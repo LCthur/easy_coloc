@@ -1,5 +1,18 @@
 .tasks {
+    margin: 0 auto;
     display: grid;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
-    margin: 0px 20px 20px 0px;
+    text-align: center;
+}
+
+.task {
+    background-color: #fff;
+    margin:0 20px;
+    height: 400px;
+}
+
+.task-title {
+    background: linear-gradient(0.25turn, #27E0EE, #24C7FF);
 }
