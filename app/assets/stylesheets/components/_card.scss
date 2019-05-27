@@ -11,8 +11,13 @@
     background-color: #fff;
     margin:0 20px;
     height: 400px;
+    border-radius: 10px;
 }
 
 .task-title {
-    background: linear-gradient(0.25turn, #27E0EE, #24C7FF);
+    background: linear-gradient(0.25turn, #24C7FF,#27E0EE);
+    border-radius: 10px 10px 0px 0px;
+    padding:7px 27px;
+    color: #fff;
+    text-align: left;
 }
