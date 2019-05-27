@@ -16,22 +16,27 @@ Flat.destroy_all
 p 'Creating 5 tasks'
 
 Task.create!(
+    id: 1,
     name: 'Aspirateur',
     description: "Aspirer la poussière"
   )
 Task.create!(
+    id: 2,
     name: "Lave-vaisselle",
     description: "Vider le lave-vaisselle"
   )
 Task.create!(
+    id: 3,
     name: 'Courses',
     description: "Faire les courses"
   )
 Task.create!(
+    id: 4,
     name: 'Compost',
     description: "vider le compost"
   )
 Task.create!(
+    id: 5,
     name: 'WC',
     description: "Laver les WC"
   )
@@ -44,9 +49,10 @@ Flat.create!(
   name: 'Zero waste'
   )
 
-p 'Create a User'
+p 'Create 4 User'
 
 User.create!(
+  id: 1,
   first_name: 'Toto',
   last_name: 'Titi',
   password: 'tototiti',
@@ -55,9 +61,36 @@ User.create!(
   flat_id: 1
   )
 
+User.create!(
+  id: 2,
+  first_name: 'Giovanni',
+  last_name: 'Salcuni',
+  password: 'tototiti',
+  password_confirmation: 'tototiti',
+  email: 'giova@titi.com',
+  flat_id: 1
+  )
+
+User.create!(
+  id: 3,
+  first_name: 'Matthieu',
+  last_name: 'Borgognon',
+  password: 'tototiti',
+  password_confirmation: 'tototiti',
+  email: 'matbgn@titi.com',
+  flat_id: 1
+  )
 
 
+p 'Create Assignments'
 
+Assignment.create!(
+    user_id: rand(1..3),
+    task_id: rand(1..5),
+    deadline: Date.today + rand(1..7),
+    done_state: [true, false].sample
+
+  )
 
 
 
