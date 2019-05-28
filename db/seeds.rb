@@ -84,20 +84,12 @@ User.create!(
 
 p 'Create Assignments'
 
+10.times do 
+    Assignment.create!(
+      user_id: rand(1..3),
+      task_id: rand(1..5),
+      deadline: Date.today + rand(1..7),
+      done_state: [true, false].sample
 
-Assignment.create!(
-    user_id: rand(1..3),
-    task_id: rand(1..5),
-    deadline: Date.today + rand(1..7),
-    done_state: [true, false].sample
-  )
-
-
-
-
-
-
-
-
-
-
+    )
+    end
