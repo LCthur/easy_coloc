@@ -1,0 +1,7 @@
+<%= simple_form_for([@assignment, @deal]) do |f| %>
+    <% @proposals.each do |proposal| %>
+        <%= proposal.task.name %>
+        <%= f.input :chosen %>
+    <% end %>
+    <%= f.button :submit %>
+<% end %>

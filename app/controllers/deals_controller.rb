@@ -1,18 +1,35 @@
 class DealsController < ApplicationController
   def new
+    @user = current_user
+    assignments = Assignment.where.not(user: @user)
+    @proposals = assignments.select { |assignment| assignment.done_state == false }
     @deal = Deal.new
+    @assignment = Assignment.find(params[:assignment_id])
+    @deal.assignment = @assignment 
   end
 
   def create
-    @deal = Deal.new(deal_params)
-    @deal.user = current_user
-    @task = Task.find(params[:task_id])
-    @deal.task = @task
+         
+    # recuperer tous les assignments id sélectionnés
+    @assignment_to_deal = Assignment.find(params[:assignment_id])
+    assignment_ids = params.keep_if {|k, v| k=~ /\d/ }.keys
+    # Pour chaque id, reconstituer l'objet correspondant
+    assignment = []
+    assignment_ids.map { |id| assignment << Assignment.find(id.to_i) }
+    # itérer sur le tableau de asssignments 
+    assignment.each do |assignment_proposal|
+      # Pour chacun, créer un deal
+      deal = Deal.new
+      deal.assignment_proposal_id = assignment_proposal.id
+      deal.assignment = @assignment_to_deal
+      render :new unless deal.save
+    end
+    redirect_to flat_path(current_user.flat)
   end
 
   private
 
   def deal_params
-    params.require(:deal).permit(:user_id)
+    params.require(:deal).permit(:assignment_proposal_id)
   end
 end

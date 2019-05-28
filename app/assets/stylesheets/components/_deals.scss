@@ -1,12 +1,17 @@
-<div class=“container col-6”>
- <div class=“task-title”>
-   <h2 class=“text-center py-2”>Raise an issue against: <%= full_name(@user.first_name, @user.last_name) %></h2>
- </div>
- <div class=“d-flex pt-3 pl-3 bg-white”>
-   <%= cl_image_tag @user.avatar_photo, class: “avatar-large-issues” %>
-   <div class=“pb-3">
-     <h2 class=“card-task-info px-3 pb-1”><%= @task.name %></h2>
-     <p class=“card-task-info px-3"><%= @task.description %></p>
-   </div>
- </div>
-</div>
+.deal {
+    background-color: #fff;
+    display: flex;
+}
+
+.deal-avatar {
+    margin:0 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-icon {
+    margin: 0 40px;
+    font-size: 50px;
+}
