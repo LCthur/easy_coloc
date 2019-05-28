@@ -1,5 +1,5 @@
-<%= simple_form_for(:issue) do |f| %>
-  <%= f.input :description, require: true, label: 'description:' %>
+<%= simple_form_for([assignment, issue]) do |f| %>
+  <%= f.input :description, required: true, label: 'description:' %>
   <%= f.input :photo, required: false, as: :file, label: 'image:'%>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit, value: "Raise" %>
