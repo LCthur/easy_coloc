@@ -76,7 +76,6 @@ gio = User.create!(
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'giova@titi.com',
-  avatar_photo: 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559037666/ukrmvgtwplp8qstj6b0d.jpg',
   flat_id: 1
   )
 
@@ -90,7 +89,6 @@ matt = User.create(
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'matbgn@titi.com',
-  avatar_photo: 'amsv3groux8hkv0v2jdg_qoddk9',
   flat_id: 1
   )
 matt.remote_avatar_photo_url = url_matt

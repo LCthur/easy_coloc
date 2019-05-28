@@ -12,7 +12,9 @@
                         <h2><%= assignment.task.name %></h2>
                         <p> <%= assignment.task.description %></p>
                     </div> 
-                <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
+                <div class="btn">
+                    <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
+                </div>
             </div>
         <% end %>
         <% end %>
