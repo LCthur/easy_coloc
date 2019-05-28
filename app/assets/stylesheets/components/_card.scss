@@ -5,7 +5,7 @@
 }
 
 .tasks {
-    margin: 0 auto;
+    margin: 0 60px;
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
@@ -33,7 +33,7 @@
     margin: 20px auto;
     overflow: hidden;
     height: 80px;
-    width: 400px;
+    width: 350px;
     border-radius: 10px;
     padding: 20px;
     background: #fff;
@@ -43,7 +43,7 @@
     transition: 0.5s;
 
     &:hover {
-        width: 500px;
+        width: 400px;
         transition: 0.5s;
     }
 }
@@ -66,20 +66,20 @@
 
 @media (max-width: 1070px) {
     .card-task {
-        width: 350px;
+        width: 320px;
 
         &:hover {
-            width: 410px;
+            width: 370px;
         }
     }
 }
 
 @media (max-width: 970px) {
     .card-task {
-        width: 300px;
+        width: 280px;
 
         &:hover {
-            width: 360px;
+            width: 320px;
         }
     }
 }
@@ -88,6 +88,7 @@
     .tasks {
         grid-template-columns: 1fr;
         width: 700px;
+        margin: 0 auto;
     }
 
     .task {
@@ -103,16 +104,30 @@
     }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 770px) {
     .tasks {
-        width: 600px;
+        width: 650px;
     }
 
     .card-task {
-        width: 400px;
+        width: 470px;
 
         &:hover {
-            width: 500px;
+            width: 560px;
+        }
+    }
+}
+
+@media (max-width: 690px) {
+    .tasks {
+        width: 500px;
+    }
+
+    .card-task {
+        width: 350px;
+
+        &:hover {
+            width: 420px;
         }
     }
 }
@@ -126,25 +141,25 @@
         width: 300px;
 
         &:hover {
-            width: 370px;
+            width: 380px;
         }
     }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 510px) {
     #colocation-title {
         font-size: 30px;
     }
 
     .tasks {
-        width: 390px;
+        width: 380px;
     }
 
     .card-task {
-        width: 250px;
+        width: 240px;
 
         &:hover {
-            width: 330px;
+            width: 310px;
         }
     }
 }

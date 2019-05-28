@@ -84,7 +84,7 @@ User.create!(
 
 p 'Create Assignments'
 
-5.times do 
+10.times do 
     Assignment.create!(
       user_id: rand(1..3),
       task_id: rand(1..5),
