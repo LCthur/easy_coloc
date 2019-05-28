@@ -4,13 +4,13 @@
         <div class="task-title">
             <h2>Todo</h2>
         </div>
-        <% @flat.assignments.each do |assignement| %>
-        <% unless assignement.done_state %>
+        <% @flat.assignments.each do |assignment| %>
+        <% unless assignment.done_state %>
             <div class="card-task">
-                <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
                     <div class="card-task-info">
-                        <h2><%= assignement.task.name %></h2>
-                        <p> <%= assignement.task.description %></p>
+                        <h2><%= assignment.task.name %></h2>
+                        <p> <%= assignment.task.description %></p>
                     </div>
             </div>
         <% end %>
@@ -20,16 +20,17 @@
         <div class="task-title">
             <h2>Done</h2>
         </div>
-        <% @flat.assignments.each do |assignement| %>
-        <% if assignement.done_state%>
+        <% @flat.assignments.each do |assignment| %>
+        <% if assignment.done_state%>
             <div class="card-task">
-                <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
                     <div class="card-task-info">
-                        <h2><%= assignement.task.name %></h2>
-                        <p> <%= assignement.task.description %></p>
+                        <h2><%= assignment.task.name %></h2>
+                        <p> <%= assignment.task.description %></p>
                     </div>
             </div>
         <% end %>
         <% end %>
     </div>
 </div>
+
