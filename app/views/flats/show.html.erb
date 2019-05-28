@@ -6,8 +6,9 @@
         </div>
         <% @flat.assignments.each do |assignment| %>   
         <% unless assignment.done_state %> 
+
             <div class="card-task">
-                <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
                     <div class="card-task-info">
                         <h2><%= assignment.task.name %></h2>
                         <p> <%= assignment.task.description %></p>
@@ -15,6 +16,7 @@
                 <div class="btn">
                     <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
                 </div>
+
             </div>
         <% end %>
         <% end %>
@@ -25,8 +27,9 @@
         </div>
         <% @flat.assignments.each do |assignment| %>   
         <% if assignment.done_state%> 
+
             <div class="card-task">
-                <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
                     <div class="card-task-info">
                         <h2><%= assignment.task.name %></h2>
                         <p> <%= assignment.task.description %></p>
@@ -36,3 +39,4 @@
         <% end %>
     </div>
 </div>
+
