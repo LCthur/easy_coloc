@@ -1,10 +1,16 @@
+#colocation-title {
+    text-align: center;
+    padding: 10px;
+    font-size: 34px;
+}
 .tasks {
     margin: 0 auto;
     display: grid;
     justify-content: center;
-    align-items: center;
     grid-template-columns: 1fr 1fr;
     text-align: center;
+    align-content: start;
+    transition: 0.5s;
 }
 
 .task {
@@ -53,4 +59,81 @@
           margin-top:10px;
       }
   }
-  
+ 
+  @media (max-width: 1070px) {
+    .card-task {
+        width:350px;
+        &:hover {
+            width:410px;
+        }
+    }
+  }
+
+  @media (max-width: 970px) {
+    .card-task {
+        width:300px;
+        &:hover {
+            width:360px;
+        }
+    }
+  }
+
+  @media (max-width: 870px) {
+    .tasks {
+        grid-template-columns: 1fr;
+        width:700px;
+    }
+
+    .task {
+        margin: 20px 20px;
+    }
+
+    .card-task {
+        width:500px;
+        &:hover {
+            width:600px;
+        }
+    }
+  }
+
+  @media (max-width: 690px) {
+    .tasks {
+        width:600px;
+    }
+
+    .card-task {
+        width:400px;
+        &:hover {
+            width:500px;
+        }
+    }
+  }
+
+  @media (max-width: 590px) {
+    .tasks {
+        width:450px;
+    }
+
+    .card-task {
+        width:300px;
+        &:hover {
+            width:370px;
+        }
+    }
+  }
+
+  @media (max-width: 490px) {
+    #colocation-title {
+        font-size: 30px;
+    }
+    .tasks {
+        width:390px;
+    }
+
+    .card-task {
+        width:250px;
+        &:hover {
+            width:330px;
+        }
+    }
+  }

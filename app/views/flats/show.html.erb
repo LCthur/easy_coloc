@@ -1,25 +1,35 @@
-<h1><%= @flat.name %></h1>
+<h1 id="colocation-title">Colocation : <%= @flat.name %></h1>
 <div class="tasks">
     <div class="task">
         <div class="task-title">
             <h2>Todo</h2>
         </div>
-        <% @flat.assignments.each do |assignement| %>    
+        <% @flat.assignments.each do |assignement| %>   
+        <% unless assignement.done_state %> 
             <div class="card-task">
                 <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
                     <div class="card-task-info">
-                        <h2><%= assignement.task.name %> <%= assignement.task.description %></h2>
-                        <p><%= assignement.user.first_name %></p>
+                        <h2><%= assignement.task.name %></h2>
+                        <p> <%= assignement.task.description %></p>
                     </div> 
             </div>
+        <% end %>
         <% end %>
     </div>
     <div class="task">
         <div class="task-title">
             <h2>Done</h2>
         </div>
-        <div class="card-task">
-
-        </div>
+        <% @flat.assignments.each do |assignement| %>   
+        <% if assignement.done_state%> 
+            <div class="card-task">
+                <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+                    <div class="card-task-info">
+                        <h2><%= assignement.task.name %></h2>
+                        <p> <%= assignement.task.description %></p>
+                    </div> 
+            </div>
+        <% end %>
+        <% end %>
     </div>
 </div>
