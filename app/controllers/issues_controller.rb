@@ -11,6 +11,7 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
     if @issue.save
       redirect_to flat_path(current_user.flat)
+    else
     end
   end
 

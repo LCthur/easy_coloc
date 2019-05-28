@@ -1,5 +1,5 @@
 class Issue < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
   belongs_to :user
   belongs_to :assignment
+  mount_uploader :photo, PhotoUploader
 end
