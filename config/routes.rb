@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'issues/new'
+  get 'issues/create'
   resources :flats, only: [:show, :index]
   devise_for :users
   root to: 'pages#home'
