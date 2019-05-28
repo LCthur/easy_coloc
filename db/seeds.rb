@@ -15,6 +15,7 @@ Flat.destroy_all
 
 p 'Creating 5 tasks'
 
+
 Task.create!(
     id: 1,
     name: 'Aspirateur',
@@ -43,6 +44,7 @@ Task.create!(
 
 p 'Create a flat'
 
+
 Flat.create!(
   id: 1,
   task_management: true,
@@ -51,40 +53,53 @@ Flat.create!(
 
 p 'Create 4 User'
 
-User.create!(
+url_matt = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/amsv3groux8hkv0v2jdg_qoddk9.jpg'
+url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/rxvmw8qn1hve9gmi4enu_kvznhk.jpg'
+url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/ufnku3qnuo2heeauakdm_p5jxyh.jpg'
+lo = User.create!(
   id: 1,
   first_name: 'Toto',
   last_name: 'Titi',
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'toto@titi.com',
+  avatar_photo: 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/ufnku3qnuo2heeauakdm_p5jxyh.jpg',
   flat_id: 1
   )
+lo.remote_avatar_photo_url = url_lo
+lo.save
 
-User.create!(
+
+gio = User.create!(
   id: 2,
   first_name: 'Giovanni',
   last_name: 'Salcuni',
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'giova@titi.com',
+  avatar_photo: 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559037666/ukrmvgtwplp8qstj6b0d.jpg',
   flat_id: 1
   )
 
-User.create!(
+gio.remote_avatar_photo_url = url_gio
+gio.save
+
+matt = User.create(
   id: 3,
   first_name: 'Matthieu',
   last_name: 'Borgognon',
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'matbgn@titi.com',
+  avatar_photo: 'amsv3groux8hkv0v2jdg_qoddk9',
   flat_id: 1
   )
-
+matt.remote_avatar_photo_url = url_matt
+matt.save
 
 p 'Create Assignments'
 
-10.times do 
+10.times do
     Assignment.create!(
       user_id: rand(1..3),
       task_id: rand(1..5),
