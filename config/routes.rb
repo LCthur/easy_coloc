@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :assignments, only: [:show] do
+    resources :deals, only: [:new, :create]
+  end
+  
   resources :flats, only: [:show, :index]
   devise_for :users
   root to: 'pages#home'

@@ -4,14 +4,15 @@
         <div class="task-title">
             <h2>Todo</h2>
         </div>
-        <% @flat.assignments.each do |assignement| %>   
-        <% unless assignement.done_state %> 
+        <% @flat.assignments.each do |assignment| %>   
+        <% unless assignment.done_state %> 
             <div class="card-task">
                 <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
                     <div class="card-task-info">
-                        <h2><%= assignement.task.name %></h2>
-                        <p> <%= assignement.task.description %></p>
+                        <h2><%= assignment.task.name %></h2>
+                        <p> <%= assignment.task.description %></p>
                     </div> 
+                <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
             </div>
         <% end %>
         <% end %>
@@ -20,13 +21,13 @@
         <div class="task-title">
             <h2>Done</h2>
         </div>
-        <% @flat.assignments.each do |assignement| %>   
-        <% if assignement.done_state%> 
+        <% @flat.assignments.each do |assignment| %>   
+        <% if assignment.done_state%> 
             <div class="card-task">
                 <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
                     <div class="card-task-info">
-                        <h2><%= assignement.task.name %></h2>
-                        <p> <%= assignement.task.description %></p>
+                        <h2><%= assignment.task.name %></h2>
+                        <p> <%= assignment.task.description %></p>
                     </div> 
             </div>
         <% end %>
