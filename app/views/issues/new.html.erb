@@ -1,2 +1,2 @@
-<h1>Issues#new</h1>
-<p>Find me in app/views/issues/new.html.erb</p>
+<%= cl_image_tag @user.avatar_photo, class: "avatar-large" %>
+<%= full_name(@user.first_name, @user.last_name) %>

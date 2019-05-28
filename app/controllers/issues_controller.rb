@@ -1,6 +1,10 @@
 class IssuesController < ApplicationController
   def new
     @issue = Issue.new
+    @user = current_user
+    assignment = Assignment.find(params[:assignment_id])
+    @task = assignment.task
+    @user = assignment.user
   end
 
   def create
