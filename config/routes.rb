@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'assignements/:assignment_id/issues/new', to: "issues#new",     as: "new_issue"
-  get 'assignements/:assignment_id/issues',     to: "issues#create",  as: "create_issue"
+  get 'assignments/:assignment_id/issues/new', to: "issues#new",     as: "new_issue"
+  post 'assignments/:assignment_id/issues',     to: "issues#create",  as: "create_issue"
   resources :flats, only: [:show, :index]
   devise_for :users
   root to: 'pages#home'

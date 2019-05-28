@@ -9,11 +9,14 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
+    if @issue.save
+      redirect_to flat_path(current_user.flat)
+    end
   end
 
   private
 
   def issue_params
-    params.require(:issue).permit(:photo, :description)
+    params.require(:issue).permit(:description, :photo)
   end
 end
