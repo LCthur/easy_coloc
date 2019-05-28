@@ -63,7 +63,6 @@ lo = User.create!(
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'toto@titi.com',
-  avatar_photo: 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/ufnku3qnuo2heeauakdm_p5jxyh.jpg',
   flat_id: 1
   )
 lo.remote_avatar_photo_url = url_lo
