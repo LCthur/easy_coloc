@@ -41,6 +41,16 @@ Task.create!(
     name: 'WC',
     description: "Laver les WC"
   )
+Task.create!(
+    id: 6,
+    name: 'Rangement soirée',
+    description: "Ranger le désordre de la soirée"
+  )
+Task.create!(
+    id: 7,
+    name: 'Micro-ondes',
+    description: "Laver le micro-ondes"
+  )
 
 p 'Create a flat'
 
@@ -104,4 +114,48 @@ p 'Create Assignments'
       done_state: [true, false].sample
 
     )
-    end
+end
+
+Assignment.create!(
+  id: 1000,
+  user_id: 1,
+  task_id: 6,
+  deadline: Date.today + rand(-3..5),
+  done_state: false
+)
+
+Assignment.create!(
+  id: 1001,
+  user_id: 1,
+  task_id: 7,
+  deadline: Date.today + rand(-3..5),
+  done_state: false
+)
+
+p 'Crate issues'
+
+url_nespresso = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138314/IMG_20190529_155105_m2iuyy.jpg"
+url_microwave = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138317/IMG_20190529_155143_yyi1d1.jpg"
+
+nespresso = Issue.create!(
+    description: "T'as pas bien lavé"
+    description: "Les gobelets ne sont pas rangés...",
+    assignment_id: 1000
+  )
+nespresso.photo_url = url_nespresso
+nespresso.save
+
+
+microwave = Issue.create!(
+    description: "T'as pas bien lavé"
+    description: "Les gobelets ne sont pas rangés...",
+    assignment_id: 1001
+  )
+microwave.photo_url = url_microwave
+microwave.save
+
+
+
+
+
+
