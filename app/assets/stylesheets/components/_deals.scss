@@ -1,6 +1,7 @@
 .deal {
     background-color: #fff;
     display: flex;
+    flex-direction: column;
 }
 
 .deal-avatar {
@@ -14,4 +15,10 @@
 .change-icon {
     margin: 0 40px;
     font-size: 50px;
+}
+
+.form-checkbox {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }

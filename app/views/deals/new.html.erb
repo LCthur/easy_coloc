@@ -10,14 +10,16 @@
                 </div>
             <%= cl_image_tag("not-a-user_httobd", :width=>200, class: "avatar-large-deal") %>
         </div>
-        <%# <%= render 'form', proposals: @proposals, deal: @deal %>
-        <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            <% @proposals.each do |proposal| %>
-                <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %>
-                <%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.user.first_name} - #{proposal.deadline}</label>".html_safe %>
-            <% end %>
+        <div class="form-chekbox">
+            <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <% @proposals.each do |proposal| %>
+                <ul>
+                    <li><%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %> <%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.user.first_name} - #{proposal.deadline}</label>".html_safe %></li>
+                </ul>
+                <% end %>
             <input type="submit" value="Propose deals">
-        </form>
+            </form>
+        </div>
     </div>
 </div>
