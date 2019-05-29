@@ -1,0 +1,11 @@
+<% @flat.assignments.each do |assignment| %>
+  <% if delayed?(assignment) %>
+    <div class="card-task-delayed">
+      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+            <div class="card-task-info">
+                <h2><%= assignment.task.name %></h2>
+                <p> <%= assignment.task.description %></p>
+            </div>
+    </div>
+  <% end %>
+<% end %>
