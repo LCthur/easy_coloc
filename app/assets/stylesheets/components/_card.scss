@@ -40,6 +40,7 @@
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     transition: 0.5s;
 
     &:hover {
@@ -68,7 +69,8 @@
 .card-task-delayed .card-task-info {
     text-align: left;
     padding: 16px;
-
+    width:200px;
+    transition: 0.5s;
     h2 {
         font-size: 16px;
         font-weight: bold;
@@ -80,6 +82,19 @@
         margin-top: 10px;
     }
 }
+
+
+.card-task:hover .card-task-info {
+    transition: 0.5s;
+    margin-left: -30px;
+}
+
+@media (max-width: 1070px) {
+    .card-task {
+        width: 320px;
+        &:hover {
+            width: 370px;
+        }
 
 .card-task .card-task-info {
     text-align: left;
@@ -94,11 +109,13 @@
     p {
         font-size: 12px;
         margin-top: 10px;
+
     }
 }
 
 
 @media (max-width: 970px) {
+
     .card-task {
         width: 280px;
 
@@ -116,6 +133,7 @@
 }
 
 @media (max-width: 870px) {
+
     .tasks {
         grid-template-columns: 1fr;
         width: 700px;

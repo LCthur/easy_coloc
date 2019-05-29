@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :assignments, only: [:show] do
+    resources :deals, only: [:new, :create]
+  end
+  
   resources :flats, only: [:show, :index]
   resources :assignments, only: [:create, :destroy] do
     resources :issues, only: [:new, :create]

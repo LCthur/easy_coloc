@@ -1,0 +1,47 @@
+.deal {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.deal-avatar {
+    margin:0 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-icon {
+    margin: 0 40px;
+    font-size: 50px;
+}
+
+.form-checkbox {
+    text-align: center;
+    .style-checkbox {
+        margin: 5px 100px;
+        background-color: #27E0EE;
+        border-radius: 10px;
+        padding: 5px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: grab;
+        input {
+            appearance: none;
+        }
+        img {
+            margin-left: 20px;            
+        }
+        label {
+            margin-right: 20px;
+            cursor: grab;
+        }
+    }
+}
+
+.style-checkbox.active {
+    background-color: #24C7FF;
+}
