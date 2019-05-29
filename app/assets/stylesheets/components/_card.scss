@@ -30,6 +30,11 @@
     text-align: left;
 }
 
+.task-subtitle {
+  text-align: left;
+  margin-left: 55px;
+}
+
 .card-task {
     margin: 20px auto;
     overflow: hidden;
@@ -122,6 +127,11 @@
 }
 
 @media (max-width: 1350px) {
+
+    .task-subtitle {
+      text-align: left;
+      margin-left: 55px;
+  }
     .card-task .card-task-info {
         text-align: left;
         padding: 16px;
@@ -168,6 +178,11 @@
         grid-template-columns: 1fr;
         width: 800px;
         margin: 0 auto;
+    }
+
+    .task-subtitle {
+      text-align: left;
+      margin-left: 75px;
     }
 
     .card-task .card-task-info {
@@ -219,6 +234,11 @@
         width: 650px;
     }
 
+    .task-subtitle {
+      text-align: left;
+      margin-left: 60px;
+    }
+
     .card-task .card-task-info {
         text-align: left;
         padding: 16px;
@@ -229,6 +249,11 @@
 @media (max-width: 690px) {
     .tasks {
         width: 570px;
+    }
+
+    .task-subtitle {
+      text-align: left;
+      margin-left: 50px;
     }
 
     .card-task .card-task-info {
