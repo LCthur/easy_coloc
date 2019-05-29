@@ -4,7 +4,7 @@
     <% @issues.each do |issue| %>
       <div class="example-2 issue-card">
         <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path @issue.photo %>')">">
+         url('<%= cl_image_path issue.photo %>')">
           <div class="data">
             <div class="content">
               <span class="author">Raised by: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>

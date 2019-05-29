@@ -65,6 +65,8 @@ h1 {
     }
   }
   .wrapper {
+    background-size: cover;
+    background-repeat: no-repeat;
     min-height: 300px;
     position: relative;
     overflow: hidden;

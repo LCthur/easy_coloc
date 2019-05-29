@@ -12,6 +12,8 @@ p 'Destroy Users'
 User.destroy_all
 p 'Destroy flats'
 Flat.destroy_all
+p 'Destroy issues'
+Issue.destroy_all
 
 p 'Creating 5 tasks'
 
@@ -138,20 +140,20 @@ url_nespresso = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138314/I
 url_microwave = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138317/IMG_20190529_155143_yyi1d1.jpg"
 
 nespresso = Issue.create!(
-    description: "T'as pas bien lavé"
-    description: "Les gobelets ne sont pas rangés...",
+    user_id: 2,
+    description: "T'as pas bien lavé",
     assignment_id: 1000
   )
-nespresso.photo_url = url_nespresso
+nespresso.remote_photo_url = url_nespresso
 nespresso.save
 
 
 microwave = Issue.create!(
-    description: "T'as pas bien lavé"
-    description: "Les gobelets ne sont pas rangés...",
+    user_id: 2,
+    description: "Le micro-onde n'est pas lavé correctement",
     assignment_id: 1001
   )
-microwave.photo_url = url_microwave
+microwave.remote_photo_url = url_microwave
 microwave.save
 
 
