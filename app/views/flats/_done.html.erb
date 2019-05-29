@@ -2,11 +2,15 @@
   <% if assignment.done_state%>
     <div class="card-task">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-            <div class="card-task-info">
-                <h2><%= assignment.task.name %></h2>
-                <p> <%= assignment.task.description %></p>
-                <%= link_to "ISSUE", new_assignment_issue_path(assignment) %>
-            </div>
+          <div class="card-task-info">
+            <h2><%= assignment.task.name %></h2>
+            <p> <%= assignment.task.description %></p>
+          </div>
+      <div class="btn">
+          <% if assignment.user != current_user %>
+          <%= link_to "ISSUE", new_assignment_issue_path(assignment), class: "btn-deal" %>
+          <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
