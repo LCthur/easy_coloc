@@ -11,6 +11,9 @@ class IssuesController < ApplicationController
     @issue.assignment = Assignment.find(params[:assignment_id])
     @issue.user = current_user
     if @issue.save
+      # chgt de statut pour le boolean done_state
+      @issue.assignment.done_state = false
+      @issue.assignment.save
       redirect_to flat_path(current_user.flat)
     else
       render :new
