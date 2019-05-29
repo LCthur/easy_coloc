@@ -6,6 +6,15 @@
         </div>
         <% @flat.assignments.each do |assignment| %>
         <% unless assignment.done_state %>
+          <% if delayed?(assignment) %>
+            <div class="card-task-delayed">
+              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+                    <div class="card-task-info">
+                        <h2><%= assignment.task.name %></h2>
+                        <p> <%= assignment.task.description %></p>
+                    </div>
+            </div>
+          <% else %>
             <div class="card-task">
               <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
                     <div class="card-task-info">
@@ -13,6 +22,7 @@
                         <p> <%= assignment.task.description %></p>
                     </div>
             </div>
+          <% end %>
         <% end %>
         <% end %>
     </div>
