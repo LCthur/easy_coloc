@@ -1,6 +1,6 @@
 <div class="container col-6">
     <div class="task-title">
-        <h2 class="text-center py-2">Make a deal: <%= @assignment.user.first_name %></h2>
+        <h2 class="text-center py-2">Make a deal</h2>
     </div>
     <div class="deal">
         <div class="deal-avatar">
@@ -10,12 +10,12 @@
                 </div>
             <%= cl_image_tag("not-a-user_httobd", :width=>200, class: "avatar-large-deal") %>
         </div>
-        <div class="form-chekbox">
+        <div class="form-checkbox form-group">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                 <% @proposals.each do |proposal| %>
                 <ul>
-                    <li><%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %> <%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.user.first_name} - #{proposal.deadline}</label>".html_safe %></li>
+                    <li><%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %> <%="<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'".html_safe %><%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline.strftime}</label>".html_safe %></li>
                 </ul>
                 <% end %>
             <input type="submit" value="Propose deals">

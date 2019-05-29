@@ -19,6 +19,10 @@
 
 .form-checkbox {
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    ul li{
+        list-style: none;
+        input {
+            appearance: none;
+        }
+    }
 }
