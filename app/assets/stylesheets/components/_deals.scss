@@ -19,10 +19,22 @@
 
 .form-checkbox {
     text-align: center;
-    ul li{
-        list-style: none;
+    .style-checkbox {
+        margin: 5px 50px;
+        background-color: #27E0EE;
+        border-radius: 10px;
+        padding: 5px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         input {
             appearance: none;
+            display: none;
+        }
+        img {
+            margin-right: 20px;
+            
         }
     }
 }

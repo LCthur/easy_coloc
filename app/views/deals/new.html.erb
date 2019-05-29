@@ -10,13 +10,15 @@
                 </div>
             <%= cl_image_tag("not-a-user_httobd", :width=>200, class: "avatar-large-deal") %>
         </div>
-        <div class="form-checkbox form-group">
+        <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                 <% @proposals.each do |proposal| %>
-                <ul>
-                    <li><%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %> <%="<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'".html_safe %><%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline.strftime}</label>".html_safe %></li>
-                </ul>
+                <div class="style-checkbox">
+                    <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %> 
+                    <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'".html_safe %> 
+                    <%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline}</label>".html_safe %>
+                </div>
                 <% end %>
             <input type="submit" value="Propose deals">
             </form>
