@@ -1,37 +1,17 @@
 <h1 id="colocation-title">Colocation : <%= @flat.name %></h1>
 <div class="tasks">
-    <div class="task fade-in-left">
-        <div class="task-title">
-            <h2>Todo</h2>
-        </div>
-        <% @flat.assignments.each do |assignment| %>
-        <% unless assignment.done_state %>
-            <div class="card-task">
-              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-                    <div class="card-task-info">
-                        <h2><%= assignment.task.name %></h2>
-                        <p> <%= assignment.task.description %></p>
-                    </div>
-            </div>
-        <% end %>
-        <% end %>
+  <div class="task fade-in-left">
+    <div class="task-title">
+      <h2>Todo</h2>
     </div>
-    <div class="task fade-in-left">
-        <div class="task-title">
-            <h2>Done</h2>
-        </div>
-        <% @flat.assignments.each do |assignment| %>
-        <% if assignment.done_state%>
-            <div class="card-task">
-              <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-                    <div class="card-task-info">
-                        <h2><%= assignment.task.name %></h2>
-                        <p> <%= assignment.task.description %></p>
-                        <%= link_to "ISSUE", new_assignment_issue_path(assignment) %>
-                    </div>
-            </div>
-        <% end %>
-        <% end %>
+    <%= render 'flats/delayed', flat: @flat  %>
+    <%= render 'flats/todo',    flat: @flat  %>
+  </div>
+  <div class="task fade-in-left">
+    <div class="task-title">
+      <h2>Done</h2>
     </div>
+    <%= render 'flats/done', flat: @flat %>
+  </div>
 </div>
 

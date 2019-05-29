@@ -47,6 +47,39 @@
         transition: 0.5s;
     }
 }
+.card-task-delayed {
+    margin: 20px auto;
+    overflow: hidden;
+    height: 80px;
+    width: 350px;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0px 20px rgba(255, 0, 0, 1);
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    &:hover {
+        width: 400px;
+        transition: 0.5s;
+    }
+}
+
+.card-task-delayed .card-task-info {
+    text-align: left;
+    padding: 16px;
+
+    h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
 
 .card-task .card-task-info {
     text-align: left;
@@ -64,18 +97,16 @@
     }
 }
 
-@media (max-width: 1070px) {
-    .card-task {
-        width: 320px;
-
-        &:hover {
-            width: 370px;
-        }
-    }
-}
 
 @media (max-width: 970px) {
     .card-task {
+        width: 280px;
+
+        &:hover {
+            width: 320px;
+        }
+    }
+    .card-task-delayed {
         width: 280px;
 
         &:hover {
@@ -102,6 +133,14 @@
             width: 600px;
         }
     }
+
+    .card-task-delayed {
+        width: 500px;
+
+        &:hover {
+            width: 600px;
+        }
+    }
 }
 
 @media (max-width: 770px) {
@@ -110,6 +149,13 @@
     }
 
     .card-task {
+        width: 470px;
+
+        &:hover {
+            width: 560px;
+        }
+    }
+    .card-task-delayed {
         width: 470px;
 
         &:hover {
@@ -130,6 +176,13 @@
             width: 420px;
         }
     }
+    .card-task-delayed {
+        width: 350px;
+
+        &:hover {
+            width: 420px;
+        }
+    }
 }
 
 @media (max-width: 590px) {
@@ -138,6 +191,13 @@
     }
 
     .card-task {
+        width: 300px;
+
+        &:hover {
+            width: 380px;
+        }
+    }
+    .card-task-delayed {
         width: 300px;
 
         &:hover {
@@ -156,6 +216,14 @@
     }
 
     .card-task {
+        width: 240px;
+
+        &:hover {
+            width: 310px;
+        }
+    }
+
+    .card-task-delayed {
         width: 240px;
 
         &:hover {
