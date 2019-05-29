@@ -12,6 +12,7 @@
     text-align: center;
     align-content: start;
     transition: 0.5s;
+    margin-bottom: 30px;
 }
 
 .task {
@@ -32,19 +33,18 @@
 .card-task {
     margin: 20px auto;
     overflow: hidden;
-    height: 80px;
-    width: 350px;
+    height: 90px;
+    width: 80%;
     border-radius: 10px;
     padding: 20px;
     background: #fff;
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     transition: 0.5s;
-
     &:hover {
-        width: 400px;
+        width: 90%;
         transition: 0.5s;
     }
 }
@@ -53,15 +53,17 @@
     text-align: left;
     padding: 16px;
     width:200px;
+    margin-top:6px;
+    margin-left: 0;
     transition: 0.5s;
     h2 {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
     }
 
     p {
-        font-size: 12px;
+        font-size: 16px;
         margin-top: 10px;
     }
 }
@@ -70,8 +72,8 @@
 .card-task-delayed {
     margin: 20px auto;
     overflow: hidden;
-    height: 80px;
-    width: 350px;
+    height: 90px;
+    width: 80%;
     border-radius: 10px;
     padding: 20px;
     background: #fff;
@@ -80,7 +82,7 @@
     align-items: center;
     transition: 0.5s;
     &:hover {
-        width: 400px;
+        width: 90%;
         transition: 0.5s;
     }
 }
@@ -91,155 +93,104 @@
     width:200px;
     transition: 0.5s;
     h2 {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
     }
 
     p {
-        font-size: 12px;
+        font-size: 16px;
         margin-top: 10px;
     }
 }
 
 .card-task:hover .card-task-info {
     transition: 0.5s;
-    margin-left: -30px;
 }
 
-@media (max-width: 1070px) {
-    .card-task {
-        width: 320px;
-        &:hover {
-            width: 370px;
-        }
-    }
+.div-btn {
+    margin-left:30%;
+    transition: 0.5s;
+}
 
+.card-task:hover .div-btn {
+    margin-left: 40%;
+}
+
+@media (max-width: 1350px) {
     .card-task .card-task-info {
     text-align: left;
     padding: 16px;
-
     h2 {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
     }
 
     p {
-        font-size: 12px;
+        font-size: 16px;
         margin-top: 10px;
       }
     }
 }
 
-
-@media (max-width: 970px) {
-
-    .card-task {
-        width: 280px;
-
-        &:hover {
-            width: 320px;
-        }
-    }
-    .card-task-delayed {
-        width: 280px;
-
-        &:hover {
-            width: 320px;
-        }
-    }
-}
-
-@media (max-width: 870px) {
-
+@media (max-width: 1170px) {
     .tasks {
         grid-template-columns: 1fr;
-        width: 700px;
+        width: 800px;
         margin: 0 auto;
     }
 
     .task {
         margin: 20px 20px;
     }
-
-    .card-task {
-        width: 500px;
-
-        &:hover {
-            width: 600px;
-        }
+    .div-btn {
+        margin-left:40%;
     }
-
-    .card-task-delayed {
-        width: 500px;
-
-        &:hover {
-            width: 600px;
-        }
+    .card-task:hover .div-btn {
+        margin-left:50%;
     }
 }
-
-@media (max-width: 770px) {
+@media (max-width: 800px) {
     .tasks {
         width: 650px;
     }
-
-    .card-task {
-        width: 470px;
-
-        &:hover {
-            width: 560px;
-        }
-    }
-    .card-task-delayed {
-        width: 470px;
-
-        &:hover {
-            width: 560px;
-        }
+    .card-task .card-task-info {
+        text-align: left;
+        padding: 16px;
+        margin-left:-2%;
     }
 }
 
 @media (max-width: 690px) {
     .tasks {
-        width: 500px;
+        width: 570px;
     }
-
-    .card-task {
-        width: 350px;
-
-        &:hover {
-            width: 420px;
+    .card-task .card-task-info {
+        text-align: left;
+        padding: 16px;
+        margin-left:-2%;
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
         }
-    }
-    .card-task-delayed {
-        width: 350px;
-
-        &:hover {
-            width: 420px;
-        }
+    
+        p {
+            font-size: 12px;
+            margin-top: 10px;
+          }
     }
 }
 
 @media (max-width: 590px) {
     .tasks {
-        width: 450px;
+        width: 500px;
     }
-
-    .card-task {
-        width: 300px;
-
-        &:hover {
-            width: 380px;
-        }
-    }
-    .card-task-delayed {
-        width: 300px;
-
-        &:hover {
-            width: 380px;
-        }
+    .card-task .card-task-info {
+        text-align: left;
+        padding: 16px;
+        margin-left:0%;
     }
 }
 
@@ -249,23 +200,28 @@
     }
 
     .tasks {
-        width: 380px;
+        width: 480px;
     }
-
-    .card-task {
-        width: 240px;
-
-        &:hover {
-            width: 310px;
+    .card-task .card-task-info {
+        text-align: left;
+        padding: 20px;
+        margin-left:-4%;
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
         }
+    
+        p {
+            font-size: 12px;
+            margin-top: 10px;
+          }
     }
-
-    .card-task-delayed {
-        width: 240px;
-
-        &:hover {
-            width: 310px;
-        }
+    .div-btn {
+        margin-left: 10%;
+    }
+    .card-task:hover .div-btn {
+        margin-left: 20%;
     }
 }
 
