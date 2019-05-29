@@ -1,5 +1,16 @@
 <h1>My Issues</h1>
 
-<% @issues.each do |thing| %>
-  <p><%= thing.task.name %></p>
+
+<% @issues.each do |issue| %>
+  <div class="example-2 card">
+    <div class="wrapper">
+      <div class="data">
+        <div class="content">
+          <span class="author"></span>
+          <h1 class="title"></h1>
+          <p class="text"><%= issue.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
