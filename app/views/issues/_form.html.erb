@@ -1,11 +1,11 @@
 <%= simple_form_for([assignment, issue]) do |f| %>
 
 <div class="form-group px-3">
-  <%= f.input :description, required: true, label: 'Description:', as: :text %>
+  <%= f.input :description, required: true, label: 'Description:', as: :text, placeholder: "Describe here..." %>
 </div>
-<div class="d-flex justify-content-between align-items-center">
+<div class="issue-upload-card">
   <div class="form-group px-3">
-    <%= f.input :photo, required: false, as: :file, label: 'Image:'%>
+    <%= f.input :photo, required: false, as: :file, label: 'Picture:'%>
     <%= f.input :photo_cache, as: :hidden %>
   </div>
   <div class="px-3">
