@@ -1,5 +1,6 @@
 <% @flat.assignments.each do |assignment| %>
-  <% if !assignment.done_state && !delayed?(assignment) %>
+  <% if !assignment.done_state && !delayed?(assignment) && assignment.deadline.strftime("%A") == Date.today.strftime("%A") %>
+  <h3><%= Date.today.strftime("%A") %></h3>
     <div class="card-task">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
         <div class="card-task-info">
