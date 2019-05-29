@@ -5,29 +5,29 @@
     <div class="deal">
         <div class="deal-avatar">
             <%= cl_image_tag @assignment.user.avatar_photo, class: "avatar-large-deal" %>
-                <div class="change-icon">
-                    <i class="fas fa-arrows-alt-h" id="change-icon"></i>
-                </div>
+            <div class="change-icon">
+                <i class="fas fa-arrows-alt-h" id="change-icon"></i>
+            </div>
             <%= cl_image_tag("not-a-user_httobd", :width=>200, class: "avatar-large-deal") %>
         </div>
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
-                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                                    <h2 class="text-center">With :</h2>
-                <div class="checkboxs">
-                    <% @proposals.each do |proposal| %>
-                        <div class="style-checkbox">
-                            <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'>".html_safe %>
-                            <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %>
-                            <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline.strftime("%d %B")}</label>".html_safe %>
-                        </div>                  
-                    <% end %>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <h2 class="text-center">With :</h2>
+            <div class="checkboxs">
+                <% @proposals.each do |proposal| %>
+                <div class="style-checkbox">
+                    <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'>".html_safe %>
+                    <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %>
+                    <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline.strftime("%d %B")}</label>".html_safe %>
                 </div>
-                <h2 class="p-2">Why you can not :</h2>
-                    <div class="description form-group mb-5">
-                        <textarea class="form-control" name="description" cols="40" rows="5"></textarea>
-                    </div>
-                <input type="submit" class="btn mb-5 button-deal" value="Propose deals">
+                <% end %>
+            </div>
+            <h2 class="p-2">Why you can not :</h2>
+            <div class="description form-group mb-5">
+                <textarea class="form-control" name="description" cols="40" rows="5"></textarea>
+            </div>
+            <input type="submit" class="btn mb-5 button-deal" value="Propose deals">
             </form>
         </div>
     </div>

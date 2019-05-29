@@ -6,7 +6,7 @@
 }
 
 .deal-avatar {
-    margin:0 20px;
+    margin: 0 20px;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -19,13 +19,14 @@
 }
 
 .checkboxs {
-    padding:20px;
+    padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .form-checkbox {
     text-align: center;
+
     .style-checkbox {
         margin: 10px 25px;
         background-color: #222;
@@ -36,12 +37,15 @@
         justify-content: space-between;
         align-items: center;
         cursor: grab;
+
         input {
             appearance: none;
         }
+
         img {
-            margin-left: 20px;            
+            margin-left: 20px;
         }
+
         label {
             margin-top: 5px;
             margin-right: 20px;
@@ -55,14 +59,15 @@
 }
 
 .description {
-    margin:0 auto;
-    width:80%;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .button-deal {
     background-color: #222;
     color: #fff;
     border-radius: 25px;
+
     &:hover {
         background-color: #24C7FF;
         color: #fff;
