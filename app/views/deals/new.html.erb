@@ -1,4 +1,4 @@
-<div class="container col-6">
+<div class="container col-6 mb-5">
     <div class="task-title">
         <h2 class="text-center py-2">Make a deal</h2>
     </div>
@@ -20,7 +20,10 @@
                             <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline}</label>".html_safe %>
                         </div>
                     <% end %>
-                <input type="submit" value="Propose deals">
+                    <div class="description">
+                        <textarea class="text-center" name="description" cols="40" rows="5"></textarea>
+                    </div>
+                <input type="submit" class="btn btn-primary" value="Propose deals">
             </form>
         </div>
     </div>

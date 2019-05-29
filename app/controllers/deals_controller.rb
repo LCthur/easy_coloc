@@ -9,13 +9,14 @@ class DealsController < ApplicationController
   end
 
   def create
-    raise
+    description = params[:description]
     @assignment_to_deal = Assignment.find(params[:assignment_id])
     assignment_ids = params.keep_if {|k, v| k=~ /\d/ }.keys
     assignment = []
     assignment_ids.map { |id| assignment << Assignment.find(id.to_i) }
       assignment.each do |assignment_proposal|
         deal = Deal.new
+        deal.description = description
         deal.assignment_proposal_id = assignment_proposal.id
         deal.assignment = @assignment_to_deal
         render :new unless deal.save
