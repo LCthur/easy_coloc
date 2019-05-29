@@ -73,19 +73,27 @@ h1 {
     box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
     &:hover {
       .data {
+        margin-top: 0px;
         transform: translateY(0);
       }
+      .title {
+        opacity:1;
+      }
+      .text {
+        opacity:1;
+      }
+
     }
   }
   .data {
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    margin-top: 120px;
+    bottom: 10px;
     transform: translateY(calc(70px + 1em));
     transition: transform 0.3s;
     .content {
+      position: absolute;
       padding: 1em;
-      position: relative;
       z-index: 1;
     }
   }
@@ -93,11 +101,15 @@ h1 {
     font-size: 12px;
   }
   .title {
+    opacity:0;
     margin-top: 10px;
+    transition: 0.8s;
   }
   .text {
+    opacity: 0;
     height: 70px;
     margin: 0;
+    transition: 0.8s;
   }
 }
 
