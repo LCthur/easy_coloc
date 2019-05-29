@@ -123,7 +123,7 @@ Assignment.create!(
   user_id: 1,
   task_id: 6,
   deadline: Date.today + rand(-3..5),
-  done_state: false
+  done_state: true
 )
 
 Assignment.create!(
@@ -131,7 +131,7 @@ Assignment.create!(
   user_id: 1,
   task_id: 7,
   deadline: Date.today + rand(-3..5),
-  done_state: false
+  done_state: true
 )
 
 p 'Crate issues'
@@ -141,7 +141,7 @@ url_microwave = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138317/I
 
 nespresso = Issue.create!(
     user_id: 2,
-    description: "T'as pas bien lavé",
+    description: "T'as pas rangé les gobelets en carton !",
     assignment_id: 1000
   )
 nespresso.remote_photo_url = url_nespresso

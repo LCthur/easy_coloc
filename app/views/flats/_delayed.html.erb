@@ -1,5 +1,5 @@
-<% @flat.assignments.each do |assignment| %>
-  <% if delayed?(assignment) %>
+<% flat.assignments.each do |assignment| %>
+  <% if delayed?(assignment) && assignment.done_state == false %>
     <div class="card-task-delayed">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
         <div class="card-task-info">
