@@ -9,6 +9,7 @@ class DealsController < ApplicationController
   end
 
   def create
+    raise
     @assignment_to_deal = Assignment.find(params[:assignment_id])
     assignment_ids = params.keep_if {|k, v| k=~ /\d/ }.keys
     assignment = []

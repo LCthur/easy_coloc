@@ -20,7 +20,7 @@
 .form-checkbox {
     text-align: center;
     .style-checkbox {
-        margin: 5px 50px;
+        margin: 5px 100px;
         background-color: #27E0EE;
         border-radius: 10px;
         padding: 5px;
@@ -28,13 +28,23 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: grab;
+        &:hover {
+            background-color: #24C7FF;
+        }
         input {
             appearance: none;
-            display: none;
         }
         img {
+            margin-left: 20px;            
+        }
+        label {
             margin-right: 20px;
-            
+            cursor: grab;
         }
     }
+}
+
+.style-checkbox.active {
+    background-color: #24C7FF;
 }

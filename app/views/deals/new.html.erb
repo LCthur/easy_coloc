@@ -12,15 +12,15 @@
         </div>
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                <% @proposals.each do |proposal| %>
-                <div class="style-checkbox">
-                    <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %> 
-                    <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'".html_safe %> 
-                    <%= "<label for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline}</label>".html_safe %>
-                </div>
-                <% end %>
-            <input type="submit" value="Propose deals">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <% @proposals.each do |proposal| %>
+                        <div class="style-checkbox">
+                            <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'>".html_safe %>
+                            <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %>
+                            <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline}</label>".html_safe %>
+                        </div>
+                    <% end %>
+                <input type="submit" value="Propose deals">
             </form>
         </div>
     </div>
