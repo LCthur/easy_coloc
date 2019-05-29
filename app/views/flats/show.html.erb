@@ -18,7 +18,6 @@
                         <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
                     <% end %>
                 </div>
-
             </div>
         <% end %>
         <% end %>
@@ -36,6 +35,9 @@
                         <h2><%= assignment.task.name %></h2>
                         <p> <%= assignment.task.description %></p>
                     </div> 
+                <div class="btn">
+                    <%= link_to "ISSUE", new_assignment_issue_path(assignment) %>
+                </div>
             </div>
         <% end %>
         <% end %>
