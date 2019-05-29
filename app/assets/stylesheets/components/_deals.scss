@@ -2,6 +2,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .deal-avatar {
@@ -17,13 +18,19 @@
     font-size: 50px;
 }
 
+.checkboxs {
+    padding:20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .form-checkbox {
     text-align: center;
     .style-checkbox {
-        margin: 5px 100px;
-        background-color: #27E0EE;
+        margin: 10px 25px;
+        background-color: #222;
         border-radius: 10px;
-        padding: 5px;
+        padding: 8px 5px 8px 5px;
         color: #fff;
         display: flex;
         justify-content: space-between;
@@ -36,6 +43,7 @@
             margin-left: 20px;            
         }
         label {
+            margin-top: 5px;
             margin-right: 20px;
             cursor: grab;
         }
@@ -44,4 +52,25 @@
 
 .style-checkbox.active {
     background-color: #24C7FF;
+}
+
+.description {
+    margin:0 auto;
+    width:80%;
+}
+
+.button-deal {
+    background-color: #222;
+    color: #fff;
+    border-radius: 25px;
+    &:hover {
+        background-color: #24C7FF;
+        color: #fff;
+    }
+}
+
+@media (max-width: 1250px) {
+    .checkboxs {
+        grid-template-columns: 1fr;
+    }
 }

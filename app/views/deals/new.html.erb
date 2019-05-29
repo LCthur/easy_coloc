@@ -1,4 +1,4 @@
-<div class="container col-6 mb-5">
+<div class="container col-6 mt-5 mb-5">
     <div class="task-title">
         <h2 class="text-center py-2">Make a deal</h2>
     </div>
@@ -13,17 +13,21 @@
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                                    <h2 class="text-center">With :</h2>
+                <div class="checkboxs">
                     <% @proposals.each do |proposal| %>
                         <div class="style-checkbox">
                             <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'>".html_safe %>
                             <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %>
-                            <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline}</label>".html_safe %>
-                        </div>
+                            <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{proposal.deadline.strftime("%d %B")}</label>".html_safe %>
+                        </div>                  
                     <% end %>
-                    <div class="description">
-                        <textarea class="text-center" name="description" cols="40" rows="5"></textarea>
+                </div>
+                <h2 class="p-2">Why you can not :</h2>
+                    <div class="description form-group mb-5">
+                        <textarea class="form-control" name="description" cols="40" rows="5"></textarea>
                     </div>
-                <input type="submit" class="btn btn-primary" value="Propose deals">
+                <input type="submit" class="btn mb-5 button-deal" value="Propose deals">
             </form>
         </div>
     </div>
