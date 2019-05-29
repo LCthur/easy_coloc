@@ -4,6 +4,7 @@ class User < ApplicationRecord
   mount_uploader :avatar_photo, PhotoUploader
   belongs_to :flat
   has_many :assignments, dependent: :destroy
+  has_many :issues, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
