@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :flats, only: [:show, :index]
   get '/issues/recap'
+  get '/deals/recap'
   resources :assignments, only: [:create, :destroy] do
     resources :issues, only: [:new, :create]
     resources :deals, only: [:new, :create]

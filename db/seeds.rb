@@ -12,8 +12,8 @@ p 'Destroy Users'
 User.destroy_all
 p 'Destroy flats'
 Flat.destroy_all
-p 'Destroy issues'
-Issue.destroy_all
+p 'Destroy assignments'
+Assignment.destroy_all
 
 p 'Creating 5 tasks'
 
@@ -133,6 +133,26 @@ Assignment.create!(
   deadline: Date.today + rand(-3..5),
   done_state: true
 )
+
+Assignment.create!(
+  id: 1002,
+  user_id: 1,
+  task_id: 4,
+  deadline: Date.today + rand(-3..5),
+  done_state: true
+)
+
+p 'Create deals'
+
+Deal.create!(
+  assignment_id: 1000,
+  assignment_proposal_id: 1001
+  )
+
+Deal.create!(
+  assignment_id: 1000,
+  assignment_proposal_id: 1002
+  )
 
 p 'Crate issues'
 

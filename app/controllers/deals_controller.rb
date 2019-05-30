@@ -5,7 +5,7 @@ class DealsController < ApplicationController
     @proposals = assignments.select { |assignment| assignment.done_state == false }
     @deal = Deal.new
     @assignment = Assignment.find(params[:assignment_id])
-    @deal.assignment = @assignment 
+    @deal.assignment = @assignment
   end
 
   def create
@@ -22,6 +22,11 @@ class DealsController < ApplicationController
         render :new unless deal.save
       end
     redirect_to flat_path(current_user.flat)
+  end
+
+  def recap
+    @deals = Deal.joins("INNER JOIN assignments
+                          ON deal.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
   end
 
   private
