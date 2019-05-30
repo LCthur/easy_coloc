@@ -43,10 +43,8 @@
     align-items: center;
     justify-content: flex-start;
     transition: 0.5s;
-
     &:hover {
         width: 90%;
-        transition: 0.5s;
     }
 }
 
@@ -57,13 +55,11 @@
     margin-top: 6px;
     margin-left: 0;
     transition: 0.5s;
-
     h2 {
         font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
     }
-
     p {
         font-size: 16px;
         margin-top: 10px;
@@ -83,10 +79,8 @@
     display: flex;
     align-items: center;
     transition: 0.5s;
-
     &:hover {
         width: 90%;
-        transition: 0.5s;
     }
 }
 
@@ -95,21 +89,15 @@
     padding: 16px;
     width: 350px;
     transition: 0.5s;
-
     h2 {
         font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
     }
-
     p {
         font-size: 16px;
         margin-top: 10px;
     }
-}
-
-.card-task:hover .card-task-info {
-    transition: 0.5s;
 }
 
 .div-btn {
@@ -123,42 +111,27 @@
 
 @media (max-width: 1350px) {
     .card-task .card-task-info {
-        text-align: left;
-        padding: 16px;
         width: 370px;
-
         h2 {
             font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
         }
 
         p {
             font-size: 16px;
-            margin-top: 10px;
         }
     }
 
     .card-task:hover .card-task-info {
-        transition: 0.5s;
         width: 400px;
     }
 
     .card-task-delayed .card-task-info {
-        text-align: left;
-        padding: 16px;
-        width: 350px;
-        transition: 0.5s;
-
+        width: 370px;
         h2 {
             font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
         }
-
         p {
             font-size: 16px;
-            margin-top: 10px;
         }
     }
 }
@@ -173,31 +146,19 @@
     .card-task .card-task-info {
         h2 {
             font-size: 20px;
-            font-weight: bold;
-            margin-top: 10px;
         }
-
         p {
             font-size: 16px;
-            margin-top: 10px;
         }
     }
 
     .card-task-delayed .card-task-info {
-        text-align: left;
-        padding: 16px;
         width: 350px;
-        transition: 0.5s;
-
         h2 {
             font-size: 20px;
-            font-weight: bold;
-            margin-top: 10px;
         }
-
         p {
             font-size: 16px;
-            margin-top: 10px;
         }
     }
 
@@ -220,9 +181,12 @@
     }
 
     .card-task .card-task-info {
-        text-align: left;
-        padding: 16px;
-        margin-left: -2%;
+        width:600px;
+        margin-left: 0%;
+    }
+    
+    .card-task-delayed .card-task-info {
+        width:600px;
     }
 }
 
@@ -232,35 +196,23 @@
     }
 
     .card-task .card-task-info {
-        text-align: left;
-        padding: 16px;
+        width: 50%;
         margin-left: -2%;
-
         h2 {
             font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
         }
-
         p {
             font-size: 12px;
-            margin-top: 10px;
         }
     }
     .card-task-delayed .card-task-info {
-        text-align: left;
-        padding: 16px;
+        width: 50%;
         margin-left: -2%;
-
         h2 {
             font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
         }
-
         p {
             font-size: 12px;
-            margin-top: 10px;
         }
     }
 }
@@ -271,44 +223,66 @@
     }
 
     .card-task .card-task-info {
-        text-align: left;
-        padding: 16px;
+        width: 400px;
         margin-left: 0%;
+        &:hover {
+            width:50%;
+        }
+    }
+
+    .card-task {
+        width: 75%;
+        &:hover {
+            width:85%;
+        }
+    }
+
+    .card-task-delayed {
+        width: 75%;
+        &:hover {
+            width:85%;
+        }
+    }
+
+    .card-task-delayed .card-task-info {
+        width: 400px;
+        margin-left: 0%;
+        &:hover {
+            width:50%;
+        }
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 490px) {
     #colocation-title {
         font-size: 30px;
     }
 
     .tasks {
-        width: 480px;
+        width: 490px;
     }
 
     .card-task .card-task-info {
-        text-align: left;
         padding: 20px;
         margin-left: -4%;
-
         h2 {
             font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
         }
-
         p {
             font-size: 12px;
-            margin-top: 10px;
         }
     }
 
+
+    .card-task-delayed {
+        width: 20%;
+        &:hover {
+            width:40%;
+        }
+    }
+    
     .div-btn {
         margin-left: 10%;
-    }
-
-    .card-task:hover .div-btn {
-        margin-left: 20%;
     }
 }
 
