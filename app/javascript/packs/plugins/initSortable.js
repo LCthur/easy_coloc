@@ -2,6 +2,7 @@ import Sortable from 'sortablejs';
 
 const initSortable = () => {
     const endColumn = document.querySelector(".done-column")
+    const cardTask = document.querySelector(".card-task")
     const todo = document.querySelector(".todo")
     const done = document.querySelector(".done")
 
@@ -10,6 +11,7 @@ const initSortable = () => {
             name: 'shared',
             put: false // Do not allow items to be put into this list
         },
+        chosenClass: "sortable-chosen",
         ghostClass: "ghost",
         animation: 150,
         sort: false
@@ -24,14 +26,16 @@ const initSortable = () => {
             // alert(`${event.oldIndex} moved to ${event.newIndex}`);
             endColumn.addEventListener('drop',(e) => {
                 console.log(e);
+                // console.log(e.path);
+                console.log(endColumn.children[1].querySelectorAll(".card-task"));
+                let test = endColumn.children[1].getElementsByClassName(".card-task"); 
+                console.log(test.getAttribute("draggable"));
                 const Http = new XMLHttpRequest();
-                const url = '<%= flat_path %>';
-                Http.open("GET", url);
-                Http.send();
+                const url = `/assignments/92`;
+                Http.open("PATCH", url);
+                Http.send("PATCH");
                     Http.onreadystatechange = function() {
-                        if(this.readyState && this.status == 200) {
-                            console.log(Http.responseText)
-                        }
+                        console.log(Http.responseText)
                     }
             })
           }
