@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '>= 2.4.3'
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -9,7 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'carrierwave', '~> 1.2'
-
+gem 'tzinfo-data'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
