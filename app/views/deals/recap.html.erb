@@ -1,7 +1,21 @@
-<% console %>
+<div class="container">
+  <h1>My proposed deals</h1>
+  <div class="deals-grid">
+    <div class="deal-card">
+      <% @deals.each_with_index do |deal, i| %>
+        <% if i > 0 || deal[i] != deal[i-1] %>
+          <%= deal.assignment.task.name %>
+          <%= full_name(deal.assignment.user.first_name, deal.assignment.user.last_name) %>
+          <%= deal.description %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
 
-<% @deals.each do |deal| %>
-  <p><%= deal.assignment.task.name %></p>
-<% end %>
+
+
+
+

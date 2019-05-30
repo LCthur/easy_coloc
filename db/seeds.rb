@@ -120,7 +120,7 @@ end
 
 Assignment.create!(
   id: 1000,
-  user_id: 1,
+  user_id: 3,
   task_id: 6,
   deadline: Date.today + rand(-3..5),
   done_state: true
@@ -146,12 +146,14 @@ p 'Create deals'
 
 Deal.create!(
   assignment_id: 1000,
-  assignment_proposal_id: 1001
+  assignment_proposal_id: 1001,
+  description: "Je ne peux malheuresement pas être là durant la semaine"
   )
 
 Deal.create!(
   assignment_id: 1000,
-  assignment_proposal_id: 1002
+  assignment_proposal_id: 1002,
+  description: "Je ne peux malheuresement pas être là durant la semaine"
   )
 
 p 'Crate issues'
