@@ -21,7 +21,7 @@ class DealsController < ApplicationController
         deal.assignment = @assignment_to_deal
         if deal.save
           mail = DealMailer.with(user: current_user, deal: deal).request_deal
-          mail.deliver_now
+          mail.deliver
         else 
           render :new
         end
