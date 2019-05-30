@@ -13,3 +13,16 @@
         color: #fff;
     }
 }
+
+
+.btn-late {
+    background-color: #DB3545;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        cursor: default;
+    }
+}

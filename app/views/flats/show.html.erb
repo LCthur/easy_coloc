@@ -4,8 +4,7 @@
     <div class="task-title">
       <h2>Todo</h2>
     </div>
-    <h2 class="task-subtitle mt-2 p-0">Today</h2>
-
+    <h2 class="task-subtitle">Today</h2>
     <%= render 'flats/delayed', flat: @flat  %>
     <%= render 'flats/today', flat: @flat %>
     <%= render 'flats/todo',    flat: @flat  %>
@@ -15,6 +14,5 @@
       <h2>Done</h2>
     </div>
     <%= render 'flats/done', flat: @flat %>
-
   </div>
 </div>
