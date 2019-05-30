@@ -12,8 +12,9 @@
         <p><%= deal.assignment.deadline.strftime("%A, %B, %Y") %></p>
       </div>
     </div>
-    <div class="arrow">
-      <i class="fas fa-arrows-alt-h" id="change-icon"></i>
+    <div class="text-center">
+      <i class="fas fa-arrows-alt-h arrow" id="change-icon"></i>
+      <%= link_to 'Accept deal', '#' ,class: "btn-accept-deal" %>
     </div>
     <div class="right-card">
       <div class="card-task-proposal">
