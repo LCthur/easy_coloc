@@ -33,7 +33,7 @@
 								</tr>
 								<tr>
 									<td class="content-block" itemprop="handler" itemscope itemtype="http://schema.org/HttpActionHandler">
-                    <a href="<%= ApplicationGlobals::GlobalVar::BASE_URL %>" class="btn-primary" itemprop="url">Accept the deal!</a>
+                    <a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_URL].join %>" class="btn-primary" itemprop="url">Accept the deal!</a>
                   </td>
 								</tr>
 								<tr>

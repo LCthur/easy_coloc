@@ -2,6 +2,7 @@
 
 module ApplicationGlobals
   class GlobalVar
-    BASE_URL = "http://localhost:3000/issues/recap"
+    BASE_URL = "http://localhost:3000"
+    DEALS_URL = "/issues/recap"
   end
 end
