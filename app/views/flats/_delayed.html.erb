@@ -1,7 +1,7 @@
 <!-- taches du jours et en retard-->
 <% flat.assignments.each do |assignment| %>
   <% if delayed?(assignment) && assignment.done_state == false %>
-    <div class="card-task">
+    <div class="card-task" id="id_<%= assignment.id %>">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
         <div class="card-task-info">
             <h2><%= assignment.task.name %></h2>
