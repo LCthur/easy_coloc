@@ -2,14 +2,13 @@ import Sortable from 'sortablejs';
 
 const initSortable = () => {
     const endColumn = document.querySelector(".done-column")
-    const cardTask = document.querySelector(".card-task")
     const todo = document.querySelector(".todo")
     const done = document.querySelector(".done")
 
     new Sortable(todo, {
         group: {
             name: 'shared',
-            put: false // Do not allow items to be put into this list
+            put: false
         },
         chosenClass: "sortable-chosen",
         ghostClass: "ghost",
@@ -23,15 +22,11 @@ const initSortable = () => {
         group: 'shared',
         animation: 150,
         onChange: (event) => {
-            // alert(`${event.oldIndex} moved to ${event.newIndex}`);
             endColumn.addEventListener('drop',(e) => {
                 console.log(e);
-                // console.log(e.path);
-                console.log(endColumn.children[1].querySelectorAll(".card-task"));
-                let test = endColumn.children[1].getElementsByClassName(".card-task"); 
-                console.log(test.getAttribute("draggable"));
+                let idString = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0].id.substr(3);
                 const Http = new XMLHttpRequest();
-                const url = `/assignments/92`;
+                const url = `/assignments/${idString}`;
                 Http.open("PATCH", url);
                 Http.send("PATCH");
                     Http.onreadystatechange = function() {
