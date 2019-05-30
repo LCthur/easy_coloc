@@ -24,6 +24,15 @@ const initSortable = () => {
             // alert(`${event.oldIndex} moved to ${event.newIndex}`);
             endColumn.addEventListener('drop',(e) => {
                 console.log(e);
+                const Http = new XMLHttpRequest();
+                const url = '<%= flat_path %>';
+                Http.open("GET", url);
+                Http.send();
+                    Http.onreadystatechange = function() {
+                        if(this.readyState && this.status == 200) {
+                            console.log(Http.responseText)
+                        }
+                    }
             })
           }
     });
