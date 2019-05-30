@@ -1,3 +1,4 @@
+<!-- taches du jours et en retard-->
 <% flat.assignments.each do |assignment| %>
   <% if delayed?(assignment) && assignment.done_state == false %>
     <div class="card-task-delayed">
