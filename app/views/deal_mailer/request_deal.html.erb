@@ -1,5 +1,15 @@
-<p>Hi <%= @user.email %>,</p>
+<p>Hi <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,</p>
 
-<p>Today we'll talk about SMTP and Postmark!</p>
+<p><%= @user.first_name %> <%= @user.last_name %> want to deal his task:</p>
+
+<h3><%= @initial_task["name"] %></h3> <span>Description: <%= @initial_task["description"] %></span>
+
+<p>The reason given is:</p>
+
+<h3><%= @deal.description %></h3>
+
+<p>If you agree with the deal simply click on the link here:</p>
+
+<a href="<%= ApplicationGlobals::GlobalVar::BASE_URL %>">Accept the deal!</a>
 
 <p>See ya!</p>

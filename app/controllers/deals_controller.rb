@@ -19,7 +19,12 @@ class DealsController < ApplicationController
         deal.description = description
         deal.assignment_proposal_id = assignment_proposal.id
         deal.assignment = @assignment_to_deal
-        render :new unless deal.save
+        if deal.save
+          mail = DealMailer.with(user: current_user, deal: deal).request_deal
+          mail.deliver_now
+        else 
+          render :new
+        end
       end
     redirect_to flat_path(current_user.flat)
   end
