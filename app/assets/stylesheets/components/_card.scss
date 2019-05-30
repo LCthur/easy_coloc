@@ -30,6 +30,12 @@
     text-align: left;
 }
 
+.task-subtitle {
+  text-align: left;
+  margin-left: 55px;
+  margin-top: 10px;
+}
+
 .card-task {
     margin: 20px auto;
     overflow: hidden;
@@ -143,6 +149,11 @@
         margin: 0 auto;
     }
 
+    .task-subtitle {
+      text-align: left;
+      margin-left: 75px;
+    }
+
     .card-task .card-task-info {
         h2 {
             font-size: 20px;
@@ -180,11 +191,16 @@
         width: 650px;
     }
 
+    .task-subtitle {
+      text-align: left;
+      margin-left: 60px;
+    }
+
     .card-task .card-task-info {
         width:600px;
         margin-left: 0%;
     }
-    
+
     .card-task-delayed .card-task-info {
         width:600px;
     }
@@ -193,6 +209,11 @@
 @media (max-width: 690px) {
     .tasks {
         width: 570px;
+    }
+
+    .task-subtitle {
+      text-align: left;
+      margin-left: 50px;
     }
 
     .card-task .card-task-info {
@@ -280,7 +301,7 @@
             width:40%;
         }
     }
-    
+
     .div-btn {
         margin-left: 10%;
     }
