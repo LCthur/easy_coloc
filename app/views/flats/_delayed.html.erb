@@ -1,10 +1,14 @@
-<% @flat.assignments.each do |assignment| %>
-  <% if delayed?(assignment) %>
-    <div class="card-task-delayed">
+<!-- taches du jours et en retard-->
+<% flat.assignments.each do |assignment| %>
+  <% if delayed?(assignment) && assignment.done_state == false %>
+    <div class="card-task">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
         <div class="card-task-info">
             <h2><%= assignment.task.name %></h2>
             <p> <%= assignment.task.description %></p>
+        </div>
+        <div class="div-btn">
+          <%= link_to "Late", "#", class: "btn-late" %>
         </div>
     </div>
   <% end %>

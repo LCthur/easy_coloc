@@ -13,3 +13,24 @@
         color: #fff;
     }
 }
+
+.button-deal {
+    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+    color: #fff;
+    border-radius: 10px;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.btn-late {
+    background-color: #DB3545;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        cursor: default;
+    }
+}
