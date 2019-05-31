@@ -112,7 +112,7 @@ p 'Create Assignments'
     Assignment.create!(
       user_id: rand(1..3),
       task_id: rand(1..5),
-      deadline: Date.today + rand(-3..5),
+      deadline: Date.today + rand(-2..5),
       done_state: [true, false].sample
 
     )

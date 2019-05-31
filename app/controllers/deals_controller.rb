@@ -33,9 +33,19 @@ class DealsController < ApplicationController
   end
 
   def update
+    # On trouve le deal choisi, on le passe à chosen : true
     deal = Deal.find(params[:id])
+    # echange des user
+    asker = deal.assignment.user
+    assignment_dealed = deal.assignment
+    assignment_choosed = Assignment.find(deal.assignment_proposal_id)
+    assignment_dealed.user = current_user
+    assignment_choosed.user = asker
+    assignment_choosed.save
+    assignment_dealed.save
     deal.chosen = true
     deal.save
+    # On recupere toutes les autres propositions
     other_deals_proposal = Deal.where(assignment: deal.assignment).where(chosen: nil)
     other_deals_proposal.each do |deal_proposal|
       deal_proposal.chosen = false
