@@ -34,3 +34,8 @@
         cursor: default;
     }
 }
+
+// Hide standard input button
+.custom-file-input {
+    display: none;
+}
