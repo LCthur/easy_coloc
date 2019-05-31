@@ -1,17 +1,15 @@
 <!-- Taches du jour -->
-<% flat.assignments.each do |assignment| %>
-    <% if assignment.deadline == Date.today && assignment.done_state == false %>
-      <div class="card-task">
-        <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-        <div class="card-task-info">
-          <h2><%= assignment.task.name %></h2>
-          <p> <%= assignment.task.description %></p>
-        </div>
-        <div class="div-btn">
-          <% if assignment.user == current_user %>
-          <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
-          <% end %>
-        </div>
-    </div>
-  <% end %>
+<% @assignments_today_delayed.each do |assignment| %>
+  <div class="card-task">
+    <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+      <div class="card-task-info">
+        <h2><%= assignment.task.name %></h2>
+        <p> <%= assignment.task.description %></p>
+      </div>
+      <div class="div-btn">
+        <% if assignment.user == current_user %>
+        <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
+        <% end %>
+      </div>
+  </div>
 <% end %>

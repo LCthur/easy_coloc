@@ -4,9 +4,9 @@
     <div class="task-title">
       <h2>Todo</h2>
     </div>
-    <h2 class="task-subtitle">Today</h2>
-    <%= render 'flats/delayed', flat: @flat  %>
-    <%= render 'flats/today', flat: @flat %>
+    <% console %>
+    <h2 class="task-subtitle"><%= "Today" unless @assignments_today_delayed.blank? %></h2>
+    <%= render 'flats/today' %>
     <%= render 'flats/todo',    flat: @flat  %>
   </div>
   <div class="task fade-in-left">
