@@ -35,6 +35,11 @@
     }
 }
 
+// Hide standard input button
+.custom-file-input {
+    display: none;
+}
+
 .btn-done {
     margin-right: 0;
     background-color: #27E0EE;
