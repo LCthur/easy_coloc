@@ -1,1 +1,13 @@
+<% if content_for?(:header) %>
+<%= yield(:header) %>
+<% end %>
+
 <%= yield %>
+
+Accept the deal! 
+<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>
+
+— The Colocation
+
+Follow @Colocation on Easy Coloc'.
+<%= ApplicationGlobals::GlobalVar::BASE_URL %>
