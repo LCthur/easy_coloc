@@ -10,6 +10,7 @@
               <span class="author">Raised by: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
               <h1 class="title"><%= issue.assignment.task.name %></h1>
               <p class="text"><%= issue.description %></p>
+              <%= link_to "Done",  %>
             </div>
           </div>
         </div>
