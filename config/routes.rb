@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/issues/recap'
   get '/deals/recap'
   patch '/deals/id:', to: 'deals#update'
-  resources :assignments, only: [:create, :destroy] do
+  resources :assignments, only: [:create, :destroy, :update] do
     resources :issues, only: [:new, :create]
     resources :deals, only: [:new, :create]
   end

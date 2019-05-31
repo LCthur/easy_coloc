@@ -3,7 +3,7 @@
   <% @flat.assignments.each do |assignment| %>
     <% if !assignment.done_state && !delayed?(assignment) && assignment.deadline.strftime("%A") == (Date.today + i).strftime("%A") %>
     <h3 class="task-subtitle"><%= (Date.today + i).strftime("%A") %></h3>
-      <div class="card-task">
+      <div class="card-task" id="id_<%= assignment.id %>">
         <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
           <div class="card-task-info">
             <h2><%= assignment.task.name %></h2>
