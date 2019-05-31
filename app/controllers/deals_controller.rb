@@ -5,13 +5,13 @@ class DealsController < ApplicationController
     @proposals = assignments.select { |assignment| assignment.done_state == false }
     @deal = Deal.new
     @assignment = Assignment.find(params[:assignment_id])
-    @deal.assignment = @assignment 
+    @deal.assignment = @assignment
   end
 
   def create
     description = params[:description]
     @assignment_to_deal = Assignment.find(params[:assignment_id])
-    assignment_ids = params.keep_if {|k, v| k=~ /\d/ }.keys
+    assignment_ids = params.keep_if { |k, _v| k =~ /\d/ }.keys
     assignment = []
     assignment_ids.map { |id| assignment << Assignment.find(id.to_i) }
       assignment.each do |assignment_proposal|
@@ -26,6 +26,36 @@ class DealsController < ApplicationController
           render :new
         end
       end
+    redirect_to flat_path(current_user.flat)
+  end
+
+  def recap
+    # recup de tous les deals proposes au current_user
+    @deals = Deal.joins("INNER JOIN assignments
+                          ON deals.assignment_proposal_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+    @my_deals = Deal.joins("INNER JOIN assignments
+                            ON deals.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+  end
+
+  def update
+    # On trouve le deal choisi, on le passe à chosen : true
+    deal = Deal.find(params[:id])
+    # echange des user
+    asker = deal.assignment.user
+    assignment_dealed = deal.assignment
+    assignment_choosed = Assignment.find(deal.assignment_proposal_id)
+    assignment_dealed.user = current_user
+    assignment_choosed.user = asker
+    assignment_choosed.save
+    assignment_dealed.save
+    deal.chosen = true
+    deal.save
+    # On recupere toutes les autres propositions
+    other_deals_proposal = Deal.where(assignment: deal.assignment).where(chosen: nil)
+    other_deals_proposal.each do |deal_proposal|
+      deal_proposal.chosen = false
+      deal_proposal.save
+    end
     redirect_to flat_path(current_user.flat)
   end
 
