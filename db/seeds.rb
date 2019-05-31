@@ -123,7 +123,7 @@ Assignment.create!(
   user_id: 1,
   task_id: 6,
   deadline: Date.today + rand(-3..5),
-  done_state: true
+  done_state: false
 )
 
 Assignment.create!(
@@ -131,7 +131,7 @@ Assignment.create!(
   user_id: 1,
   task_id: 7,
   deadline: Date.today + rand(-3..5),
-  done_state: true
+  done_state: false
 )
 
 p 'Crate issues'

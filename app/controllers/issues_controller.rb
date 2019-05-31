@@ -23,10 +23,10 @@ class IssuesController < ApplicationController
   def recap
     @issues = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
   end
-
+  
   private
 
   def issue_params
-    params.require(:issue).permit(:description, :photo)
+    params.require(:issue).permit(:description, :photo, :id, :assignment_id)
   end
 end
