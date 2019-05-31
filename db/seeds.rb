@@ -39,8 +39,8 @@ Task.create!(
   )
 Task.create!(
     id: 5,
-    name: 'WC',
-    description: "Laver les WC"
+    name: 'Recyclage',
+    description: "Alu, Pet, Carton "
   )
 Task.create!(
     id: 6,
@@ -73,7 +73,7 @@ lo = User.create!(
   last_name: 'Titi',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'toto@titi.com',
+  email: 'loic.thurre@gmail.com',
   flat_id: 1
   )
 lo.remote_avatar_photo_url = url_lo
@@ -86,7 +86,7 @@ gio = User.create!(
   last_name: 'Salcuni',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'giova@titi.com',
+  email: 'giovanni.salcuni12@gmail.com',
   flat_id: 1
   )
 
@@ -99,7 +99,7 @@ matt = User.create(
   last_name: 'Borgognon',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'matbgn@titi.com',
+  email: 'mattrach@gmail.com',
   flat_id: 1
   )
 matt.remote_avatar_photo_url = url_matt
@@ -107,13 +107,21 @@ matt.save
 
 p 'Create Assignments'
 
-10.times do
+5.times do
     Assignment.create!(
       user_id: rand(1..3),
       task_id: rand(1..5),
-      deadline: Date.today + rand(-3..5),
-      done_state: [true, false].sample
+      deadline: Date.today + rand(-2..5),
+      done_state: true
+    )
+end
 
+3.times do
+  Assignment.create!(
+      user_id: rand(1..3),
+      task_id: rand(1..5),
+      deadline: Date.today + rand(0..5),
+      done_state: true
     )
 end
 
@@ -145,6 +153,14 @@ Assignment.create!(
   id: 1003,
   user_id: 1,
   task_id: 7,
+  deadline: Date.today + rand(0..5),
+  done_state: false
+)
+
+Assignment.create!(
+  id: 1004,
+  user_id: 1,
+  task_id: 2,
   deadline: Date.today + rand(0..5),
   done_state: false
 )
@@ -181,7 +197,12 @@ Deal.create!(
   description: "Je ne suis pas là"
   )
 
-
+Deal.create!(
+  assignment_id:1002,
+  assignment_proposal_id:1004,
+  chosen: nil,
+  description: "Je ne suis pas là"
+  )
 
 
 
