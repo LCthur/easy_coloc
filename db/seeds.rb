@@ -102,7 +102,7 @@ matt = User.create(
   last_name: 'Borgognon',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'mattrach@gmail.com',
+  email: 'matrash@bqn.ch',
   flat_id: 1
   )
 matt.remote_avatar_photo_url = url_matt
