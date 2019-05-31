@@ -9,10 +9,12 @@
     <%= render 'flats/today' %>
     <%= render 'flats/todo',    flat: @flat  %>
   </div>
-  <div class="task fade-in-left">
+  <div class="task fade-in-left done-column">
     <div class="task-title">
       <h2>Done</h2>
     </div>
-    <%= render 'flats/done', flat: @flat %>
+    <div class="done">
+      <%= render 'flats/done', flat: @flat %>
+    </div>
   </div>
 </div>

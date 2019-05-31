@@ -1,0 +1,25 @@
+.todo .card-task {
+    cursor: grab;
+}
+
+.todo .card-task:active {
+    cursor: grabbing;
+}
+
+.todo .card-task.ghost {
+    filter: grayscale(1);
+    opacity: 0;
+}
+
+.done .card-task {
+    cursor: grab;
+}
+
+.done .card-task:active {
+    cursor: grabbing;
+}
+
+.done .card-task.ghost {
+    filter: grayscale(1);
+    opacity: 0;
+  }
