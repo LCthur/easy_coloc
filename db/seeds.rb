@@ -14,7 +14,6 @@ p 'Destroy flats'
 Flat.destroy_all
 p 'Destroy issues'
 Issue.destroy_all
-
 p 'Creating 5 tasks'
 
 
@@ -134,6 +133,22 @@ Assignment.create!(
   done_state: true
 )
 
+Assignment.create!(
+  id: 1002,
+  user_id: 2,
+  task_id: 2,
+  deadline: Date.today + rand(0..5),
+  done_state: false
+)
+
+Assignment.create!(
+  id: 1003,
+  user_id: 1,
+  task_id: 7,
+  deadline: Date.today + rand(0..5),
+  done_state: false
+)
+
 p 'Crate issues'
 
 url_nespresso = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138314/IMG_20190529_155105_m2iuyy.jpg"
@@ -155,6 +170,16 @@ microwave = Issue.create!(
   )
 microwave.remote_photo_url = url_microwave
 microwave.save
+
+
+p 'create deal'
+
+Deal.create!(
+  assignment_id:1002,
+  assignment_proposal_id:1003,
+  chosen: nil,
+  description: "Je ne suis pas là"
+  )
 
 
 
