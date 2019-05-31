@@ -1,32 +1,52 @@
 <div class="container bg-white p-3">
-  <h1>My proposed deals</h1>
+  <h1>Deals proposed to me</h1>
   <div class="grid-deal">
     <% @deals.each do |deal| %>
-    <% proposal = Assignment.find(deal.assignment_proposal_id ) %>
-    <div class="card-task-deal">
-      <div class="deal-avatar">
-        <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-deal-recap" %>
-      </div>
-      <div class="card-task-proposal-info">
-        <h2><%= deal.assignment.task.name %></h2>
-        <p><%= deal.assignment.deadline.strftime("%A, %B, %Y") %></p>
-      </div>
-    </div>
-    <div class="text-center">
-      <i class="fas fa-arrows-alt-h arrow" id="change-icon"></i>
-      <%= link_to 'Accept deal', '#' ,class: "btn-accept-deal" %>
-    </div>
-    <div class="right-card">
-      <div class="card-task-proposal">
-        <div class="deal-avatar">
-          <%= cl_image_tag proposal.user.avatar_photo, class: "avatar-deal-recap" %>
+    <% if deal.chosen == nil %>
+      <% proposal = Assignment.find(deal.assignment_proposal_id ) %>
+        <div class="card-task-deal">
+          <div class="deal-avatar">
+            <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-deal-recap" %>
+          </div>
+          <div class="card-task-proposal-info">
+            <h2><%= deal.assignment.task.name %></h2>
+            <p><%= deal.assignment.deadline.strftime("%A, %B, %Y") %></p>
+          </div>
         </div>
-        <div class="card-task-proposal-info">
-          <h2><%= proposal.task.name %></h2>
-          <p><%=  proposal.deadline.strftime("%A, %B, %Y") %></p>
+        <div class="text-center">
+          <i class="fas fa-arrows-alt-h arrow" id="change-icon"></i>
+          <%= link_to 'Accept deal', update_deal_path(deal) ,class: "btn-accept-deal",
+          :method=> :patch %>
         </div>
-      </div>
-    </div>
+        <div class="right-card">
+          <div class="card-task-proposal">
+            <div class="deal-avatar">
+              <%= cl_image_tag proposal.user.avatar_photo, class: "avatar-deal-recap" %>
+            </div>
+            <div class="card-task-proposal-info">
+              <h2><%= proposal.task.name %></h2>
+              <p><%=  proposal.deadline.strftime("%A, %B, %Y") %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <h1>My pending deals</h1>
+  <div class="grid-deal">
+    <% @my_deals.each_with_index do |deal, i| %>
+    <% if deal.chosen == nil %>
+      <% proposal = Assignment.find(deal.assignment_proposal_id ) %>
+        <div class="card-task-deal">
+          <div class="deal-avatar">
+            <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-deal-recap" %>
+          </div>
+          <div class="card-task-proposal-info">
+            <h2><%= deal.assignment.task.name %></h2>
+            <p><%= deal.assignment.deadline.strftime("%A, %B, %Y") %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

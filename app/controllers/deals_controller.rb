@@ -28,6 +28,20 @@ class DealsController < ApplicationController
     # recup de tous les deals proposes au current_user
     @deals = Deal.joins("INNER JOIN assignments
                           ON deals.assignment_proposal_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+    @my_deals = Deal.joins("INNER JOIN assignments
+                            ON deals.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+  end
+
+  def update
+    deal = Deal.find(params[:id])
+    deal.chosen = true
+    deal.save
+    other_deals_proposal = Deal.where(assignment: deal.assignment).where(chosen: nil)
+    other_deals_proposal.each do |deal_proposal|
+      deal_proposal.chosen = false
+      deal_proposal.save
+    end
+    redirect_to flat_path(current_user.flat)
   end
 
   private
