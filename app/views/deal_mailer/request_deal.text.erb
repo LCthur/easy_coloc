@@ -1,0 +1,12 @@
+Hi <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,
+
+<%= @user.first_name %> <%= @user.last_name %> want to deal his task:
+
+<%= @initial_task["name"] %> 
+Description: <%= @initial_task["description"] %>
+
+The reason given is:
+
+<%= @deal.description %>
+
+If you agree with the deal simply click on the link below.

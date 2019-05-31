@@ -93,7 +93,9 @@
        .text {
          opacity: 1;
        }
-
+       .btn-done {
+        opacity: 1;
+       }
      }
    }
 
@@ -126,6 +128,10 @@
      height: 70px;
      margin: 0;
      transition: 0.8s;
+   }
+   .btn-done {
+    transition: 0.8s;
+    opacity: 0;
    }
  }
 

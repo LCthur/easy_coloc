@@ -39,3 +39,24 @@
 .custom-file-input {
     display: none;
 }
+
+.btn-done {
+    margin-right: 0;
+    background-color: #27E0EE;
+    padding: 5px;
+}
+
+.btn-accept-deal {
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #27E0EE;
+    padding: 5px 5px;
+    border-radius: 10px;
+    color: #fff;
+    &:hover {
+        background-color: #24C7FF;
+        text-decoration: none;
+        color: #fff;
+    }
+}
