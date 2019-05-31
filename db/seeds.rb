@@ -14,6 +14,9 @@ p 'Destroy flats'
 Flat.destroy_all
 p 'Destroy issues'
 Issue.destroy_all
+p 'Destroy assignments'
+Assignment.destroy_all
+
 p 'Creating 5 tasks'
 
 
@@ -112,7 +115,7 @@ p 'Create Assignments'
       user_id: rand(1..3),
       task_id: rand(1..5),
       deadline: Date.today + rand(-2..5),
-      done_state: true
+      done_state: false
     )
 end
 
@@ -127,7 +130,7 @@ end
 
 Assignment.create!(
   id: 1000,
-  user_id: 1,
+  user_id: 3,
   task_id: 6,
   deadline: Date.today + rand(-3..5),
   done_state: true

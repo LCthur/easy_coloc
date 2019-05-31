@@ -15,7 +15,7 @@ const initSortable = () => {
         animation: 150,
         sort: false
     });
-    
+
     new Sortable(done, {
         removeCloneOnHide: true,
         ghostClass: "ghost",
@@ -36,5 +36,5 @@ const initSortable = () => {
           }
     });
 };
-  
+
 export { initSortable };

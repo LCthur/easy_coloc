@@ -1,8 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-  <%= image_tag "favicon.ico" %>
+  <% unless current_user.nil? %>
+    <%= link_to flat_path(current_user.flat), class: "navbar-brand" do %>
+      <%= image_tag "favicon.ico" %>
+    <% end %>
   <% end %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,7 +14,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
       <li class="nav-item active">
-        <%= link_to "Deals", "#", class: "nav-link" %>
+        <%= link_to "Deals", deals_recap_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= cl_image_tag current_user.avatar_photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

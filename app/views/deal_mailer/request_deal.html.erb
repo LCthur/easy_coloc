@@ -1,0 +1,11 @@
+<p>Hi <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,</p>
+
+<span><%= @user.first_name %> <%= @user.last_name %> want to deal his task:</span>
+
+<h3><%= @initial_task["name"] %></h3> <span>Description: <%= @initial_task["description"] %></span>
+
+<br><br><span>The reason given is:</span>
+
+<h3><%= @deal.description %></h3>
+
+<br><br><p>If you agree with the deal simply click on the button below.</p>
