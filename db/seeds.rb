@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 p 'Destroy tasks'
 Task.destroy_all
 p 'Destroy Users'
@@ -14,8 +6,6 @@ p 'Destroy flats'
 Flat.destroy_all
 p 'Destroy issues'
 Issue.destroy_all
-p 'Destroy assignments'
-Assignment.destroy_all
 
 p 'Creating 5 tasks'
 
@@ -42,8 +32,8 @@ Task.create!(
   )
 Task.create!(
     id: 5,
-    name: 'Recyclage',
-    description: "Alu, Pet, Carton "
+    name: 'WC',
+    description: "Laver les WC"
   )
 Task.create!(
     id: 6,
@@ -76,7 +66,7 @@ lo = User.create!(
   last_name: 'Titi',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'loic.thurre@gmail.com',
+  email: 'toto@titi.com',
   flat_id: 1
   )
 lo.remote_avatar_photo_url = url_lo
@@ -89,7 +79,7 @@ gio = User.create!(
   last_name: 'Salcuni',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'giovanni.salcuni12@gmail.com',
+  email: 'giova@titi.com',
   flat_id: 1
   )
 
@@ -102,7 +92,7 @@ matt = User.create(
   last_name: 'Borgognon',
   password: 'tototiti',
   password_confirmation: 'tototiti',
-  email: 'matrash@bqn.ch',
+  email: 'matbgn@titi.com',
   flat_id: 1
   )
 matt.remote_avatar_photo_url = url_matt
@@ -110,30 +100,22 @@ matt.save
 
 p 'Create Assignments'
 
-5.times do
+10.times do
     Assignment.create!(
       user_id: rand(1..3),
       task_id: rand(1..5),
-      deadline: Date.today + rand(-2..5),
-      done_state: false
-    )
-end
+      deadline: Date.today + rand(-3..5),
+      done_state: [true, false].sample
 
-3.times do
-  Assignment.create!(
-      user_id: rand(1..3),
-      task_id: rand(1..5),
-      deadline: Date.today + rand(0..5),
-      done_state: true
     )
 end
 
 Assignment.create!(
   id: 1000,
-  user_id: 3,
+  user_id: 1,
   task_id: 6,
   deadline: Date.today + rand(-3..5),
-  done_state: true
+  done_state: false
 )
 
 Assignment.create!(
@@ -141,30 +123,6 @@ Assignment.create!(
   user_id: 1,
   task_id: 7,
   deadline: Date.today + rand(-3..5),
-  done_state: true
-)
-
-Assignment.create!(
-  id: 1002,
-  user_id: 2,
-  task_id: 2,
-  deadline: Date.today + rand(0..5),
-  done_state: false
-)
-
-Assignment.create!(
-  id: 1003,
-  user_id: 1,
-  task_id: 7,
-  deadline: Date.today + rand(0..5),
-  done_state: false
-)
-
-Assignment.create!(
-  id: 1004,
-  user_id: 1,
-  task_id: 2,
-  deadline: Date.today + rand(0..5),
   done_state: false
 )
 
@@ -175,7 +133,7 @@ url_microwave = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138317/I
 
 nespresso = Issue.create!(
     user_id: 2,
-    description: "T'as pas rangé les gobelets en carton !",
+    description: "T'as pas bien lavé",
     assignment_id: 1000
   )
 nespresso.remote_photo_url = url_nespresso
@@ -189,24 +147,3 @@ microwave = Issue.create!(
   )
 microwave.remote_photo_url = url_microwave
 microwave.save
-
-
-p 'create deal'
-
-Deal.create!(
-  assignment_id:1002,
-  assignment_proposal_id:1003,
-  chosen: nil,
-  description: "Je ne suis pas là"
-  )
-
-Deal.create!(
-  assignment_id:1002,
-  assignment_proposal_id:1004,
-  chosen: nil,
-  description: "Je ne suis pas là"
-  )
-
-
-
-
