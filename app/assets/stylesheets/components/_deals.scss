@@ -53,6 +53,15 @@
     }
 }
 
+.my-task {
+    width:100%;
+    padding: 20px;
+    color: #222;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .style-checkbox.active {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
