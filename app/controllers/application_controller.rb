@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token  
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -10,5 +11,9 @@ class ApplicationController < ActionController::Base
 
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :avatar_photo])
+  end
+
+  def after_sign_in_path_for(resource)
+    flat_path(current_user.flat)
   end
 end

@@ -5,6 +5,5 @@ class User < ApplicationRecord
   belongs_to :flat, optional: true
   has_many :assignments, dependent: :destroy
   has_many :issues, dependent: :destroy
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 end
