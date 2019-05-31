@@ -1,15 +1,28 @@
 <!-- Taches du jour -->
-<% @assignments_today_delayed.each do |assignment| %>
-  <div class="card-task">
-    <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-      <div class="card-task-info">
-        <h2><%= assignment.task.name %></h2>
-        <p> <%= assignment.task.description %></p>
-      </div>
-      <div class="div-btn">
-        <% if assignment.user == current_user %>
-        <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
-        <% end %>
-      </div>
-  </div>
+<% @assignments_today_late.each do |assignment| %>
+  <% if delayed?(assignment) %>
+    <div class="card-task" id="id_<%= assignment.id %>">
+      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+        <div class="card-task-info">
+            <h2><%= assignment.task.name %></h2>
+            <p> <%= assignment.task.description %></p>
+        </div>
+        <div class="div-btn">
+          <%= link_to "Late", "#", class: "btn-late" %>
+        </div>
+    </div>
+  <% else %>
+    <div class="card-task" id="id_<%= assignment.id  %>">
+      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+        <div class="card-task-info">
+          <h2><%= assignment.task.name %></h2>
+          <p> <%= assignment.task.description %></p>
+        </div>
+        <div class="div-btn">
+          <% if assignment.user == current_user %>
+          <%= link_to "Deal", new_assignment_deal_path(assignment), class: "btn-deal"%>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
 <% end %>

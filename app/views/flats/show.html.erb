@@ -4,10 +4,22 @@
     <div class="task-title">
       <h2>Todo</h2>
     </div>
-    <% console %>
-    <h2 class="task-subtitle"><%= "Today" unless @assignments_today_delayed.blank? %></h2>
-    <%= render 'flats/today' %>
-    <%= render 'flats/todo',    flat: @flat  %>
+    <div class="todo">
+      <h2 class="task-subtitle"><%= "Today" unless @assignments_today_late.empty? %></h2>
+      <%= render 'flats/today' %>
+      <h2 class="task-subtitle"> <%= (Date.today + 1).strftime("%A") unless @assignments_day1.empty? %></h2>
+      <%= render 'flats/todo',    assignments: @assignments_day1  %>
+      <h2 class="task-subtitle"> <%= (Date.today + 2).strftime("%A") unless @assignments_day2.empty? %></h2>
+      <%= render 'flats/todo',    assignments: @assignments_day2  %>
+      <h2 class="task-subtitle"> <%= (Date.today + 3).strftime("%A") unless @assignments_day3.empty? %></h2>
+      <%= render 'flats/todo',    assignments: @assignments_day3  %>
+      <h2 class="task-subtitle"> <%= (Date.today + 4).strftime("%A") unless @assignments_day4.empty? %></h2>
+      <%= render 'flats/todo',    assignments: @assignments_day4  %>
+      <h2 class="task-subtitle"> <%= (Date.today + 5).strftime("%A") unless @assignments_day5.empty? %></h2>
+      <%= render 'flats/todo',    assignments: @assignments_day5  %>
+      <h2 class="task-subtitle"> <%= (Date.today + 6).strftime("%A") unless @assignments_day6.empty? %></h2>
+      <%= render 'flats/todo',    assignments: @assignments_day6  %>
+    </div>
   </div>
   <div class="task fade-in-left done-column">
     <div class="task-title">
