@@ -1,4 +1,16 @@
 {
   "schemaVersion": 2,
-  "templateId": "ruby-rack/2.5.3"
+  "dockerfileLines": [
+    "FROM library/ruby:2.5.3-alpine3.7",
+    "RUN apk update && apk upgrade && apk add --no-cache make g++ git postgresql-dev
+    "RUN mkdir -p /usr/src/app",
+    "WORKDIR /usr/src/app",
+    "COPY ./Gemfile /usr/src/app/",
+    "RUN gem update bundler
+    "RUN bundle install",
+    "COPY ./src /usr/src/app",
+    "ENV RACK_ENV production",
+    "EXPOSE 80",
+    "CMD [\"rackup\", \"config.ru\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
+  ]
 }
