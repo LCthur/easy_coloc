@@ -8,9 +8,9 @@
     "COPY ./Gemfile /usr/src/app/",
     "RUN gem update bundler",
     "RUN bundle install",
-    "COPY ./src /usr/src/app",
+    "COPY ./ /usr/src/app",
     "ENV RACK_ENV production",
     "EXPOSE 80",
-    "CMD [\"rackup\", \"config.ru\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
+    "CMD ["rackup", "config.ru", "--host", "0.0.0.0", "--port", "80"]"
   ]
 }
