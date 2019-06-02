@@ -7,7 +7,7 @@
     "WORKDIR /usr/src/app",
     "COPY ./Gemfile /usr/src/app/",
     "RUN gem install bundler",
-    "RUN bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4",
+    "RUN bundle install --without development:test --path vendor/cache",
     "COPY ./package.json /usr/src/app/",
     "RUN yarn install",
     "COPY ./ /usr/src/app",
