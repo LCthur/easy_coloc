@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '>= 2.4.3'
 
 gem 'bootsnap', require: false
-gem 'bundler', '>= 2.0.1'
+gem 'bundler', '~> 2.0'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
