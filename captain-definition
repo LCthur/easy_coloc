@@ -2,11 +2,11 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM library/ruby:2.5.3-alpine3.7",
-    "RUN apk update && apk upgrade && apk add --no-cache make g++ git postgresql-dev,
+    "RUN apk update && apk upgrade && apk add --no-cache make g++ git postgresql-dev",
     "RUN mkdir -p /usr/src/app",
     "WORKDIR /usr/src/app",
     "COPY ./Gemfile /usr/src/app/",
-    "RUN gem update bundler,
+    "RUN gem update bundler",
     "RUN bundle install",
     "COPY ./src /usr/src/app",
     "ENV RACK_ENV production",
