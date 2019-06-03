@@ -1,22 +1,18 @@
 <div class="container">
-  <h1 class="p-4">Tickets levés contre moi</h1>
-  <%= render 'issues/recap_cards', issues: @issues_against_me %>
-</div>
-<div class="container mb-5">
- <h1 class="p-4">Mes tickets</h1>
- <div class="grid">
-  <% @my_issues.each do |issue| %>
-  <% if issue.assignment.done_state == false %>
-    <div class="example-2 issue-card">
-      <% unless issue.photo.nil? %>
-      <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-       url('<%= cl_image_path issue.photo %>')">
-      <% end %>
-        <div class="data">
-          <div class="content">
-            <span class="author">Levé le <%= issue.created_at.strftime("%A, %M %B %Y") %></span>
-            <h1 class="title"><%= issue.assignment.task.name %></h1>
-            <p class="text"><%= issue.description %></p>
+  <h1 class="p-4">Tickets sur mes tâches</h1>
+  <div class="grid">
+    <% @issues.each do |issue| %>
+    <% if issue.assignment.done_state == true %>
+      <div class="example-2 issue-card">
+        <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path issue.photo %>')">
+          <div class="data">
+            <div class="content">
+              <span class="author">Crée par: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
+              <h1 class="title"><%= issue.assignment.task.name %></h1>
+              <p class="text"><%= issue.description %></p>
+              <%= link_to "Done", issue_done_path(issue.assignment), :method => :patch, class: "btn-done" %>
+            </div>
           </div>
         </div>
       </div>
