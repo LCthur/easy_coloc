@@ -1,7 +1,7 @@
 .parrallax {
-  margin-top: -100px;
-  background-image: url("https://res.cloudinary.com/ddzk8vfke/image/upload/v1558689866/final-valley_jkq38h.jpg");
-  height: 50% !important;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("https://www.brickunderground.com/sites/default/files/styles/blog_primary_image/public/blog/images/roommates_4_0.jpg");
+  height: calc(105vh);
+  margin-top: -80px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,18 +12,21 @@
   min-height: 100vh;
 }
 
-#title-easy-coloc {
-  color: white !important;
-  padding-top: 30px;
-  margin: 63px 200px 0px 200px;
+.title-easy-coloc {
+  color: black;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
+
 
 #subtitle-easy-coloc {
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  color: black;
+  font-size: 38px;
+  font-weight: 700;
+  color: white;
   margin: 80px 20px 0px 20px!important;
-  padding: 20px 100px !important;
+  padding: 20px 0 3000px 0 !important;
+  width: 700px;
 }
 
 #index-page {
