@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <% unless current_user.nil? %>
+  <% unless current_user.nil? || current_user.flat.nil? %>
     <%= link_to flat_path(current_user.flat), class: "navbar-brand" do %>
       <%= image_tag "favicon.ico" %>
     <% end %>
@@ -14,7 +14,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
       <li class="nav-item active">
-        <%= link_to "Deals", deals_recap_path, class: "nav-link" %>
+        <%= link_to "Echanges", deals_recap_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Tickets", issues_recap_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= cl_image_tag current_user.avatar_photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

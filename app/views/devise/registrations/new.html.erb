@@ -31,6 +31,8 @@
                       required: true,
                       input_html: { autocomplete: "new-password" },
                       placeholder: '••••••••••••' %>
+          <%= f.input :avatar_photo, required: true, as: :file %>
+          <%= f.input :avatar_photo_cache, as: :hidden %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "S'enregistrer", class: "btn-signup" %>

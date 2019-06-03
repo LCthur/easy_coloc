@@ -2,11 +2,26 @@
   <h1>Propositions d'échange</h1>
   <div class="grid-deal">
     <% @deals.each do |deal| %>
-    <% if deal.chosen == nil %>
+      <% if deal.chosen == nil %>
       <% proposal = Assignment.find(deal.assignment_proposal_id ) %>
-        <div class="card-task-deal">
+      <div class="card-task-deal">
+        <div class="deal-avatar">
+          <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-deal-recap" %>
+        </div>
+        <div class="card-task-proposal-info">
+          <h2><%= deal.assignment.task.name %></h2>
+          <p><%= deal.assignment.deadline.strftime("%d %A, %B, %Y") %></p>
+        </div>
+      </div>
+      <div class="text-center">
+        <i class="fas fa-arrows-alt-h arrow" id="change-icon"></i>
+        <%= link_to 'Accept deal', update_deal_path(deal) ,class: "btn-accept-deal",
+        :method=> :patch %>
+      </div>
+      <div class="right-card">
+        <div class="card-task-proposal">
           <div class="deal-avatar">
-            <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-deal-recap" %>
+            <%= cl_image_tag proposal.user.avatar_photo, class: "avatar-deal-recap" %>
           </div>
           <div class="card-task-proposal-info">
             <h2><%= deal.assignment.task.name %></h2>
@@ -29,6 +44,7 @@
             </div>
           </div>
         </div>
+      </div>
       <% end %>
     <% end %>
   </div>
