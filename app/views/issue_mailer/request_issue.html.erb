@@ -1,0 +1,11 @@
+<p>Hi <%= @target_user.first_name %> <%= @target_user.last_name %>,</p>
+
+<span><%= @user.first_name %> <%= @user.last_name %> a ouvert un ticket pour la tâche</span>
+
+<h3><%= @assignment.task.name %></h3> <span>Description: <%= @assignment.task.description %></span>
+
+<br><br><span>The reason given is:</span>
+
+<h3><%= @issue.description %></h3>
+
+<br><br><p>Pour en savoir plus, clique sur le bouton suivant</p>
