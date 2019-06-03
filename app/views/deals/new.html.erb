@@ -10,11 +10,12 @@
             </div>
             <%= cl_image_tag("not-a-user_httobd", :width=>200, class: "avatar-large-deal") %>
         </div>
-        <h2 class="text-center p-4"><%= @deal.assignment.task.name %></h2>
+        <h3 class="text-center"><%= @deal.assignment.task.name %></h3>
+        <h3 class="text-center"><%= complete_date(@deal.assignment.deadline) %></h3>
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            <h2 class="text-center">With :</h2>
+            <h2 class="text-center">Avec :</h2>
             <div class="checkboxs">
                 <% @proposals.each do |proposal| %>
                 <div class="style-checkbox">
@@ -28,7 +29,7 @@
             <div class="description form-group mb-5">
                 <textarea class="form-control" name="description" placeholder="Expliquez brièvement..." cols="40" rows="5"></textarea>
             </div>
-            <input type="submit" class="btn mb-5 button-deal" value="Propose deals">
+            <input type="submit" class="btn mb-5 button-deal" value="Proposer les échanges">
             </form>
         </div>
     </div>
