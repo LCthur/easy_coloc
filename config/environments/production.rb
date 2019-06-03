@@ -65,7 +65,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: ApplicationGlobals::GlobalVar::BASE_URL }
+  config.action_mailer.default_url_options = { host: "https://www.easy-coloc.com" }
 
   config.action_mailer.delivery_method = :smtp
 

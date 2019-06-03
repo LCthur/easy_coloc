@@ -2,7 +2,8 @@
 
 module ApplicationGlobals
   class GlobalVar
-    BASE_URL = "https://easy-coloc-lcthur.herokuapp.com"
+    BASE_URL = "https://www.easy-coloc.com"
     DEALS_PATH = "/deals/recap"
+    ISSUES_PATH = "/issues/recap"
   end
 end

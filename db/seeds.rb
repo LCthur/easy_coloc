@@ -176,7 +176,7 @@ url_microwave = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138317/I
 nespresso = Issue.create!(
     user_id: 2,
     description: "T'as pas rangé les gobelets en carton !",
-    assignment_id: 1000
+    assignment_id: 1003
   )
 nespresso.remote_photo_url = url_nespresso
 nespresso.save
@@ -185,7 +185,7 @@ nespresso.save
 microwave = Issue.create!(
     user_id: 2,
     description: "Le micro-onde n'est pas lavé correctement",
-    assignment_id: 1001
+    assignment_id: 1004
   )
 microwave.remote_photo_url = url_microwave
 microwave.save

@@ -4,8 +4,10 @@
 
 <%= yield %>
 
-Accept the deal! 
-<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>
+<% if content_for?(:footer) %>
+  <%= yield(:footer) %>
+<% end %>
+
 
 — The Colocation
 

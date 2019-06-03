@@ -1,0 +1,13 @@
+<p>Salut <%= @target_user.first_name %> <%= @target_user.last_name %>,</p>
+
+<span><%= @user.first_name %> <%= @user.last_name %> a ouvert un ticket pour la tâche suivante:</span>
+
+<h3><%= @assignment.task.name %></h3> <span>Description: <%= @assignment.task.description %></span>
+
+<br><br><span>Pour la raison suivante:</span>
+
+<h3><%= @issue.description %></h3>
+
+<br><br><p>Pour en savoir plus, clique sur le bouton ci-dessous</p>
+
+<a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>" class="btn-primary" itemprop="url">Voir le ticket</a>

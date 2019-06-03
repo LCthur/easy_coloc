@@ -16,6 +16,12 @@
   }
 }
 
+.container-deals {
+  border-radius: 10px;
+  padding-bottom: 16px !important;
+  margin-bottom: 30px;
+}
+
 .right-card {
   display: flex;
   justify-content: flex-end;
@@ -46,6 +52,7 @@
 
 .arrow {
   font-size: 50px;
-  margin-bottom: 25px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

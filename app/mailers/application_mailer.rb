@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'easy.colocation@gmail.com'
+  default from: 'hello@easy-coloc.com'
   layout 'mailer'
 end
