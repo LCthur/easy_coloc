@@ -9,3 +9,5 @@
 <h3><%= @issue.description %></h3>
 
 <br><br><p>Pour en savoir plus, clique sur le bouton suivant</p>
+
+<a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>" class="btn-primary" itemprop="url">Voir le ticket</a>

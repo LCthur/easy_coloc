@@ -9,3 +9,5 @@
 <h3><%= @deal.description %></h3>
 
 <br><br><p>If you agree with the deal simply click on the button below.</p>
+
+<a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>" class="btn-primary" itemprop="url">Accepter le deal!</a>
