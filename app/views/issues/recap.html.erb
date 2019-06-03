@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="p-4">Tickets sur mes tâches</h1>
   <div class="grid">
-    <% @issues.each do |issue| %>
+    <% @issues_against_me.each do |issue| %>
     <% if issue.assignment.done_state == true %>
       <div class="example-2 issue-card">
         <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
