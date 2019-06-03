@@ -1,15 +1,15 @@
-Hi <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,
+Salut <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,
 
-<%= @user.first_name %> <%= @user.last_name %> want to deal his task:
+<%= @user.first_name %> <%= @user.last_name %> veut échanger cette tâche avec vous:
 
 <%= @initial_task["name"] %>
 Description: <%= @initial_task["description"] %>
 
-The reason given is:
+Pour la raison suivante:
 
 <%= @deal.description %>
 
-If you agree with the deal simply click on the link below.
+Si vous êtes d'accord avec de cet échange, veuillez cliquer sur le bouton ci-dessous.
 
-Accept the deal!
+Accepter l'échange!
 <%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>

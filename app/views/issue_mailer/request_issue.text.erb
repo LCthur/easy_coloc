@@ -1,15 +1,15 @@
-Hi <%= @target_user.first_name %> <%= @target_user.last_name %>,
+Salut <%= @target_user.first_name %> <%= @target_user.last_name %>,
 
 <%= @user.first_name %> <%= @user.last_name %> a ouvert un ticket pour la tâche suivante:
 
 <%= @issue.assignment.task.name %>
 Description: <%= @issue.assignment.task.description %>
 
-La raison est:
+Pour la raison suivante:
 
 <%= @issue.description %>
 
-Pour en savoir plus, clique sur ce lien.
+Pour en savoir plus, clique sur le bouton ci-dessous.
 
 Voir le ticket
 <%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::ISSUES_PATH].join %>
