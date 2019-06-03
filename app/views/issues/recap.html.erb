@@ -1,25 +1,27 @@
 <div class="container">
-  <div>
-    <h1 class="p-4">Tickets levés contre moi</h1>
-    <%= render 'issues/recap_cards', issues: @issues_against_me %>
-  </div>
+  <h1 class="p-4">Tickets levés contre moi</h1>
+  <%= render 'issues/recap_cards', issues: @issues_against_me %>
 </div>
-<div class="container">
+<div class="container mb-5">
  <h1 class="p-4">Mes tickets</h1>
  <div class="grid">
   <% @my_issues.each do |issue| %>
+  <% if issue.assignment.done_state == false %>
     <div class="example-2 issue-card">
+      <% unless issue.photo.nil? %>
       <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
        url('<%= cl_image_path issue.photo %>')">
+      <% end %>
         <div class="data">
           <div class="content">
-            <span class="author">Crée le: <%= issue.created_at.strftime("%e %B, %Y") %></span>
+            <span class="author">Levé le <%= issue.created_at.strftime("%A, %M %B %Y") %></span>
             <h1 class="title"><%= issue.assignment.task.name %></h1>
             <p class="text"><%= issue.description %></p>
           </div>
         </div>
       </div>
     </div>
+      <% end %>
   <% end %>
-  </div>
+ </div>
 </div>
