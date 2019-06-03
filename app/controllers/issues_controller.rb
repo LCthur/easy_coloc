@@ -22,9 +22,10 @@ class IssuesController < ApplicationController
   end
 
   def recap
-    @issues = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+    @my_issues = Issue.where(user_id: current_user.id)
+    @issues_against_me = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
   end
-  
+
   private
 
   def issue_params
