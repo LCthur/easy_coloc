@@ -1,0 +1,56 @@
+.parrallax {
+  margin-top: -100px;
+  background-image: url("https://res.cloudinary.com/ddzk8vfke/image/upload/v1558689866/final-valley_jkq38h.jpg");
+  height: 50% !important;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-cards-product {
+  min-height: 100vh;
+}
+
+#title-easy-coloc {
+  color: white !important;
+  padding-top: 30px;
+  margin: 63px 200px 0px 200px;
+}
+
+#subtitle-easy-coloc {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  margin: 80px 20px 0px 20px!important;
+  padding: 20px 100px !important;
+}
+
+#index-page {
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  #title-easy-coloc {
+      margin: 63px 100px 0px 100px;
+  }
+
+  #subtitle-easy-coloc {
+      text-align: center;
+      margin:0 100px;
+      padding: 20px 40px !important;
+      font-size: 18px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  #title-easy-coloc {
+      margin: 63px 50px 0px 50px;
+  }
+
+  #subtitle-easy-coloc  {
+      text-align: center;
+      margin:0 auto;
+      font-size: 18px !important;
+  }
+}
