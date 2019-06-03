@@ -21,9 +21,9 @@
 							<table width="100%" cellpadding="0" cellspacing="0">
 								<tr>
 									<td class="content-block">
-                    <% if content_for?(:header) %> 
+                    <% if content_for?(:header) %>
                     <%= yield(:header) %>
-                    <% end %>									
+                    <% end %>
                   </td>
 								</tr>
 								<tr>
@@ -32,8 +32,10 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="content-block" itemprop="handler" itemscope itemtype="http://schema.org/HttpActionHandler">
-                    <a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DEALS_PATH].join %>" class="btn-primary" itemprop="url">Accept the deal!</a>
+									<td class="content-block">
+                    <% if content_for?(:footer) %>
+                    <%= yield(:footer) %>
+                    <% end %>
                   </td>
 								</tr>
 								<tr>

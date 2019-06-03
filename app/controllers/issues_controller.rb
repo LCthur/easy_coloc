@@ -15,6 +15,8 @@ class IssuesController < ApplicationController
       # chgt de statut pour le boolean done_state
       @issue.assignment.done_state = false
       @issue.assignment.save
+      mail = IssueMailer.with(user: current_user, issue: @issue).request_issue
+      mail.deliver
       redirect_to flat_path(current_user.flat)
     else
       render :new
@@ -22,9 +24,10 @@ class IssuesController < ApplicationController
   end
 
   def recap
-    @issues = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+    @my_issues = Issue.where(user_id: current_user.id)
+    @issues_against_me = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
   end
-  
+
   private
 
   def issue_params

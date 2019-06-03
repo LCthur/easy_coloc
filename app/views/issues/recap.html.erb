@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="p-4">My Issues</h1>
+  <h1 class="p-4">Tickets sur mes tâches</h1>
   <div class="grid">
     <% @issues.each do |issue| %>
     <% if issue.assignment.done_state == true %>
@@ -8,15 +8,16 @@
          url('<%= cl_image_path issue.photo %>')">
           <div class="data">
             <div class="content">
-              <span class="author">Raised by: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
+              <span class="author">Crée par: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
               <h1 class="title"><%= issue.assignment.task.name %></h1>
               <p class="text"><%= issue.description %></p>
-              <%= link_to "Done", issue_done_path(issue.assignment), :method => :patch, class: "btn-done" %> 
+              <%= link_to "Done", issue_done_path(issue.assignment), :method => :patch, class: "btn-done" %>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
-    <% end %>
-  </div>
+    </div>
+      <% end %>
+  <% end %>
+ </div>
 </div>

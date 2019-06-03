@@ -1,22 +1,22 @@
 <%= simple_form_for([assignment, issue]) do |f| %>
 
 <div class="form-group px-3">
-  <%= f.input :description, label: 'Description:', as: :text, placeholder: "Enter your reason here...", class: "form-control" %>
+  <%= f.input :description, label: 'Description:', as: :text, placeholder: "Entrez la raison ici...", class: "form-control" %>
 </div>
 <div class="d-flex align-items-start issue-upload-card">
   <div class="form-group px-3">
-    
-    <label class="btn btn-primary">Add a file!
+
+    <label class="btn btn-primary">Ajouter un fichier!
       <span class="custom-file-input">
         <%= f.input :photo, required: false, as: :file %>
         <%= f.input :photo_cache, as: :hidden %>
       </span>
     </label>
-    <p><i class="fa fa-file fileinput-exists"></i><span id="custom-file-input-label"> Choose a file</span></p>
-   
+    <p><i class="fa fa-file fileinput-exists"></i><span id="custom-file-input-label"> Choisissez un fichier</span></p>
+
   </div>
   <div class="px-3">
-    <%= f.button :submit, value: "Raise the issue", class: "btn btn-primary" %>
+    <%= f.button :submit, value: "Créer Ticket", class: "btn btn-primary" %>
   </div>
 </div>
 
