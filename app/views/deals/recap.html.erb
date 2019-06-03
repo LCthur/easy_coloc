@@ -1,5 +1,5 @@
 <div class="container bg-white p-3">
-  <h1>Deals proposed to me</h1>
+  <h1>Propositions d'échange</h1>
   <div class="grid-deal">
     <% @deals.each do |deal| %>
     <% if deal.chosen == nil %>
@@ -10,12 +10,12 @@
           </div>
           <div class="card-task-proposal-info">
             <h2><%= deal.assignment.task.name %></h2>
-            <p><%= deal.assignment.deadline.strftime("%A, %B, %Y") %></p>
+            <p><%= complete_date(deal.assignment.deadline) %></p>
           </div>
         </div>
         <div class="text-center">
           <i class="fas fa-arrows-alt-h arrow" id="change-icon"></i>
-          <%= link_to 'Accept deal', update_deal_path(deal) ,class: "btn-accept-deal",
+          <%= link_to 'Accepter', update_deal_path(deal) ,class: "btn-accept-deal",
           :method=> :patch %>
         </div>
         <div class="right-card">
@@ -25,7 +25,7 @@
             </div>
             <div class="card-task-proposal-info">
               <h2><%= proposal.task.name %></h2>
-              <p><%=  proposal.deadline.strftime("%A, %B, %Y") %></p>
+              <p><%=  complete_date(proposal.deadline) %></p>
             </div>
           </div>
         </div>
