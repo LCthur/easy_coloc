@@ -10,6 +10,21 @@ module ApplicationHelper
     "Sunday"    =>  "Dimanche"
   }
 
+  FRENCH_MONTHS = {
+    "January"   =>  "janvier",
+    "February"  =>  "février",
+    "March"     =>  "mars",
+    "April"     =>  "avril",
+    "May"       =>  "mai",
+    "June"      =>  "juin",
+    "July"      =>  "juillet",
+    "August"    =>  "août",
+    "September" =>  "septembre",
+    "October"   =>  "octobre",
+    "November"  =>  "novembre",
+    "December"  =>  "décembre"
+  }
+
   def delayed?(assignment)
     assignment.deadline < Date.today
   end
@@ -20,5 +35,9 @@ module ApplicationHelper
 
   def day_french(day)
     FRENCH_DAYS[day]
+  end
+
+  def month_french(month)
+    FRENCH_MONTHS[month]
   end
 end
