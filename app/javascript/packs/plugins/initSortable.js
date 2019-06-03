@@ -22,7 +22,7 @@ const initSortable = () => {
         group: 'shared',
         animation: 150,
         onChange: (event) => {
-            done.addEventListener('drop',(e) => {
+            endColumn.addEventListener('drop',(e) => {
                 console.log(e);
                 let idString = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0].id.substr(3);
                 const Http = new XMLHttpRequest();
