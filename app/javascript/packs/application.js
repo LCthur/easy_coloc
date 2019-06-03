@@ -7,5 +7,8 @@ if (document.getElementById('issue-page')) {
   initCustomInputFile();
 };
 
+if (document.getElementById('dashboard-page')) {
+  initSortable();
+};
+
 inputState();
-initSortable();
