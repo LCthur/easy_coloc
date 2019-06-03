@@ -6,10 +6,10 @@
        url('<%= cl_image_path issue.photo %>')">
         <div class="data">
           <div class="content">
-            <span class="author">Raised by: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
+            <span class="author">Crée par: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
             <h1 class="title"><%= issue.assignment.task.name %></h1>
             <p class="text"><%= issue.description %></p>
-            <%= link_to "Done", issue_done_path(issue.assignment), :method => :patch, class: "btn-done" %>
+            <%= link_to "Fait", issue_done_path(issue.assignment), :method => :patch, class: "btn-done" %>
           </div>
         </div>
       </div>

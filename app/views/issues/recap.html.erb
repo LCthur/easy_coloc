@@ -13,7 +13,7 @@
        url('<%= cl_image_path issue.photo %>')">
         <div class="data">
           <div class="content">
-            <span class="author">Crée le: <%= issue.created_at.strftime("%e %B, %Y") %></span>
+            <span class="author">Crée: <%= complete_date(issue.created_at) %></span>
             <h1 class="title"><%= issue.assignment.task.name %></h1>
             <p class="text"><%= issue.description %></p>
           </div>
