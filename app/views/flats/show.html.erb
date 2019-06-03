@@ -1,8 +1,8 @@
 <h1 id="colocation-title">Colocation : <%= @flat.name %></h1>
 <div class="tasks">
   <div class="task fade-in-left">
-    <div class="task-title">
-      <h2>A faire</h2>
+    <div class="task-title-todo">
+      <h2 class="text-task-title">Todo</h2>
     </div>
     <div class="todo">
       <h2 class="task-subtitle"><%= "Aujourd'hui" unless @assignments_today_late.empty? %></h2>
@@ -22,8 +22,8 @@
     </div>
   </div>
   <div class="task fade-in-left done-column">
-    <div class="task-title">
-      <h2>Fait</h2>
+    <div class="task-title-done">
+      <h2 class="text-task-title">Done</h2>
     </div>
     <div class="done">
       <%= render 'flats/done', flat: @flat %>
