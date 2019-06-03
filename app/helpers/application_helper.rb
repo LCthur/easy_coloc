@@ -40,4 +40,9 @@ module ApplicationHelper
   def month_french(month)
     FRENCH_MONTHS[month]
   end
+
+  def complete_date(date)
+    "#{day_french(date.strftime('%A'))}, Le #{date.strftime('%-d')}
+     #{month_french(date.strftime('%B'))} #{date.strftime('%Y')}"
+  end
 end
