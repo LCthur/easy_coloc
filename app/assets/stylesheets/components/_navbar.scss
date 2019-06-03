@@ -3,10 +3,96 @@
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+/* Create a sticky/fixed navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 240px;
+  width: 100%;
+  padding: 0 64px;
+  background: transparent;
+  line-height: 150px;
+    -webkit-transition: height .5s, line-height .5s; /* Safari */
+    transition: height .5s, line-height .5s;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.site-title {
+  color: white;
+  font-weight: 700;
+  display: inline-block;
+  margin: 0 -10px;
+  -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.site-title:hover {
+  color:black;
+  transition: color 0s;
+}
+
+.scrolled-nav {
+  height: 60px !important;
+  line-height: 60px !important;
+}
+
+.scrolled-nav .site-title  {
+  font-size: 16px;
+}
+
+.transition-finished {
+  background-color: hsla(0,0%,100%,1) !important;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    
+}
+
+.transition-finished .site-title {
+  color: black;
+  padding-bottom: 12px;
+}
+
+.transition-finished a.nav-link {
+  color: black !important;
+  font-size: 16px !important;
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0px 12px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo */
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+/* Links on mouse-over */
+#navbar a:hover {
+  opacity: 0.7;
+  color: black;
+}
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
