@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :flats, only: [:show, :index]
-  get '/issues/recap'
+  get '/issues/recap', as: :issues_recap, to: 'issues#recap'
   patch '/assignments/:id', as: :issue_done, to: 'assignments#issue_done'
   get '/deals/recap'
   patch '/deals/:id', as: :update_deal, to: 'deals#update'
