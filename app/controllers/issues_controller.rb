@@ -15,6 +15,8 @@ class IssuesController < ApplicationController
       # chgt de statut pour le boolean done_state
       @issue.assignment.done_state = false
       @issue.assignment.save
+      mail = IssueMailer.with(user: current_user, issue: @issue).request_issue
+      mail.deliver
       redirect_to flat_path(current_user.flat)
     else
       render :new

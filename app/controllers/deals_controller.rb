@@ -22,7 +22,7 @@ class DealsController < ApplicationController
         if deal.save
           mail = DealMailer.with(user: current_user, deal: deal).request_deal
           mail.deliver
-        else 
+        else
           render :new
         end
       end
@@ -38,7 +38,7 @@ class DealsController < ApplicationController
   end
 
   def update
-    # On trouve le deal choisi, on le passe à chosen : true
+    # On trouve le deal choisi, on le passe a chosen : true
     deal = Deal.find(params[:id])
     # echange des user
     asker = deal.assignment.user
