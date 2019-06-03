@@ -1,35 +1,29 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <% unless current_user.nil? || current_user.flat.nil? %>
-    <%= link_to flat_path(current_user.flat), class: "navbar-brand" do %>
-      <%= image_tag "favicon.ico" %>
-    <% end %>
-  <% end %>
+<div id="navbar" class="d-flex align-items-center navbar navbar-expand-sm navbar-light">
+  <a href="<%= ApplicationGlobals::GlobalVar::BASE_URL %> " id="logo">
+    <h1 class="site-title">Easy coloc'</h1>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto align-items-center">
       <% if user_signed_in? %>
-      <li class="nav-item active">
+      <li class="nav-item">
         <%= link_to "Echanges", deals_recap_path, class: "nav-link" %>
       </li>
-      <li class="nav-item active">
-        <%= link_to "Tickets", issues_recap_path, class: "nav-link" %>
+      <li class="nav-item">
+        <%= link_to "Tickets", issues_recap_path , class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-        <%= cl_image_tag current_user.avatar_photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "My Issues", issues_recap_path , class: "dropdown-item" %>
-          <%= link_to "Another actio", "#", class: "dropdown-item" %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
+      <li class="nav-item">
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= cl_image_tag current_user.avatar_photo, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </li>
       <% else %>
       <li class="nav-item">
-        <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+        <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
       </li>
       <% end %>
     </ul>
