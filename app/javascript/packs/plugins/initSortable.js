@@ -28,7 +28,7 @@ const initSortable = () => {
                 const Http = new XMLHttpRequest();
                 const url = `/assignments/${idString}`;
                 Http.open("PATCH", url);
-                Http.send("PATCH");
+                Http.send();
                     Http.onreadystatechange = function() {
                         console.log(Http.responseText)
                     }
