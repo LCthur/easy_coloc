@@ -3,10 +3,11 @@
 }
 
 .btn-deal {
-    background-color: #27E0EE;
+    background-color: transparent;
     padding: 5px;
     border-radius: 10px;
-    color: #fff;
+    border: 1px rgb(145, 145, 145) solid;
+    color: rgb(145, 145, 145);
     &:hover {
         background-color: #24C7FF;
         text-decoration: none;
@@ -24,14 +25,15 @@
 }
 
 .btn-late {
-    background-color: #DB3545;
+    background-color: transparent;
     padding: 5px;
     border-radius: 10px;
-    color: #fff;
+    border: 1px rgb(145, 145, 145) solid;
+    color: rgb(145, 145, 145);
     &:hover {
+        background-color: #DB3545;
         text-decoration: none;
         color: #fff;
-        cursor: default;
     }
 }
 
