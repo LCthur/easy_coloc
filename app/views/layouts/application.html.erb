@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Gérez votre colocation facilement grâce à Easy Coloc">
-    <title>Easy Coloc</title>
+    <title>Easy Coloc, l'application qui te permet de gérez facilement ta colloc !</title>
     <meta property="og:title" content="Gérez votre collocation facilement grâce à Easy Coloc">
     <meta property="og:image" content="https://res.cloudinary.com/dqktvdjkg/image/upload/v1559596730/roommates_1200x630_biaefa.jpg">
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:description" content="Easy coloc est une application web qui permet d'organiser sa collocation. En résumé, le but est de rendre agréable et juste la vie en collocation.">
     <meta property="og:site_name" content="Easy Coloc"/>
+    <meta property="og:type" content="web application" />
+    <meta property="og:url" content="<%= ApplicationGlobals::GlobalVar::BASE_URL %>"/>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Easycoloc">
     <meta name="twitter:title" content="Gérez votre collocation facilement grâce à Easy Coloc">
@@ -21,7 +23,6 @@
     <%= favicon_link_tag  %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
