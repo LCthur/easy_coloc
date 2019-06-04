@@ -9,10 +9,10 @@ en:
     failure:
       already_authenticated: "Vous êtes déjà enregistré"
       inactive: "Your account is not activated yet."
-      invalid: "Invalide %{authentication_keys} ou mot de passe."
+      invalid: "%{authentication_keys} ou mot de passe invalide."
       locked: "Votre compte est verrouillé."
       last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalide %{authentication_keys} ou mot de passe."
+      not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "Vous devez vous enregistrer pour continuer"
       unconfirmed: "You have to confirm your email address before continuing."
