@@ -1,14 +1,15 @@
+.container-deals {
+  border-radius: 10px;
+  padding-bottom: 16px !important;
+  margin-bottom: 30px;
+}
+
 .grid-deal {
   margin: 30px 60px;
   display: grid;
-  grid-template-columns: 1fr 0.25fr 1fr;
-  grid-gap: 16px;
-  .card-task-deal {
-    width: 90%;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
-    display: flex;
-    border-radius: 10px;
-  }
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+
   h2 {
     font-size: 20px;
     font-weight: bold;
@@ -16,24 +17,43 @@
   }
 }
 
-.container-deals {
-  border-radius: 10px;
-  padding-bottom: 16px !important;
-  margin-bottom: 30px;
+.parent-card {
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px;
+  place-self: center;
 }
 
-.right-card {
-  display: flex;
-  justify-content: flex-end;
-  .card-task-proposal {
-    width: 90%;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+
+ .proposal {
+    margin: 0 auto;
     display: flex;
-    border-radius: 10px;
-  }
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 10px 0 0;
+ }
+
+ .my-proposal {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+ }
+
+ .task-to-deal {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 10px 0 0;
 }
 
-.card-task-proposal-info {
+.deal-info {
    text-align: left;
     padding: 16px;
     margin-top: 6px;
@@ -50,9 +70,26 @@
     }
 }
 
-.arrow {
-  font-size: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.rotate-arrow {
+  transform: rotate(90deg);
+  padding: 20px;
+  font-size: 25px;
+}
+
+.accept-deal {
+  width: 100%;
+}
+
+
+@media (max-width: 850px) {
+  .grid-deal {
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+  }
+}
+
+@media (max-width: 540px) {
+  .parent-card {
+    width: 110%;
+  }
 }

@@ -22,8 +22,26 @@
   border: white 1px solid;
 }
 
+.avatar-to-deal {
+  border-radius: 50%;
+  width: 70px;
+  margin-right: 20px;
+}
+
+
 .avatar-large-deal {
   width: 156px;
+  border-radius: 50%;
+}
+
+.avatar-new-deal {
+  width: 110px;
+  border-radius: 50%;
+  margin: 0px;
+}
+
+.avatar-deal-proposal {
+  width: 70px;
   border-radius: 50%;
 }
 
