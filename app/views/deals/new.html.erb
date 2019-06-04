@@ -3,31 +3,35 @@
         <h2 class="text-center py-2">Echange</h2>
     </div>
     <div class="deal">
-        <div class="deal-avatar">
-            <%= cl_image_tag @assignment.user.avatar_photo, class: "avatar-large-deal" %>
+        <div class="new-deal-card">
+          <div class="deal-avatar">
+            <%= cl_image_tag @assignment.user.avatar_photo, class: "avatar-new-deal" %>
             <div class="change-icon">
                 <i class="fas fa-arrows-alt-h" id="change-icon"></i>
             </div>
-            <%= cl_image_tag("not-a-user_httobd", :width=>200, class: "avatar-large-deal") %>
+            <%= cl_image_tag("user-1633250_960_720_mcdabo", class: "avatar-new-deal") %>
+          </div>
+          <div>
+            <h3><%= @deal.assignment.task.name %></h3>
+            <p><%= complete_date(@deal.assignment.deadline) %></p>
+          </div>
         </div>
-        <h3 class="text-center"><%= @deal.assignment.task.name %></h3>
-        <h3 class="text-center"><%= complete_date(@deal.assignment.deadline) %></h3>
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            <h2 class="text-center">Avec :</h2>
+            <h3 class="text-center">Avec :</h3>
             <div class="checkboxs">
                 <% @proposals.each do |proposal| %>
                 <div class="style-checkbox">
-                    <%= "<img class='avatar' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'>".html_safe %>
+                    <%= "<img class='avatar-deal-proposal' src='#{proposal.user.avatar_photo}' alt='#{proposal.user.first_name}'>".html_safe %>
                     <%= "<input type='checkbox' id='proposal_#{proposal.id}' name='#{proposal.id}'>".html_safe %>
-                    <%= "<label class='label-name' for='proposal_#{proposal.id}'>#{proposal.task.name} - #{complete_date(proposal.deadline)}</label>".html_safe %>
+                    <%= "<label class='label-name' for='proposal_#{proposal.id}'><span>#{proposal.task.name}</span> </br> #{complete_date(proposal.deadline)}</label>".html_safe %>
                 </div>
                 <% end %>
             </div>
-            <h2 class="p-2">Justification:</h2>
+            <h3 class="p-2">Justification:</h3>
             <div class="description form-group mb-5">
-                <textarea class="form-control" name="description" placeholder="Expliquez brièvement..." cols="40" rows="5"></textarea>
+                <textarea class="form-control" id="description" name="description" placeholder="Expliquez brièvement..." cols="40" rows="2"></textarea>
             </div>
             <input type="submit" class="btn mb-5 button-deal" value="Proposer les échanges">
             </form>

@@ -1,13 +1,6 @@
-.deal {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0px 0px 20px 20px;
-}
-
 .deal-avatar {
-    margin: 0 20px;
-    padding: 20px;
+    margin: 0 5px;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,41 +9,6 @@
 .change-icon {
     margin: 0 40px;
     font-size: 50px;
-}
-
-.checkboxs {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.form-checkbox {
-    text-align: center;
-    .style-checkbox {
-        margin: 10px 25px;
-        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        padding: 8px 5px 8px 5px;
-        color: #222;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: grab;
-        transition: 0.5s;
-        input {
-            appearance: none;
-        }
-
-        img {
-            margin-left: 20px;
-        }
-
-        label {
-            margin-top: 5px;
-            margin-right: 20px;
-            cursor: grab;
-        }
-    }
 }
 
 .my-task {
@@ -62,19 +20,4 @@
     align-items: center;
 }
 
-.style-checkbox.active {
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
-    color: #fff;
-}
 
-.description {
-    margin: 0 auto;
-    width: 80%;
-}
-
-@media (max-width: 1250px) {
-    .checkboxs {
-        grid-template-columns: 1fr;
-    }
-}
