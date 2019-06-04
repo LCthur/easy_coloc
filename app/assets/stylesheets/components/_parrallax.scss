@@ -1,7 +1,7 @@
 .parrallax {
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("https://www.brickunderground.com/sites/default/files/styles/blog_primary_image/public/blog/images/roommates_4_0.jpg");
-  height: calc(105vh);
-  margin-top: -80px;
+  height: calc(100vh);
+  margin-top: -110px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,14 +19,23 @@
 }
 
 
-#subtitle-easy-coloc {
+.subtitle-easy-coloc {
   text-align: center;
   font-size: 38px;
   font-weight: 700;
   color: white;
   margin: 80px 20px 0px 20px!important;
-  padding: 20px 0 3000px 0 !important;
   width: 700px;
+}
+
+.chevron-down {
+  position: absolute;
+  bottom: -30vh;
+  left:50%;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  color: white;
 }
 
 #index-page {
@@ -38,7 +47,7 @@
       margin: 63px 100px 0px 100px;
   }
 
-  #subtitle-easy-coloc {
+  .subtitle-easy-coloc {
       text-align: center;
       margin:0 100px;
       padding: 20px 40px !important;
@@ -51,7 +60,7 @@
       margin: 63px 50px 0px 50px;
   }
 
-  #subtitle-easy-coloc  {
+  .subtitle-easy-coloc  {
       text-align: center;
       margin:0 auto;
       font-size: 18px !important;

@@ -26,11 +26,6 @@
     transition: all .5s;
 }
 
-.site-title:hover {
-  color:black;
-  transition: color 0s;
-}
-
 .scrolled-nav {
   height: 60px !important;
   line-height: 60px !important;
@@ -50,12 +45,17 @@
 
 .transition-finished .site-title {
   color: black;
-  padding-bottom: 12px;
+  padding-bottom: 4px;
+  margin: 0;
 }
 
 .transition-finished a.nav-link {
   color: black !important;
   font-size: 16px !important;
+}
+
+.transition-finished a {
+  padding: 0 !important;
 }
 
 /* Style the navbar links */
@@ -70,6 +70,7 @@
   font-weight: 900;
   line-height: 25px;
   border-radius: 4px;
+  position: relative;
 }
 
 /* Style the logo */
@@ -79,11 +80,29 @@
   transition: 0.4s;
 }
 
-/* Links on mouse-over */
-#navbar a:hover {
-  opacity: 0.7;
-  color: black;
+#navbar a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #3cefff;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
 }
+
+#navbar a:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+/* Links on mouse-over */
+// #navbar a:hover {
+//   opacity: 0.6;
+//   color: white;
+// }
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 580px) {
