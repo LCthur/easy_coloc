@@ -5,6 +5,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @assignments_done = @flat.assignments.where(done_state: true).order(updated_at: :desc)
     @assignments_today_late = @flat.assignments.where("deadline <= ?", Date.today).where(done_state: false).order(deadline: :asc)
     @assignments_day1 = @flat.assignments.where(deadline: Date.today + 1).where(done_state: false)
     @assignments_day2 = @flat.assignments.where(deadline: Date.today + 2).where(done_state: false)
