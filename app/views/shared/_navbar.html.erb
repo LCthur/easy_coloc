@@ -18,9 +18,15 @@
       </li>
       <li class="nav-item">
         <%= link_to "Echanges", deals_recap_path, class: "nav-link" %>
+        <% if deals_array.size > 0 %>
+          <div class="badge badge-pill badge-danger notification-push"><%= deals_array.size %></div>
+        <% end %>
       </li>
       <li class="nav-item">
         <%= link_to "Tickets", issues_recap_path , class: "nav-link" %>
+        <% if issues_against_me_array.size > 0 %>
+          <div class="badge badge-pill badge-danger notification-push"><%= issues_against_me_array.size %></div>
+        <% end %>
       </li>
       <li class="nav-item">
         <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>

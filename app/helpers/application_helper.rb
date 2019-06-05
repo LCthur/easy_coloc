@@ -45,4 +45,14 @@ module ApplicationHelper
     "#{day_french(date.strftime('%A'))}, Le #{date.strftime('%-d')}
      #{month_french(date.strftime('%B'))} #{date.strftime('%Y')}"
   end
+
+  def deals_array
+    # recup de tous les deals proposes au current_user
+    return Deal.joins("INNER JOIN assignments
+                          ON deals.assignment_proposal_id = assignments.id").where("assignments.user_id = #{current_user.id}").where(chosen: nil)
+  end
+
+  def issues_against_me_array
+    return Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+  end
 end
