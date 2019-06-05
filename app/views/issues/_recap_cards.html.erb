@@ -3,7 +3,7 @@
   <% if issue.assignment.done_state == false %>
   <div class="issue-parent-card">
     <div class="issue-image-container">
-      <%= cl_image_tag issue.photo, class: "issue-image" %>
+      <%= cl_image_tag issue.photo, class: "issue-image", gravity: :center %>
     </div>
     <div class="info-issue-recap">
       <h3 class="title"><%= issue.assignment.task.name %></h3>
