@@ -1,0 +1,14 @@
+Salut <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,
+
+<%= @user.first_name %> <%= @user.last_name %> a échanger cette tâche:
+
+<%= @initial_task["name"] %> Description: <%= @initial_task["description"] %>
+
+Contre:
+
+<%= @proposal_task["name"] %> Description: <%= @proposal_task["description"] %>
+
+
+Aller sur ma Dashboard
+<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::FLAT_ONE_PATH].join %>
+
