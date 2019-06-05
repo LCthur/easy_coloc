@@ -2,17 +2,16 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM library/ruby:2.5.3-alpine3.7",
-    "RUN apk update && apk upgrade && apk add --no-cache make g++ git postgresql-dev yarn",
+    "RUN apk update && apk upgrade && apk add --no-cache build-essential make g++ git libpq-dev postgresql-dev nodejs yarn",
     "RUN mkdir -p /usr/src/app",
     "WORKDIR /usr/src/app",
+    "ENV RAILS_ENV=\'production\'",
     "COPY ./Gemfile /usr/src/app/",
     "RUN gem install bundler",
-    "RUN bundle install --without development:test",
-    "RUN bundle update",
-    "COPY ./package.json /usr/src/app/",
-    "RUN yarn install",
+    "RUN bundle install --without development:test --path vendor/cache",
     "COPY ./ /usr/src/app",
+    "RUN bundle exec rake assets:precompile",
     "EXPOSE 80",
-    "CMD [\"rackup\", \"config.ru\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
+    "CMD [\"bundle\", \"exec\", \"puma\", \"-C\", \"config/puma.rb\"]"
   ]
 }
