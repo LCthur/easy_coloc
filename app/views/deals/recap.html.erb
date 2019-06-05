@@ -24,17 +24,8 @@
               <p><%=  complete_date(proposal.deadline) %></p>
             </div>
         </div>
-        <div class="popup-overlay">
-        <!--Creates the popup content-->
-        <div class="popup-content">
-            <h2>Pop-Up</h2>
-            <p> This is an example pop-up that you can make using jQuery.</p>
-          <!--popup's close button-->
-            <button class="close">Close</button>    
-        </div>
-        </div>
         <div class="accept-deal">
-          <%= link_to 'Accepter', update_deal_path(deal) ,class: " btn btn-accepter open text-center w-100",
+          <%= link_to 'Accepter', update_deal_path(deal) ,class: " btn btn-accepter text-center w-100",
         :method=> :patch %>
         </div>
       </div>

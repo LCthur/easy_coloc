@@ -59,6 +59,7 @@ class DealsController < ApplicationController
       deal_proposal.chosen = false
       deal_proposal.save
     end
+    flash[:notice] = "L'échange a bien été accepté"
     redirect_to flat_path(current_user.flat)
   end
 
