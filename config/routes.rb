@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :flats, only: [:show, :index]
+  get 'flats/:id/invite', as: :flat_invite, to: 'flats#invite'
+  post 'flats/:id/invite', as: :flat_send_invite, to: 'flats#send_invite'
   get '/issues/recap', as: :issues_recap, to: 'issues#recap'
   patch '/assignments/:id', as: :issue_done, to: 'assignments#issue_done'
   get '/deals/recap'

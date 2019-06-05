@@ -1,0 +1,13 @@
+<div class=" container container-invite col-6">
+  <div class="task-title">
+    <h2 class="text-center">Invite tes collocataires</h2>
+  </div>
+  <div class="invite-form p-3">
+    <form action="" method="post" id='invite-form' class="text-center">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <label for="email1" class="mx-3">Email du collocataire : </label>
+        <input type="email" name="email1" placeholder="Entrez l'email" id="email1">
+      <button type="submit" class="btn-deal mx-3">Inviter</button>
+    </form>
+  </div>
+</div>
