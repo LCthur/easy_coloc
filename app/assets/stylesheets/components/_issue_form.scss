@@ -12,6 +12,21 @@
   display: flex;
 }
 
+.body-form-issue {
+  background-color: #fff;
+  padding: 20px;
+
+}
+
+.new-issue-card {
+  background-color: white;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
+}
 
 @media (max-width: 768px) {
   .issue-upload-card {

@@ -2,14 +2,18 @@
   <div class="task-title">
     <h2 class="text-center py-2">Créer un ticket pour: <%= full_name(@user.first_name, @user.last_name) %></h2>
   </div>
-  <div class="assignment-issue pt-3 pl-3 bg-white">
-    <%= cl_image_tag @user.avatar_photo, class: "avatar-large-issues" %>
-    <div class="pb-3">
-      <h2 class="card-task-info px-3 pb-1"><%= @task.name %></h2>
-      <p class="card-task-info px-3"><%= @task.description %></p>
+  <div class="body-form-issue">
+    <div class="new-issue-card">
+      <div class="deal-avatar">
+        <%= cl_image_tag @user.avatar_photo, class: "avatar-new-deal" %>
+      </div>
+      <div>
+        <h3><%= @task.name %></h3>
+        <p><%= @task.description%></p>
+      </div>
     </div>
   </div>
-  <div class="bg-white bottom-rounded">
+  <div class="bg-white bottom-rounded p-3">
     <%= render 'issues/form', assignment: @assignment ,issue: @issue %>
   </div>
 </div>
