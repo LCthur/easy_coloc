@@ -52,8 +52,6 @@ class DealsController < ApplicationController
     if deal.save
       mail = DealMailer.with(user: current_user, deal: deal).confirm_deal
       mail.deliver
-    else
-      render :new
     end
     # On recupere toutes les autres propositions
     other_deals_proposal = Deal.where(assignment: deal.assignment).where(chosen: nil)

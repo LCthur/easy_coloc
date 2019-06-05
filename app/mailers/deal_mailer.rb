@@ -49,10 +49,44 @@ class DealMailer < ApplicationMailer
   end
 
   def confirm_deal
-    @user = User.find(params[:deal][:user_id])
-    @assignment = Assignment.find(params[:deal][:assignment_id])
-    @deal = Deal.find(params[:deal][:id])
-    @target_user = @assignment.user
-    mail(to: @target_user.email, subject: "#{@user.first_name} #{@user.last_name} a accepter un échange")
+    @user = params[:user]
+    @deal = params[:deal]
+
+    sql_query = " \
+    SELECT tasks.name, tasks.description
+    FROM deals
+    JOIN assignments
+    ON deals.assignment_id = assignments.id
+    JOIN tasks
+    ON assignments.task_id = tasks.id
+    WHERE deals.id = #{@deal.id};"
+
+    @initial_task = Deal.connection.execute(sql_query)[0]
+
+    sql_query = " \
+    SELECT tasks.name, tasks.description
+    FROM deals
+    JOIN assignments
+    ON deals.assignment_proposal_id = assignments.id
+    JOIN tasks
+    ON assignments.task_id = tasks.id
+    WHERE deals.id = #{@deal.id};"
+
+    @proposal_task = Deal.connection.execute(sql_query)[0]
+
+    sql_query = " \
+    SELECT users.first_name, users.last_name, users.email
+    FROM deals
+    JOIN assignments
+    ON deals.assignment_proposal_id = assignments.id
+    JOIN tasks
+    ON assignments.task_id = tasks.id
+    JOIN users
+    ON assignments.user_id = users.id
+    WHERE deals.id = #{@deal.id};"
+
+    @target_user = Deal.connection.execute(sql_query)[0]
+
+    mail(to: @target_user["email"], subject: "#{@user.first_name} a accepter un echange avec vous.")
   end
 end
