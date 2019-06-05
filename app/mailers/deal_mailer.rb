@@ -47,4 +47,12 @@ class DealMailer < ApplicationMailer
     mail(to: @target_user["email"], subject: "#{@user.first_name} proposed you a deal for your task #{@proposal_task["name"]}")
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def confirm_deal
+    @user = User.find(params[:deal][:user_id])
+    @assignment = Assignment.find(params[:deal][:assignment_id])
+    @deal = Deal.find(params[:deal][:id])
+    @target_user = @assignment.user
+    mail(to: @target_user.email, subject: "#{@user.first_name} #{@user.last_name} a accepter un échange")
+  end
 end
