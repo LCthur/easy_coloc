@@ -20,7 +20,7 @@
     "RUN gem install bundler",
     "RUN bundle install --without development:test --path vendor/cache",
     "COPY ./package.json /usr/src/app/",	
-    "RUN yarn install",
+    "RUN yarn install --check-files",
     "COPY ./ /usr/src/app",
     "RUN bundle exec rake assets:precompile",
     "EXPOSE 80",
