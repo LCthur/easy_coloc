@@ -8,18 +8,18 @@
  <h1 class="p-4">Mes tickets</h1>
  <div class="grid">
   <% @my_issues.each do |issue| %>
-    <div class="example-2 issue-card">
-      <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-       url('<%= cl_image_path issue.photo %>')">
-        <div class="data">
-          <div class="content">
-            <span class="author">Crée: <%= complete_date(issue.created_at) %></span>
-            <h1 class="title"><%= issue.assignment.task.name %></h1>
-            <p class="text"><%= issue.description %></p>
-          </div>
-        </div>
-      </div>
+  <% if issue.assignment.done_state == false %>
+  <div class="parent-card">
+    <div class="issue-image-container">
+      <%= cl_image_tag issue.photo, class: "issue-image" %>
     </div>
-  <% end %>
+    <div class="info-issue-recap">
+      <h3 class="title"><%= issue.assignment.task.name %></h3>
+      <p class="text"><%= issue.description %></p>
+      <span class="author">Crée par: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
+    </div>
   </div>
+  <% end %>
+  <% end %>
+</div>
 </div>
