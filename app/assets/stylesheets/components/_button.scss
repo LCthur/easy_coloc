@@ -8,9 +8,12 @@
   align-items: center;
   background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
   border-radius: 0 0 10px 10px;
-  color: white;
+  color:rgba(255, 255, 255, 0.8);
   font-weight: bold;
   font-size: 18px;
+  &:hover {
+    color:rgba(255, 255, 255, 1);
+}
 }
 
 .btn-deal {
