@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM library/ruby:2.5.3-alpine3.7",
+    "FROM library/ruby:2.4.3-ubuntu:latest",
     "RUN apk update && apk upgrade && apk add --no-cache build-essential make g++ git libpq-dev postgresql nodejs yarn tzdata",
     "RUN mkdir -p /usr/src/app",
     "WORKDIR /usr/src/app",
