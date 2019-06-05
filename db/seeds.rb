@@ -62,7 +62,7 @@ p 'Create a flat'
 Flat.create!(
   id: 1,
   task_management: true,
-  name: 'Zero waste'
+  name: 'La Maison du Bonheur'
   )
 
 p 'Create 4 User'
