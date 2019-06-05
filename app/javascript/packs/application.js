@@ -9,10 +9,9 @@ if (document.getElementById('issue-page')) {
   initCustomInputFile();
 };
 
-
-
-
 initUpdateNavbarOnScroll();
 inputState();
 initSortable();
+
 autoResize();
+
