@@ -1,5 +1,5 @@
 <!-- taches faites -->
-<% flat.assignments.each do |assignment| %>
+<% assignments.each do |assignment| %>
   <% if assignment.done_state %>
     <div class="card-task">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
