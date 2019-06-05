@@ -49,13 +49,17 @@ class DealsController < ApplicationController
     assignment_choosed.save
     assignment_dealed.save
     deal.chosen = true
-    deal.save
+    if deal.save
+      mail = DealMailer.with(user: current_user, deal: deal).confirm_deal
+      mail.deliver
+    end
     # On recupere toutes les autres propositions
     other_deals_proposal = Deal.where(assignment: deal.assignment).where(chosen: nil)
     other_deals_proposal.each do |deal_proposal|
       deal_proposal.chosen = false
       deal_proposal.save
     end
+    flash[:notice] = "L'échange a bien été accepté"
     redirect_to flat_path(current_user.flat)
   end
 

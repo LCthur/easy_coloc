@@ -1,0 +1,12 @@
+<p>Salut <%= @target_user["first_name"] %> <%= @target_user["last_name"] %>,</p>
+
+<span><%= @user.first_name %> <%= @user.last_name %> a échanger cette tâche:</span>
+
+<h3><%= @initial_task["name"] %></h3> <span>Description: <%= @initial_task["description"] %></span>
+
+<br><br><span>Contre:</span>
+
+<h3><%= @proposal_task["name"] %></h3> <span>Description: <%= @proposal_task["description"] %></span>
+
+<br><br><a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::FLAT_ONE_PATH].join %>" class="btn-primary" itemprop="url">Aller sur ma Dashboard</a>
+
