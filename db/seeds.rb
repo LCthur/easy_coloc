@@ -23,37 +23,37 @@ p 'Creating 5 tasks'
 Task.create!(
     id: 1,
     name: 'Aspirateur',
-    description: "Aspirer la poussière"
+    description: "Ne pas oublier la poussière derrière la télé !"
   )
 Task.create!(
     id: 2,
     name: "Lave-vaisselle",
-    description: "Vider le lave-vaisselle"
+    description: "Vider le lave-vaisselle et pas dans l'évier hein ?!"
   )
 Task.create!(
     id: 3,
     name: 'Courses',
-    description: "Faire les courses"
+    description: "Récupérer le panier de légume et pas le laisser pourrir"
   )
 Task.create!(
     id: 4,
     name: 'Compost',
-    description: "vider le compost"
+    description: "Vider le compost avant les moucherons XD"
   )
 Task.create!(
     id: 5,
     name: 'Recyclage',
-    description: "Alu, Pet, Carton "
+    description: "Alu, Pet, Carton & Chaussettes !"
   )
 Task.create!(
     id: 6,
-    name: 'Rangement soirée',
-    description: "Ranger le désordre de la soirée"
+    name: 'Rangement fin de soirée',
+    description: "Ranger le désordre des potes"
   )
 Task.create!(
     id: 7,
     name: 'Micro-ondes',
-    description: "Laver le micro-ondes"
+    description: "Nettoyer les poils du micro-ondes"
   )
 
 p 'Create a flat'
@@ -62,7 +62,7 @@ p 'Create a flat'
 Flat.create!(
   id: 1,
   task_management: true,
-  name: 'Zero waste'
+  name: 'La Maison du Bonheur'
   )
 
 p 'Create 4 User'
@@ -72,8 +72,8 @@ url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/rxvmw8q
 url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/ufnku3qnuo2heeauakdm_p5jxyh.jpg'
 lo = User.create!(
   id: 1,
-  first_name: 'Toto',
-  last_name: 'Titi',
+  first_name: 'Loic',
+  last_name: 'Thurre',
   password: 'tototiti',
   password_confirmation: 'tototiti',
   email: 'loic.thurre@gmail.com',
@@ -110,60 +110,76 @@ matt.save
 
 p 'Create Assignments'
 
-5.times do
-    Assignment.create!(
-      user_id: rand(1..3),
-      task_id: rand(1..5),
-      deadline: Date.today + rand(-2..5),
-      done_state: false
-    )
-end
+# 5.times do |i|
+#     Assignment.create!(
+#       user_id: rand(1..3),
+#       task_id: i,
+#       deadline: Date.today + rand(-2..5),
+#       done_state: false
+#     )
+# end
 
-3.times do
-  Assignment.create!(
-      user_id: rand(1..3),
-      task_id: rand(1..5),
-      deadline: Date.today + rand(0..5),
-      done_state: true
-    )
-end
+# 3.times do |i|
+#   Assignment.create!(
+#       user_id: rand(1..3),
+#       task_id: 5+i,
+#       deadline: Date.today + rand(0..5),
+#       done_state: true
+#     )
+# end
 
 Assignment.create!(
   id: 1000,
-  user_id: 3,
-  task_id: 6,
+  user_id: 1,
+  task_id: 1,
   deadline: Date.today + rand(-3..5),
   done_state: true
 )
 
 Assignment.create!(
   id: 1001,
-  user_id: 1,
-  task_id: 7,
+  user_id: 2,
+  task_id: 2,
   deadline: Date.today + rand(-3..5),
   done_state: true
 )
 
 Assignment.create!(
   id: 1002,
-  user_id: 2,
-  task_id: 2,
+  user_id: 3,
+  task_id: 3,
   deadline: Date.today + rand(0..5),
   done_state: false
 )
 
 Assignment.create!(
   id: 1003,
-  user_id: 1,
-  task_id: 7,
+  user_id: 3,
+  task_id: 6,                                 # !!! Rangement potes
   deadline: Date.today + rand(0..5),
   done_state: false
 )
 
 Assignment.create!(
   id: 1004,
-  user_id: 1,
-  task_id: 2,
+  user_id: 2,
+  task_id: 7,                                 # !!! Micro-ondes
+  deadline: Date.today + rand(0..5),
+  done_state: false
+)
+
+Assignment.create!(
+  id: 1005,
+  user_id: 2,
+  task_id: 4,
+  deadline: Date.today + rand(0..5),
+  done_state: false
+)
+
+Assignment.create!(
+  id: 1006,
+  user_id: 3,
+  task_id: 5,
   deadline: Date.today + rand(0..5),
   done_state: false
 )
@@ -175,7 +191,7 @@ url_microwave = "https://res.cloudinary.com/dqktvdjkg/image/upload/v1559138317/I
 
 nespresso = Issue.create!(
     user_id: 2,
-    description: "T'as pas rangé les gobelets en carton !",
+    description: "Quand tu fais la fête avec tes copains, tu pourrais ranger derrière toi :-P",
     assignment_id: 1003
   )
 nespresso.remote_photo_url = url_nespresso
@@ -183,8 +199,8 @@ nespresso.save
 
 
 microwave = Issue.create!(
-    user_id: 2,
-    description: "Le micro-onde n'est pas lavé correctement",
+    user_id: 3,
+    description: "Après avoir séché ton chien dans le micro-ondes, tu pourrais au moins le laver !",
     assignment_id: 1004
   )
 microwave.remote_photo_url = url_microwave
@@ -195,16 +211,16 @@ p 'create deal'
 
 Deal.create!(
   assignment_id:1002,
-  assignment_proposal_id:1003,
+  assignment_proposal_id:1004,
   chosen: nil,
-  description: "Je ne suis pas là"
+  description: "Hey, j'ai Démo Day au Wagon ce jour-là tu pourrais pas le faire pour moi !"
   )
 
 Deal.create!(
   assignment_id:1002,
-  assignment_proposal_id:1004,
+  assignment_proposal_id:1005,
   chosen: nil,
-  description: "Je ne suis pas là"
+  description: "Hey, j'ai Démo Day au Wagon ce jour-là tu pourrais pas le faire pour moi !"
   )
 
 
