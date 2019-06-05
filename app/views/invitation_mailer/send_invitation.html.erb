@@ -1,0 +1,13 @@
+<p>Salut,</p>
+
+<span><%= @user.first_name %> <%= @user.last_name %> t'invite à rejoindre easy-coloc</span>
+
+<br><br><span>Afin d'organiser au mieux votre collocation, <%= @user.first_name %>
+  a créé :
+</span>
+
+<h3><%= @flat.name %></h3>
+
+<br><br><p>Pour pouvoir rejoindre la collocation et améliorer le quotidien de <%= @user.first_name %> et toi, clique sur le bouton ci-dessous</p>
+
+<a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::FLAT_ONE_PATH].join %>" class="btn-primary" itemprop="url">Rejoindre <%= @flat.name %></a>

@@ -11,6 +11,9 @@
     <ul class="navbar-nav ml-auto align-items-center">
       <% if user_signed_in? %>
       <li class="nav-item">
+        <%= link_to "Invite tes collocs'", flat_invite_path(current_user.flat), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Ma collocation", flat_path(current_user.flat), class: "nav-link" %>
       </li>
       <li class="nav-item">
