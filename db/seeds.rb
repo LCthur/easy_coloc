@@ -110,28 +110,28 @@ matt.save
 
 p 'Create Assignments'
 
-5.times do
-    Assignment.create!(
-      user_id: rand(1..3),
-      task_id: rand(1..5),
-      deadline: Date.today + rand(-2..5),
-      done_state: false
-    )
-end
+# 5.times do |i|
+#     Assignment.create!(
+#       user_id: rand(1..3),
+#       task_id: i,
+#       deadline: Date.today + rand(-2..5),
+#       done_state: false
+#     )
+# end
 
-3.times do
-  Assignment.create!(
-      user_id: rand(1..3),
-      task_id: rand(1..5),
-      deadline: Date.today + rand(0..5),
-      done_state: true
-    )
-end
+# 3.times do |i|
+#   Assignment.create!(
+#       user_id: rand(1..3),
+#       task_id: 5+i,
+#       deadline: Date.today + rand(0..5),
+#       done_state: true
+#     )
+# end
 
 Assignment.create!(
   id: 1000,
   user_id: 1,
-  task_id: 6,
+  task_id: 1,
   deadline: Date.today + rand(-3..5),
   done_state: true
 )
@@ -139,7 +139,7 @@ Assignment.create!(
 Assignment.create!(
   id: 1001,
   user_id: 2,
-  task_id: 7,
+  task_id: 2,
   deadline: Date.today + rand(-3..5),
   done_state: true
 )
@@ -147,7 +147,7 @@ Assignment.create!(
 Assignment.create!(
   id: 1002,
   user_id: 3,
-  task_id: 2,
+  task_id: 3,
   deadline: Date.today + rand(0..5),
   done_state: false
 )
@@ -155,7 +155,7 @@ Assignment.create!(
 Assignment.create!(
   id: 1003,
   user_id: 3,
-  task_id: 7,
+  task_id: 6,                                 # !!! Rangement potes
   deadline: Date.today + rand(0..5),
   done_state: false
 )
@@ -163,15 +163,23 @@ Assignment.create!(
 Assignment.create!(
   id: 1004,
   user_id: 2,
-  task_id: 2,
+  task_id: 7,                                 # !!! Micro-ondes
   deadline: Date.today + rand(0..5),
   done_state: false
 )
 
 Assignment.create!(
   id: 1005,
-  user_id: 1,
-  task_id: 2,
+  user_id: 2,
+  task_id: 4,
+  deadline: Date.today + rand(0..5),
+  done_state: false
+)
+
+Assignment.create!(
+  id: 1006,
+  user_id: 3,
+  task_id: 5,
   deadline: Date.today + rand(0..5),
   done_state: false
 )
