@@ -26,6 +26,17 @@
     transition: all .5s;
 }
 
+li.nav-item {
+  position: relative;
+}
+
+.notification-push {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  font-size: 10px;
+}
+
 .scrolled-nav {
   height: 60px !important;
   line-height: 60px !important;
