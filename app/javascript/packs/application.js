@@ -12,7 +12,6 @@ if (document.getElementById('issue-page')) {
 
 
 
-popup();
 initUpdateNavbarOnScroll();
 inputState();
 initSortable();
