@@ -53,6 +53,6 @@ module ApplicationHelper
   end
 
   def issues_against_me_array
-    return Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+    return Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}").where("assignments.done_state = false")
   end
 end
