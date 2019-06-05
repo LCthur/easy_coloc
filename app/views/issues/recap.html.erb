@@ -16,7 +16,7 @@
     <div class="info-issue-recap">
       <h3 class="title"><%= issue.assignment.task.name %></h3>
       <p class="text"><%= issue.description %></p>
-      <span class="author">Crée par: <%= full_name(issue.user.first_name, issue.user.last_name) %></span>
+      <span class="author">Crée: <%= complete_date(issue.created_at) %></span>
     </div>
   </div>
   <% end %>
