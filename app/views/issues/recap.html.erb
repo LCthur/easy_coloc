@@ -9,11 +9,11 @@
  <div class="grid">
   <% @my_issues.each do |issue| %>
   <% if issue.assignment.done_state == false %>
-  <div class="parent-card">
+  <div class="issue-parent-card mb-5">
     <div class="issue-image-container">
       <%= cl_image_tag issue.photo, class: "issue-image" %>
     </div>
-    <div class="info-issue-recap">
+    <div class="info-issue-recap bottom-rounded">
       <h3 class="title"><%= issue.assignment.task.name %></h3>
       <p class="text"><%= issue.description %></p>
       <span class="author">Crée: <%= complete_date(issue.created_at) %></span>
