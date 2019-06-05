@@ -8,6 +8,6 @@
 
 <h3><%= @flat.name %></h3>
 
-<br><br><p>Pour pouvoir rejoindre la collocation et aider <%= @user.first_name %>, clcique sur le bouton ci-dessous</p>
+<br><br><p>Pour pouvoir rejoindre la collocation et améliorer le quotidien de <%= @user.first_name %> et toi, clique sur le bouton ci-dessous</p>
 
-<a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::SIGN_UP_PATH].join %>" class="btn-primary" itemprop="url">Rejoindre <%= @user.first_name %></a>
+<a href="<%= [ApplicationGlobals::GlobalVar::BASE_URL, ApplicationGlobals::GlobalVar::DASHBOARD].join %>" class="btn-primary" itemprop="url">Rejoindre <%= @flat.name %></a>
