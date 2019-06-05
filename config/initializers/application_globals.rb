@@ -5,6 +5,6 @@ module ApplicationGlobals
     BASE_URL = "http://www.easy-coloc.com"
     DEALS_PATH = "/deals/recap"
     ISSUES_PATH = "/issues/recap"
-    DASHBOARD = "/flats/1"
+    FLAT_ONE_PATH = "/flats/1"
   end
 end
