@@ -44,6 +44,10 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener
 
   # Print deprecation notices to the Rails logger.
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
