@@ -1,7 +1,7 @@
 <!-- Taches du jour -->
 <% @assignments_today_late.each do |assignment| %>
   <% if delayed?(assignment) %>
-    <div class="card-task" id="id_<%= assignment.id %>">
+    <div class="card-task-delayed" id="id_<%= assignment.id %>">
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
         <div class="card-task-info">
             <h2><%= assignment.task.name %></h2>

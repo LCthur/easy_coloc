@@ -138,12 +138,16 @@
 }
 
 .div-btn {
-    margin-left: 0%;
+    margin-left: 20%;
     transition: 0.5s;
 }
 
 .card-task:hover .div-btn {
-    margin-left: 5%;
+    margin-left: 22%;
+}
+
+.card-task-delayed:hover .div-btn {
+    margin-left: 22%;
 }
 
 @media (max-width: 1350px) {
