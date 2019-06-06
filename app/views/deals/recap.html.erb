@@ -1,41 +1,9 @@
 <div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
-  <h2 class="task-title">Echanges proposés</h2>
-  <div class="grid-deal">
-     <% @deals.each do |deal| %>
-      <% if deal.chosen == nil %>
-      <% proposal = Assignment.find(deal.assignment_proposal_id ) %>
-      <div class="parent-card">
-        <div class="task-to-deal">
-          <div>
-            <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-to-deal" %>
-          </div>
-          <div class="deal-info">
-            <h2><%= deal.assignment.task.name %></h2>
-            <p><%= complete_date(deal.assignment.deadline) %></p>
-          </div>
-        </div>
-        <p class="text-center"><i class="fas fa-exchange-alt rotate-arrow"></i></p>
-        <div class="proposal">
-            <div>
-              <%= cl_image_tag proposal.user.avatar_photo, class: "avatar-to-deal" %>
-            </div>
-            <div class="deal-info">
-              <h2><%= proposal.task.name %></h2>
-              <p><%=  complete_date(proposal.deadline) %></p>
-            </div>
-        </div>
-        <div class="accept-deal">
-          <%= link_to 'Accepter', update_deal_path(deal) ,class: " btn btn-accepter text-center w-100",
-        :method=> :patch %>
-        </div>
-      </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
-  <h2 class="task-title col-12">Mes échanges</h2>
+  <h2 class="task-title">Les échanges que j'ai proposé</h2>
+  <% if @my_deals.empty? %>
+    <p class="text-center congrats">Tu n'as proposé aucun échange<p>
+    <p class="text-center smiley"><%= Emoji.find_by_alias("smile").raw %></p>
+  <% else %>
   <div class="grid-deal">
      <% @my_deals.each do |deal| %>
       <% if deal.chosen == nil %>
@@ -63,7 +31,50 @@
       </div>
       <% end %>
     <% end %>
+    <% end %>
   </div>
+</div>
+
+<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
+  <h2 class="task-title">Les échanges que l'on me propose</h2>
+  <% if @my_deals.empty? %>
+    <p class="text-center congrats">Pour l'instant, personne ne t'a proposé d'échange<p>
+    <p class="text-center smiley"><%= Emoji.find_by_alias("pensive").raw %></p>
+  <% else %>
+    <div class="grid-deal">
+       <% @deals.each do |deal| %>
+        <% if deal.chosen == nil %>
+        <% proposal = Assignment.find(deal.assignment_proposal_id ) %>
+        <div class="parent-card">
+          <div class="task-to-deal">
+            <div>
+              <%= cl_image_tag deal.assignment.user.avatar_photo, class: "avatar-to-deal" %>
+            </div>
+            <div class="deal-info">
+              <h2><%= deal.assignment.task.name %></h2>
+              <p><%= complete_date(deal.assignment.deadline) %></p>
+            </div>
+          </div>
+          <p class="text-center"><i class="fas fa-exchange-alt rotate-arrow"></i></p>
+          <div class="proposal">
+              <div>
+                <%= cl_image_tag proposal.user.avatar_photo, class: "avatar-to-deal" %>
+              </div>
+              <div class="deal-info">
+                <h2><%= proposal.task.name %></h2>
+                <p><%=  complete_date(proposal.deadline) %></p>
+              </div>
+          </div>
+          <div class="accept-deal">
+            <%= link_to 'Accepter', update_deal_path(deal) ,class: " btn btn-accepter text-center w-100",
+          :method=> :patch %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  <h5 class="text-center">Validez une proposition de l'un de vos collocs' si ça vous arrange</h5>
+  <% end %>
 </div>
 
 
