@@ -1,15 +1,15 @@
-<div class="container">
-  <div>
-    <h1 class="p-4">Tickets levés contre moi</h1>
-    <%= render 'issues/recap_cards', issues: @issues_against_me %>
-  </div>
-</div>
-<div class="container">
- <h1 class="p-4">Mes tickets</h1>
+
+
+<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
+ <h1 class="task-title">Les tickets que j'ai ouvert contre mes collocs'</h1>
+  <% if @my_issues.empty? %>
+    <p class="text-center congrats">Tu n'as ouvert aucun ticket, ta bonté te perdra<p>
+    <p class="text-center smiley"><%= Emoji.find_by_alias("smile").raw %></p>
+  <% end %>
  <div class="grid">
   <% @my_issues.each do |issue| %>
   <% if issue.assignment.done_state == false %>
-  <div class="issue-parent-card mb-5">
+  <div class="issue-parent-card m-3">
     <div class="issue-image-container">
       <%= cl_image_tag issue.photo, class: "issue-image" %>
     </div>
@@ -22,4 +22,14 @@
   <% end %>
   <% end %>
 </div>
+</div>
+
+<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
+  <h1 class="task-title">Tickets ouverts contre moi</h1>
+  <% if @issues_against_me.empty? %>
+    <p class="text-center congrats">Aucun ticket, tu es un collocataire exemplaire<p>
+    <p class="text-center smiley"><%= Emoji.find_by_alias("relieved").raw %></p>
+  <% else %>
+    <%= render 'issues/recap_cards', issues: @issues_against_me %>
+  <% end %>
 </div>

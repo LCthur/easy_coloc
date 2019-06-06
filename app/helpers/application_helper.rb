@@ -42,7 +42,7 @@ module ApplicationHelper
   end
 
   def complete_date(date)
-    "#{day_french(date.strftime('%A'))}, Le #{date.strftime('%-d')}
+    "#{day_french(date.strftime('%A'))}, #{date.strftime('%-d')}
      #{month_french(date.strftime('%B'))} #{date.strftime('%Y')}"
   end
 

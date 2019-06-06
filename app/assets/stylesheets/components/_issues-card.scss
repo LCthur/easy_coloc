@@ -2,12 +2,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-left: 30px;
  }
- 
+
+ .smiley {
+    font-size: 30px;
+ }
+
+ .congrats {
+    padding-top: 20px;
+    font-size: 20px;
+ }
+
  .issue-parent-card {
   text-align: center;
+  margin-left: 16px;
   width: 100%;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
   border-radius: 10px 10px;
   place-self: center;
 }
