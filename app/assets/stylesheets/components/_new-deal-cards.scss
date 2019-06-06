@@ -7,12 +7,21 @@
 
 .new-deal-card {
   background-color: white;
+  display: flex;
+  justify-content: space-around;
   margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
   width: 80%;
-  text-align: center;
   box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.change-icon {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .checkboxs {

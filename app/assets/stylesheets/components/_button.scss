@@ -13,7 +13,19 @@
   font-size: 18px;
   &:hover {
     color:rgba(255, 255, 255, 1);
+  }
 }
+
+.proposer {
+  padding: 12px 24px;
+  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  &:hover {
+    font-weight: bold;
+    color: white;
+  }
 }
 
 .btn-deal {
