@@ -7,17 +7,17 @@
     <div class="todo">
       <h2 class="task-subtitle"><%= "Aujourd'hui" unless @assignments_today_late.empty? %></h2>
       <%= render 'flats/today' %>
-      <h2 class="task-subtitle"> <%= day_french((Date.today + 1).strftime("%A")) unless @assignments_day1.empty? %></h2>
+      <h2 class="task-subtitle"> <%= complete_date(Date.today + 1) unless @assignments_day1.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day1  %>
-      <h2 class="task-subtitle"> <%= day_french((Date.today + 2).strftime("%A")) unless @assignments_day2.empty? %></h2>
+      <h2 class="task-subtitle"> <%= complete_date(Date.today + 2) unless @assignments_day2.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day2  %>
-      <h2 class="task-subtitle"> <%= day_french((Date.today + 3).strftime("%A")) unless @assignments_day3.empty? %></h2>
+      <h2 class="task-subtitle"> <%= complete_date(Date.today + 3) unless @assignments_day3.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day3  %>
-      <h2 class="task-subtitle"> <%= day_french((Date.today + 4).strftime("%A")) unless @assignments_day4.empty? %></h2>
+      <h2 class="task-subtitle"> <%= complete_date(Date.today + 4) unless @assignments_day4.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day4  %>
-      <h2 class="task-subtitle"> <%= day_french((Date.today + 5).strftime("%A")) unless @assignments_day5.empty? %></h2>
+      <h2 class="task-subtitle"> <%= complete_date(Date.today + 5) unless @assignments_day5.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day5  %>
-      <h2 class="task-subtitle"> <%= day_french((Date.today + 6).strftime("%A")) unless @assignments_day6.empty? %></h2>
+      <h2 class="task-subtitle"> <%= complete_date(Date.today + 6) unless @assignments_day6.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day6  %>
     </div>
   </div>
