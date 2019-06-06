@@ -3,17 +3,18 @@
 }
 
 .btn-accepter {
-  height: 50px;
-  margin: auto 0;
-  align-items: center;
-  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
-  border-radius: 0 0 10px 10px;
-  color:rgba(255, 255, 255, 0.8);
-  font-weight: bold;
-  font-size: 18px;
-  &:hover {
-    color:rgba(255, 255, 255, 1);
-}
+    height: 50px;
+    margin: auto 0;
+    align-items: center;
+    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+    border-radius: 0 0 10px 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    font-size: 18px;
+
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+    }
 }
 
 .btn-deal {
@@ -22,6 +23,7 @@
     background-color: #24C7FF;
     color: #fff;
     transition: 0.5s;
+
     &:hover {
         background-color: #27E0EE;
         text-decoration: none;
@@ -33,6 +35,7 @@
     background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
     color: #fff;
     border-radius: 10px;
+
     &:hover {
         color: #fff;
     }
@@ -43,6 +46,7 @@
     border-radius: 10px;
     background-color: rgb(235, 28, 49);
     color: #fff;
+
     &:hover {
         background-color: #DB3545;
         text-decoration: none;
@@ -50,15 +54,6 @@
     }
 }
 
-.btn-retard {
-    padding: 5px;
-    border-radius: 10px;
-    color: #DB3545;
-    &:hover {
-        text-decoration: none;
-        color: #DB3545;
-    }
-}
 // Hide standard input button
 .custom-file-input {
     display: none;
@@ -70,6 +65,7 @@
     padding: 5px;
     border-radius: 10px;
     color: #fff;
+
     &:hover {
         background-color: #24C7FF;
         text-decoration: none;
@@ -85,6 +81,7 @@
     padding: 5px 5px;
     border-radius: 10px;
     color: #fff;
+
     &:hover {
         background-color: #24C7FF;
         text-decoration: none;
