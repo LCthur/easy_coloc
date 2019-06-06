@@ -17,7 +17,7 @@ class IssuesController < ApplicationController
       @issue.assignment.save
       mail = IssueMailer.with(user: current_user, issue: @issue).request_issue
       mail.deliver
-      redirect_to flat_path(current_user.flat)
+      redirect_to issues_recap_path	
     else
       render :new
     end
