@@ -1,36 +1,37 @@
 <!-- Taches du jour -->
 <% @assignments_today_late.each do |assignment| %>
   <% if delayed?(assignment) && assignment.user == current_user %>
-  <% if assignment.user == current_user %>
-    <div class="card-task-delayed user" id="id_<%= assignment.id %>">
-  <% else %>
-    <div class="card-task-delayed not-user" id="id_<%= assignment.id %>">
-  <% end %>
-      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-        <div class="card-task-info">
-            <h2><%= assignment.task.name %></h2>
-            <p> <%= assignment.task.description %></p>
-        </div>
-        <div class="div-btn">
-          <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal" %>
-        </div>
-    </div>
-  <% else %>
     <% if assignment.user == current_user %>
-      <div class="card-task user" id="id_<%= assignment.id %>">
+      <div class="card-task-delayed user" id="id_<%= assignment.id %>">
     <% else %>
-      <div class="card-task not-user" id="id_<%= assignment.id %>">
+      <div class="card-task-delayed not-user" id="id_<%= assignment.id %>">
     <% end %>
-      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-        <div class="card-task-info">
-          <h2><%= assignment.task.name %></h2>
-          <p> <%= assignment.task.description %></p>
-        </div>
-        <div class="div-btn">
-          <% if assignment.user == current_user %>
-          <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal"%>
-          <% end %>
-        </div>
+    <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+    <div class="card-task-info">
+      <h2><%= assignment.task.name %></h2>
+      <p> <%= assignment.task.description %></p>
     </div>
-  <% end %>
-<% end %>
+    <div class="ribbon"><span id="ribbon-text">Retard</span></div>
+    <div class="div-btn">
+      <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal" %>
+    </div>
+  </div>
+  <% else %>
+  <% if assignment.user == current_user %>
+  <div class="card-task user" id="id_<%= assignment.id %>">
+    <% else %>
+    <div class="card-task not-user" id="id_<%= assignment.id %>">
+      <% end %>
+      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+      <div class="card-task-info">
+        <h2><%= assignment.task.name %></h2>
+        <p> <%= assignment.task.description %></p>
+      </div>
+      <div class="div-btn">
+        <% if assignment.user == current_user %>
+        <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal"%>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <% end %>

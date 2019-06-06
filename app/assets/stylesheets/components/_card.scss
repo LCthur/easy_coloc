@@ -127,6 +127,7 @@
     display: flex;
     align-items: center;
     transition: 0.5s;
+    position: relative;
 
     &:hover {
         width: 90%;
@@ -154,6 +155,46 @@
 .div-btn {
     margin-left: 20%;
     transition: 0.5s;
+}
+
+#ribbon-text {
+    position: absolute;
+    top: -15px;
+    right: 12px;
+}
+
+.ribbon {
+    background: red;
+    opacity: 0.8;
+    height: 49px;
+    margin: 0 auto;
+    position: absolute;
+    width: 74px;
+    top: 0;
+    right: 150px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 87px;
+    font-size: 35px;
+    color: #f2f2f2;
+    font-size: 15px;
+}
+.ribbon:after,
+.ribbon:before {
+    content: '';
+    position: absolute;
+    border-top: 20px solid red;
+    height: 0;
+    width: 0;
+    top: 100%;
+}
+.ribbon:after {
+    border-left: 50px solid transparent;
+    right: 0px;
+}
+.ribbon:before {
+    border-right: 50px solid transparent;
+    left: 0px;
 }
 
 @media (max-width: 1350px) {
