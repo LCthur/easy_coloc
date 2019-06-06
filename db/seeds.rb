@@ -170,8 +170,8 @@ Assignment.create!(
 
 Assignment.create!(
   id: 1005,
-  user_id: 2,
-  task_id: 4,
+  user_id: 1,
+  task_id: 4,                                 # !!! Compost
   deadline: Date.today + rand(0..5),
   done_state: false
 )
