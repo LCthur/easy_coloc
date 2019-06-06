@@ -67,9 +67,9 @@ Flat.create!(
 
 p 'Create 4 User'
 
-url_matt = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/amsv3groux8hkv0v2jdg_qoddk9.jpg'
-url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/rxvmw8qn1hve9gmi4enu_kvznhk.jpg'
-url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/ufnku3qnuo2heeauakdm_p5jxyh.jpg'
+url_matt = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559823555/face-matthieu-color_bqzqwm.jpg'
+url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559823377/face-giovanni-color_kt9sns.jpg'
+url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559823376/face-loic-color_frmlie.jpg'
 lo = User.create!(
   id: 1,
   first_name: 'Loic',
