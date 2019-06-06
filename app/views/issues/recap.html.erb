@@ -1,13 +1,13 @@
-<div class="container">
-  <div>
-    <div class="container-deals">
+<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
       <h1 class="task-title">Tickets levés contre moi</h1>
+      <% if @issues_against_me.empty? %>
+        <p class="text-center smiley">Aucun ticket<p>
+        <p class="text-center smiley"><i class="far fa-grin"></i></p>
+      <% end %>
       <%= render 'issues/recap_cards', issues: @issues_against_me %>
-    </div>
-  </div>
 </div>
-<div class="container">
- <h1 class="p-4">Mes tickets</h1>
+<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
+ <h1 class="task-title">Mes tickets</h1>
  <div class="grid">
   <% @my_issues.each do |issue| %>
   <% if issue.assignment.done_state == false %>
