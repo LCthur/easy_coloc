@@ -11,7 +11,7 @@
               <p><%= complete_date(@deal.assignment.deadline) %></p>
             </div>
           </div>
-          <div class="change-icon">
+          <!-- <div class="change-icon">
             <i class="fas fa-exchange-alt"></i>
           </div>
           <div class="p-3">
@@ -20,12 +20,12 @@
               <h3>Tâche</h3>
               <p>Date</p>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            <h3 class="text-center">Propositions d'échanges</h3>
+            <h3 class="text-center">Propositions d'échanges contre</h3>
             <div class="checkboxs">
                 <% @proposals.each do |proposal| %>
                 <div class="style-checkbox">
