@@ -1,16 +1,16 @@
+
+
 <div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
-      <h1 class="task-title">Tickets levés contre moi</h1>
-      <% if @issues_against_me.empty? %>
-        <p class="text-center smiley">Aucun ticket<p>
-        <p class="text-center smiley"><i class="far fa-grin"></i></p>
-      <% end %>
-      <%= render 'issues/recap_cards', issues: @issues_against_me %>
-</div>
-<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
- <h1 class="task-title">Mes tickets</h1>
- <div class="grid">
+ <h1 class="task-title">Les tickets que j'ai ouvert contre mes collocs'</h1>
+  <% if @my_issues.empty? %>
+    <p class="text-center congrats">Tu n'as ouvert aucun ticket, ta bonté te perdra<p>
+    <p class="text-center smiley"><%= Emoji.find_by_alias("smile").raw %></p>
+  <% else %>
+    <%= render 'issues/recap_cards', issues: @issues_against_me %>
+  <% end %>
   <% @my_issues.each do |issue| %>
   <% if issue.assignment.done_state == false %>
+ <div class="grid">
   <div class="issue-parent-card mb-5">
     <div class="issue-image-container">
       <%= cl_image_tag issue.photo, class: "issue-image" %>
@@ -24,4 +24,14 @@
   <% end %>
   <% end %>
 </div>
+</div>
+
+<div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
+  <h1 class="task-title">Tickets ouverts contre moi</h1>
+  <% if @issues_against_me.empty? %>
+    <p class="text-center congrats">Aucun ticket, tu es un collocataire exemplaire<p>
+    <p class="text-center smiley"><%= Emoji.find_by_alias("relieved").raw %></p>
+  <% else %>
+    <%= render 'issues/recap_cards', issues: @issues_against_me %>
+  <% end %>
 </div>
