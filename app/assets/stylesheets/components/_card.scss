@@ -71,7 +71,7 @@
     margin: 20px auto;
     overflow: hidden;
     height: 90px;
-    width: 80%;
+    width: 85%;
     border-radius: 10px;
     padding: 20px;
     background: #fff;
@@ -88,7 +88,7 @@
 .card-task .card-task-info {
     text-align: left;
     padding: 16px;
-    width: 350px;
+    width: 600px;
     margin-top: 6px;
     margin-left: 0;
     transition: 0.5s;
@@ -124,7 +124,7 @@
 .card-task-delayed .card-task-info {
     text-align: left;
     padding: 16px;
-    width: 350px;
+    width: 500px;
     transition: 0.5s;
     h2 {
         font-size: 20px;
@@ -140,14 +140,6 @@
 .div-btn {
     margin-left: 20%;
     transition: 0.5s;
-}
-
-.card-task:hover .div-btn {
-    margin-left: 22%;
-}
-
-.card-task-delayed:hover .div-btn {
-    margin-left: 22%;
 }
 
 @media (max-width: 1350px) {
