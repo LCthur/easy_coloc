@@ -4,7 +4,7 @@
   </div>
   <div class="d-flex align-items-start issue-upload-card">
     <div class="form-group px-3">
-      <label class="btn button-deal">Ajouter une photo
+      <label class="btn btn-deal">Ajouter une photo
         <span class="custom-file-input">
           <%= f.input :photo, required: false, as: :file %>
           <%= f.input :photo_cache, as: :hidden %>
@@ -13,7 +13,7 @@
       <p><i class="fa fa-file fileinput-exists"></i><span id="custom-file-input-label"> Choisissez une photo</span></p>
     </div>
     <div class="px-3">
-      <%= f.button :submit, value: "Ouvrir un Ticket", class: "btn button-deal" %>
+      <%= f.button :submit, class: "btn btn-deal", input_html: { value: "Ouvrir un Ticket" } %>
     </div>
   </div>
 <% end %>

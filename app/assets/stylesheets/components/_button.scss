@@ -6,48 +6,40 @@
   height: 50px;
   margin: auto 0;
   align-items: center;
-  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+  background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
   border-radius: 0 0 10px 10px;
   color:rgba(255, 255, 255, 0.8);
-  font-weight: bold;
   font-size: 18px;
+  border: 0px;
   &:hover {
-    color:rgba(255, 255, 255, 1);
+    background: #5865f2;
+    text-decoration: none;
+    color: #fff;
   }
 }
 
 .proposer {
   padding: 12px 24px;
-  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+  background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
   color: white;
   border-radius: 10px;
   border: 0px;
   &:hover {
-    font-weight: bold;
-    color: white;
+    background: #5865f2;
+    text-decoration: none;
+    color: #fff;
   }
 }
 
 .btn-deal {
     padding: 5px;
     border-radius: 10px;
-    background-color: #24C7FF;
+    background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
     color: #fff;
-    transition: 0.5s;
-
+    border: 0px;
     &:hover {
-        background-color: #27E0EE;
+        background: #5865f2;
         text-decoration: none;
-        color: #fff;
-    }
-}
-
-.button-deal {
-    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
-    color: #fff;
-    border-radius: 10px;
-
-    &:hover {
         color: #fff;
     }
 }
@@ -55,11 +47,11 @@
 .btn-late {
     padding: 5px;
     border-radius: 10px;
-    background-color: rgb(235, 28, 49);
+    background: linear-gradient(146deg, #ffb7b7 0%, #ff6e99 100%);
     color: #fff;
-
+    border: 0px;
     &:hover {
-        background-color: #DB3545;
+        background: #DB3545;
         text-decoration: none;
         color: #fff;
     }
@@ -72,13 +64,13 @@
 
 .btn-done {
     margin-right: 0;
-    background-color: #27E0EE;
+    background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
     padding: 5px;
     border-radius: 10px;
     color: #fff;
-
+    border: 0px;
     &:hover {
-        background-color: #24C7FF;
+        background: #5865f2;
         text-decoration: none;
         color: #fff;
     }
@@ -88,13 +80,13 @@
     margin: 0 auto;
     padding: 5px;
     font-size: 15px;
-    background-color: #27E0EE;
+    background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
     padding: 5px 5px;
     border-radius: 10px;
     color: #fff;
-
+    border: 0px;
     &:hover {
-        background-color: #24C7FF;
+        background: #5865f2;
         text-decoration: none;
         color: #fff;
     }
