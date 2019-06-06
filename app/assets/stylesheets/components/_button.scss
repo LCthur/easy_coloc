@@ -29,13 +29,14 @@
 }
 
 .btn-deal {
-    background-color: transparent;
     padding: 5px;
     border-radius: 10px;
-    border: 1px rgb(145, 145, 145) solid;
-    color: rgb(145, 145, 145);
+    background-color: #24C7FF;
+    color: #fff;
+    transition: 0.5s;
+
     &:hover {
-        background-color: #24C7FF;
+        background-color: #27E0EE;
         text-decoration: none;
         color: #fff;
     }
@@ -45,17 +46,18 @@
     background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
     color: #fff;
     border-radius: 10px;
+
     &:hover {
         color: #fff;
     }
 }
 
 .btn-late {
-    background-color: transparent;
     padding: 5px;
     border-radius: 10px;
-    border: 1px rgb(145, 145, 145) solid;
-    color: rgb(145, 145, 145);
+    background-color: rgb(235, 28, 49);
+    color: #fff;
+
     &:hover {
         background-color: #DB3545;
         text-decoration: none;
@@ -74,6 +76,7 @@
     padding: 5px;
     border-radius: 10px;
     color: #fff;
+
     &:hover {
         background-color: #24C7FF;
         text-decoration: none;
@@ -89,6 +92,7 @@
     padding: 5px 5px;
     border-radius: 10px;
     color: #fff;
+
     &:hover {
         background-color: #24C7FF;
         text-decoration: none;
