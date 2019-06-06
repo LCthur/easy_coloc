@@ -72,6 +72,7 @@
     overflow: hidden;
     height: 90px;
     width: 85%;
+    opacity: 0.6;
     border-radius: 10px;
     padding: 20px;
     background: #fff;
@@ -102,13 +103,53 @@
         margin-top: 10px;
     }
 }
+.user {
+    opacity: 1;
+}
+.not-user {
+    opacity: 0.6;
+}
+.card-task-user {
+    margin: 20px auto;
+    overflow: hidden;
+    height: 90px;
+    width: 85%;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.5s;
+    &:hover {
+        width: 90%;
+    }
+}
 
+.card-task-user .card-task-info {
+    text-align: left;
+    padding: 16px;
+    width: 600px;
+    margin-top: 6px;
+    margin-left: 0;
+    transition: 0.5s;
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    p {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
 
 .card-task-delayed {
     margin: 20px auto;
     overflow: hidden;
     height: 90px;
-    width: 80%;
+    width: 85%;
     border-radius: 10px;
     padding: 20px;
     background: #fff;

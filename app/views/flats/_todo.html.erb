@@ -1,15 +1,19 @@
 <!-- taches a faire les prochains jours -->
 <% assignments.each do |assignment| %>
-<div class="card-task" id="id_<%= assignment.id %>">
-  <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
-  <div class="card-task-info">
-    <h2><%= assignment.task.name %></h2>
-    <p> <%= assignment.task.description %></p>
-  </div>
-  <div class="div-btn">
-    <% if assignment.user == current_user %>
-    <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal"%>
-    <% end %>
-  </div>
-</div>
+  <% if assignment.user == current_user %>
+    <div class="card-task-user" id="id_<%= assignment.id %>">
+  <% else %>
+    <div class="card-task" id="id_<%= assignment.id %>">
+  <% end %>
+      <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
+        <div class="card-task-info">
+          <h2><%= assignment.task.name %></h2>
+          <p> <%= assignment.task.description %></p>
+        </div>
+        <div class="div-btn">
+          <% if assignment.user == current_user %>
+            <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal"%>
+          <% end %>
+        </div>
+    </div>
 <% end %>
