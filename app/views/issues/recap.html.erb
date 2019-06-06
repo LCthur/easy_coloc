@@ -1,7 +1,9 @@
 <div class="container">
   <div>
-    <h1 class="p-4">Tickets levés contre moi</h1>
-    <%= render 'issues/recap_cards', issues: @issues_against_me %>
+    <div class="container-deals">
+      <h1 class="task-title">Tickets levés contre moi</h1>
+      <%= render 'issues/recap_cards', issues: @issues_against_me %>
+    </div>
   </div>
 </div>
 <div class="container">
