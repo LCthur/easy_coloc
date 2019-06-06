@@ -5,13 +5,11 @@
   <% if @my_issues.empty? %>
     <p class="text-center congrats">Tu n'as ouvert aucun ticket, ta bonté te perdra<p>
     <p class="text-center smiley"><%= Emoji.find_by_alias("smile").raw %></p>
-  <% else %>
-    <%= render 'issues/recap_cards', issues: @issues_against_me %>
   <% end %>
+ <div class="grid">
   <% @my_issues.each do |issue| %>
   <% if issue.assignment.done_state == false %>
- <div class="grid">
-  <div class="issue-parent-card mb-5">
+  <div class="issue-parent-card m-3">
     <div class="issue-image-container">
       <%= cl_image_tag issue.photo, class: "issue-image" %>
     </div>
