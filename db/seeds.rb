@@ -140,7 +140,7 @@ Assignment.create!(
   id: 1001,
   user_id: 2,
   task_id: 2,
-  deadline: Date.today + rand(-3...-1),
+  deadline: Date.today + rand(-3..-1),
   done_state: true
 )
 
@@ -148,7 +148,7 @@ Assignment.create!(
   id: 1002,
   user_id: 3,
   task_id: 3,
-  deadline: Date.today + rand(-3...-1),
+  deadline: Date.today + rand(-3..-1),
   done_state: false
 )
 

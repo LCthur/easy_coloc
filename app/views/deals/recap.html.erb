@@ -37,7 +37,7 @@
 
 <div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
   <h2 class="task-title">Les échanges que l'on me propose</h2>
-  <% if @my_deals.empty? %>
+  <% if @deals.empty? %>
     <p class="text-center congrats">Pour l'instant, personne ne t'a proposé d'échange<p>
     <p class="text-center smiley"><%= Emoji.find_by_alias("pensive").raw %></p>
   <% else %>
