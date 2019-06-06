@@ -24,6 +24,7 @@
 .form-checkbox {
     text-align: center;
     .style-checkbox {
+        text-align: left;
         margin: 10px 25px;
         box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
@@ -39,12 +40,12 @@
         }
 
         img {
-            margin: 0px 10px;
+            margin: 0px 10px 0 10px;
         }
 
         label {
             margin-top: 5px;
-            margin-right: 0 20px;
+            margin-right: 40px;
             cursor: grab;
             font-size: 0.9rem;
         }
