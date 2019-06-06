@@ -1,9 +1,9 @@
 <!-- taches a faire les prochains jours -->
 <% assignments.each do |assignment| %>
   <% if assignment.user == current_user %>
-    <div class="card-task-user" id="id_<%= assignment.id %>">
+    <div class="card-task user" id="id_<%= assignment.id %>">
   <% else %>
-    <div class="card-task" id="id_<%= assignment.id %>">
+    <div class="card-task not-user" id="id_<%= assignment.id %>">
   <% end %>
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
         <div class="card-task-info">

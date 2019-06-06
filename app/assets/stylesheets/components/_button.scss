@@ -50,6 +50,15 @@
     }
 }
 
+.btn-retard {
+    padding: 5px;
+    border-radius: 10px;
+    color: #DB3545;
+    &:hover {
+        text-decoration: none;
+        color: #DB3545;
+    }
+}
 // Hide standard input button
 .custom-file-input {
     display: none;
