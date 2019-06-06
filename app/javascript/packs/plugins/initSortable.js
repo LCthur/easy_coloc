@@ -23,6 +23,15 @@ const initSortable = () => {
         animation: 150,
         onChange: (event) => {
             endColumn.addEventListener('drop',(e) => {
+                let ribbonDiv = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0].children[2];
+                ribbonDiv.parentNode.removeChild(ribbonDiv);
+                let divChange = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0];
+                divChange.classList = "card-task user";
+                let divCardInfo = divChange.children[1];
+                let divCardInfoH2 = divCardInfo.children[0];
+                let divCardInfoP = divCardInfo.children[1];
+                divCardInfoH2.innerHTML = `<strike>${divCardInfoH2.innerHTML}</strike>`;
+                divCardInfoP.innerHTML = `<strike>${divCardInfoP.innerHTML}</strike>`;
                 let idString = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0].id.substr(3);
                 const Http = new XMLHttpRequest();
                 const url = `/assignments/${idString}`;
