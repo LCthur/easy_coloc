@@ -3,18 +3,29 @@
 }
 
 .btn-accepter {
-    height: 50px;
-    margin: auto 0;
-    align-items: center;
-    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
-    border-radius: 0 0 10px 10px;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: bold;
-    font-size: 18px;
+  height: 50px;
+  margin: auto 0;
+  align-items: center;
+  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+  border-radius: 0 0 10px 10px;
+  color:rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  font-size: 18px;
+  &:hover {
+    color:rgba(255, 255, 255, 1);
+  }
+}
 
-    &:hover {
-        color: rgba(255, 255, 255, 1);
-    }
+.proposer {
+  padding: 12px 24px;
+  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  &:hover {
+    font-weight: bold;
+    color: white;
+  }
 }
 
 .btn-deal {

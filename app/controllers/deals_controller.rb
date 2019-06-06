@@ -26,7 +26,7 @@ class DealsController < ApplicationController
           render :new
         end
       end
-    redirect_to flat_path(current_user.flat)
+    redirect_to deals_recap_path
   end
 
   def recap
