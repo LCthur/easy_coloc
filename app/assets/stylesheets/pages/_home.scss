@@ -11,7 +11,7 @@
   left: -25%;
   width: 150%;
   height: 550px;
-  margin-bottom: 50px;
+  margin-bottom: calc(100vh - 750px);
   -ms-transform: rotate(5deg); /* IE 9 */
   -webkit-transform: rotate(5deg); /* Safari */
   transform: rotate(5deg);
