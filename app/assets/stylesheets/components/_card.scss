@@ -109,10 +109,14 @@
 
 .user {
     opacity: 1;
+    box-shadow: 0 0px 12px #005669;
+    &:hover {
+      cursor: grab;
+    }
 }
 
 .not-user {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .card-task-delayed {
