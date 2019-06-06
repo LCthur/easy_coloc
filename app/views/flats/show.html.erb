@@ -2,7 +2,7 @@
 <div class="tasks">
   <div class="task fade-in-left">
     <div class="task-title-todo">
-      <h2 class="text-task-title">Todo</h2>
+      <h2 class="text-task-title">À faire</h2>
     </div>
     <div class="todo">
       <h2 class="task-subtitle"><%= "Aujourd'hui" unless @assignments_today_late.empty? %></h2>
@@ -23,7 +23,7 @@
   </div>
   <div class="task fade-in-left done-column">
     <div class="task-title-done">
-      <h2 class="text-task-title">Done</h2>
+      <h2 class="text-task-title">Fais</h2>
     </div>
     <div class="done">
       <%= render 'flats/done', assignments: @assignments_done %>
