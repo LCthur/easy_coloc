@@ -12,7 +12,7 @@
             <p> <%= assignment.task.description %></p>
         </div>
         <div class="div-btn">
-          <%= link_to "Retard", "#", class: "btn-retard" %>
+          <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal" %>
         </div>
     </div>
   <% else %>
