@@ -67,12 +67,12 @@ Flat.create!(
 
 p 'Create 4 User'
 
-url_matt = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/amsv3groux8hkv0v2jdg_qoddk9.jpg'
-url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/rxvmw8qn1hve9gmi4enu_kvznhk.jpg'
-url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559036382/ufnku3qnuo2heeauakdm_p5jxyh.jpg'
+url_matt = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559825707/61588994-09b3-4e80-b869-5ee64e1f8dc4-removebg_scprjx.png'
+url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559826372/giogio_dthzim.png'
+url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559826069/img_9806-removebg_iguouy.png'
 lo = User.create!(
   id: 1,
-  first_name: 'Loic',
+  first_name: 'Loïc',
   last_name: 'Thurre',
   password: 'tototiti',
   password_confirmation: 'tototiti',
