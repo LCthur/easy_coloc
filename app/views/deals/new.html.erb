@@ -19,7 +19,7 @@
         <div class="form-checkbox">
             <%= "<form action='/assignments/#{@assignment.id}/deals' method='post'>".html_safe %>
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            <h3 class="text-center">Avec :</h3>
+            <h3 class="text-center">Avec</h3>
             <div class="checkboxs">
                 <% @proposals.each do |proposal| %>
                 <div class="style-checkbox">
@@ -29,7 +29,7 @@
                 </div>
                 <% end %>
             </div>
-            <h3 class="p-2">Justification:</h3>
+            <h3 class="p-2">Justification</h3>
             <div class="description form-group mb-5">
                 <textarea class="form-control" id="description" name="description" placeholder="Expliquez brièvement..." cols="40" rows="2"></textarea>
             </div>
