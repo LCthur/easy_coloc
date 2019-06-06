@@ -8,7 +8,7 @@
         <%= cl_image_tag @user.avatar_photo, class: "avatar-new-deal" %>
       </div>
       <div>
-        <h3><%= @user.first_name %> à indiqué avoir fais la tâche le <%= @task.name %></h3>
+        <h3><%= @user.first_name %> à indiqué avoir fait la tâche <br> <%= @task.name %> le <%= complete_date(@task.updated_at) %></h3>
         <p><%= @task.description%></p>
       </div>
     </div>
