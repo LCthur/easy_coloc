@@ -211,13 +211,6 @@ p 'create deal'
 
 Deal.create!(
   assignment_id:1002,
-  assignment_proposal_id:1004,
-  chosen: nil,
-  description: "Hey, j'ai Démo Day au Wagon ce jour-là tu pourrais pas le faire pour moi !"
-  )
-
-Deal.create!(
-  assignment_id:1002,
   assignment_proposal_id:1005,
   chosen: nil,
   description: "Hey, j'ai Démo Day au Wagon ce jour-là tu pourrais pas le faire pour moi !"
