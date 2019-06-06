@@ -1,11 +1,15 @@
 <!-- taches faites -->
 <% assignments.each do |assignment| %>
   <% if assignment.done_state %>
-    <div class="card-task">
+  <% if assignment.user == current_user %>
+    <div class="card-task user" id="id_<%= assignment.id %>">
+  <% else %>
+    <div class="card-task not-user" id="id_<%= assignment.id %>">
+  <% end %>
       <%= cl_image_tag assignment.user.avatar_photo, class: "avatar-large" %>
           <div class="card-task-info">
-            <h2><%= assignment.task.name %></h2>
-            <p> <%= assignment.task.description %></p>
+            <h2><strike><%= assignment.task.name %></strike></h2>
+            <p><strike><%= assignment.task.description %></strike></p>
           </div>
           <div class="div-btn">
             <% if assignment.user != current_user %>

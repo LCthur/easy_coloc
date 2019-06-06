@@ -23,14 +23,12 @@ const initSortable = () => {
         animation: 150,
         onChange: (event) => {
             endColumn.addEventListener('drop',(e) => {
-                console.log(e);
                 let idString = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0].id.substr(3);
                 const Http = new XMLHttpRequest();
                 const url = `/assignments/${idString}`;
                 Http.open("PATCH", url);
                 Http.send();
                     Http.onreadystatechange = function() {
-                        console.log(Http.responseText)
                     }
             })
           }
