@@ -180,7 +180,7 @@ Assignment.create!(
   id: 1006,
   user_id: 2,
   task_id: 5,
-  deadline: Date.today + rand(0..5),
+  deadline: Date.today + rand(3..5),
   done_state: false
 )
 
