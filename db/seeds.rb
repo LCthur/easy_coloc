@@ -17,7 +17,7 @@ Issue.destroy_all
 p 'Destroy assignments'
 Assignment.destroy_all
 
-p 'Creating 5 tasks'
+p 'Creating 7 tasks'
 
 
 Task.create!(
@@ -28,7 +28,7 @@ Task.create!(
 Task.create!(
     id: 2,
     name: "Lave-vaisselle",
-    description: "Vider le lave-vaisselle et pas dans l'évier hein ?!"
+    description: "Vider le lave-vaisselle et pas dans l'évier hein ?! ;-)"
   )
 Task.create!(
     id: 3,
@@ -65,13 +65,13 @@ Flat.create!(
   name: 'La Maison du Bonheur'
   )
 
-p 'Create 4 User'
+p 'Create 3 User'
 
 url_matt = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559825707/61588994-09b3-4e80-b869-5ee64e1f8dc4-removebg_scprjx.png'
 url_gio = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559826372/giogio_dthzim.png'
 url_lo = 'https://res.cloudinary.com/dqktvdjkg/image/upload/v1559826069/img_9806-removebg_iguouy.png'
 lo = User.create!(
-  id: 1,
+  id: 3,
   first_name: 'Loïc',
   last_name: 'Thurre',
   password: 'tototiti',
@@ -97,11 +97,11 @@ gio.remote_avatar_photo_url = url_gio
 gio.save
 
 matt = User.create(
-  id: 3,
+  id: 1,
   first_name: 'Matthieu',
   last_name: 'Borgognon',
-  password: 'tototiti',
-  password_confirmation: 'tototiti',
+  password: 'bientotlapero',
+  password_confirmation: 'bientotlapero',
   email: 'matrash@bqn.ch',
   flat_id: 1
   )
@@ -164,7 +164,7 @@ Assignment.create!(
   id: 1004,
   user_id: 2,
   task_id: 7,                                 # !!! Micro-ondes
-  deadline: Date.today + rand(0..5),
+  deadline: Date.today,
   done_state: false
 )
 
@@ -172,7 +172,7 @@ Assignment.create!(
   id: 1005,
   user_id: 1,
   task_id: 4,                                 # !!! Compost
-  deadline: Date.today + rand(0..5),
+  deadline: Date.today,
   done_state: false
 )
 
