@@ -6,20 +6,21 @@
   height: 50px;
   margin: auto 0;
   align-items: center;
-  background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
+  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
   border-radius: 0 0 10px 10px;
   color:rgba(255, 255, 255, 0.8);
   font-size: 18px;
   border: 0px;
   &:hover {
-    color: white;
-    background: linear-gradient(215deg, #f7d1ff 0%, #a45eb3 0%, #4357c7 100%);
+    background-color: #24C7FF;
+    text-decoration: none;
+    color: #fff;
   }
 }
 
 .proposer {
   padding: 12px 24px;
-  background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
+  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
   color: white;
   border-radius: 10px;
   border: 0px;
@@ -63,7 +64,7 @@
 
 .btn-done {
     margin-right: 0;
-    background: linear-gradient(215deg, #f7d1ff 0%, #ed9aff 0%, #425df0 100%);
+    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
     padding: 5px;
     border-radius: 10px;
     color: #fff;
