@@ -1,7 +1,7 @@
 
 
 <div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
- <h2 class="task-title">Les remarques que j'ai fait à mes colloc's</h2>
+ <h2 class="task-title">Les remarques que j'ai faites à mes collocs</h2>
   <% if @my_issues.empty? %>
     <p class="text-center congrats">Tu n'as fait aucune remarque, ta bonté te perdra<p>
     <p class="text-center smiley"><%= Emoji.find_by_alias("smile").raw %></p>
@@ -16,7 +16,7 @@
     <div class="info-issue-recap bottom-rounded">
       <h3 class="title"><%= issue.assignment.task.name %></h3>
       <p class="text"><%= issue.description %></p>
-      <span class="author">Crée: <%= complete_date(issue.created_at) %></span>
+      <span class="author">Créée: <%= complete_date(issue.created_at) %></span>
     </div>
   </div>
   <% end %>
