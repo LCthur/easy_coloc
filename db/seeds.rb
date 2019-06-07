@@ -148,7 +148,7 @@ Assignment.create!(
   id: 1002,
   user_id: 3,
   task_id: 3,
-  deadline: Date.today,
+  deadline: Date.today + 1,
   done_state: false
 )
 
