@@ -12,9 +12,11 @@
       <p> <%= assignment.task.description %></p>
     </div>
     <div class="ribbon"><span id="ribbon-text">Retard</span></div>
+    <% if assignment.user == current_user %>
     <div class="div-btn">
       <%= link_to "Echange", new_assignment_deal_path(assignment), class: "btn-deal" %>
     </div>
+    <% end %>
   </div>
   <% else %>
     <% if assignment.user == current_user %>
