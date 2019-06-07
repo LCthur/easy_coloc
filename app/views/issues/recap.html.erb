@@ -1,9 +1,9 @@
 
 
 <div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
- <h2 class="task-title">Les tickets que j'ai ouvert contre mes collocs'</h2>
+ <h2 class="task-title">Les remarques que j'ai fait à mes colloc's</h2>
   <% if @my_issues.empty? %>
-    <p class="text-center congrats">Tu n'as ouvert aucun ticket, ta bonté te perdra<p>
+    <p class="text-center congrats">Tu n'as fait aucune remarque, ta bonté te perdra<p>
     <p class="text-center smiley"><%= Emoji.find_by_alias("smile").raw %></p>
   <% end %>
  <div class="grid">
@@ -25,9 +25,9 @@
 </div>
 
 <div class="container container-deals bg-white col-xs-11 col-lg-9  p-0">
-  <h1 class="task-title">Tickets ouverts contre moi</h1>
+  <h2 class="task-title">Remarques sur mes tâches</h2>
   <% if @issues_against_me.empty? %>
-    <p class="text-center congrats">Aucun ticket, tu es un collocataire exemplaire<p>
+    <p class="text-center congrats">Aucune remarque, tu es un collocataire exemplaire<p>
     <p class="text-center smiley"><%= Emoji.find_by_alias("relieved").raw %></p>
   <% else %>
     <%= render 'issues/recap_cards', issues: @issues_against_me %>
