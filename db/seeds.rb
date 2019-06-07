@@ -33,7 +33,7 @@ Task.create!(
 Task.create!(
     id: 3,
     name: 'Courses',
-    description: "Récupérer le panier de légume et pas le laisser pourrir"
+    description: "Récupérer le panier de légumes"
   )
 Task.create!(
     id: 4,
@@ -148,7 +148,7 @@ Assignment.create!(
   id: 1002,
   user_id: 3,
   task_id: 3,
-  deadline: Date.today + rand(-3..-1),
+  deadline: Date.today + 2,
   done_state: false
 )
 
