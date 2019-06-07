@@ -22,6 +22,14 @@
   border-radius: 10px 10px;
   place-self: center;
   align-self: stretch;
+  position: relative;
+  .text {
+    margin-bottom: 30px;
+  }
+  .author {
+    position: absolute;
+    bottom: 15px;
+  }
 }
 
  .issue-image-container {
