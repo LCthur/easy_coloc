@@ -156,7 +156,7 @@ Assignment.create!(
   id: 1003,
   user_id: 3,
   task_id: 6,                                 # !!! Rangement potes
-  deadline: Date.today + rand(0..5),
+  deadline: Date.today + 1,
   done_state: false
 )
 
