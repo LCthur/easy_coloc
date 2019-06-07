@@ -6,6 +6,14 @@
     cursor: grabbing;
 }
 
+.todo .card-task-delayed {
+    cursor: grab;
+}
+
+.todo .card-task-delayed:active {
+    cursor: grabbing;
+}
+
 .todo .card-task.ghost {
     filter: grayscale(1);
     opacity: 0;
