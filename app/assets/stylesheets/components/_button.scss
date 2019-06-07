@@ -3,32 +3,40 @@
 }
 
 .btn-accepter {
-  height: 50px;
-  margin: auto 0;
-  align-items: center;
-  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
-  border-radius: 0 0 10px 10px;
-  color:rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  border: 0px;
-  &:hover {
-    background-color: #24C7FF;
-    text-decoration: none;
-    color: #fff;
-  }
+    height: 50px;
+    margin: auto 0;
+    align-items: center;
+    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+    border-radius: 0 0 10px 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    border: 0px;
+
+    &:hover {
+        background: #5865f2;
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
-.proposer {
-  padding: 12px 24px;
-  background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
-  color: white;
-  border-radius: 10px;
-  border: 0px;
-  &:hover {
+.hover-button:hover {
     background: #5865f2;
     text-decoration: none;
     color: #fff;
-  }
+}
+
+.proposer {
+    padding: 12px 24px;
+    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+
+    &:hover {
+        background: #5865f2;
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
 .btn-deal {
@@ -38,8 +46,9 @@
     color: #fff;
     border: 0px;
     cursor: pointer;
+
     &:hover {
-        background-color: #27E0EE;
+        background: #5865f2;
         text-decoration: none;
         color: #fff;
     }
@@ -51,6 +60,7 @@
     background-color: rgb(235, 28, 49);
     color: #fff;
     border: 0px;
+
     &:hover {
         background: #DB3545;
         text-decoration: none;
@@ -70,6 +80,7 @@
     border-radius: 10px;
     color: #fff;
     border: 0px;
+
     &:hover {
         background: #5865f2;
         text-decoration: none;
@@ -86,6 +97,7 @@
     border-radius: 10px;
     color: #fff;
     border: 0px;
+
     &:hover {
         background: #5865f2;
         text-decoration: none;
