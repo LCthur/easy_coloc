@@ -81,10 +81,6 @@
     align-items: center;
     justify-content: flex-start;
     transition: 0.5s;
-
-    &:hover {
-        width: 90%;
-    }
 }
 
 .card-task .card-task-info {
@@ -112,6 +108,7 @@
     box-shadow: 0 0px 12px #005669;
     &:hover {
       cursor: grab;
+      width: 95%;
     }
 }
 
@@ -133,10 +130,6 @@
     align-items: center;
     transition: 0.5s;
     position: relative;
-
-    &:hover {
-        width: 90%;
-    }
 }
 
 .card-task-delayed .card-task-info {
