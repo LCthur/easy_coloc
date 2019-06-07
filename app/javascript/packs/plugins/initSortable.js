@@ -1,15 +1,16 @@
 import Sortable from 'sortablejs';
 
 const initSortable = () => {
-    const endColumn = document.querySelector(".done-column")
-    const todo = document.querySelector(".todo")
-    const done = document.querySelector(".done")
+    const endColumn = document.querySelector(".done-column");
+    const todo = document.querySelector(".todo");
+    const done = document.querySelector(".done");
 
     new Sortable(todo, {
         group: {
             name: 'shared',
             put: false
         },
+        filter: ".not-user",
         chosenClass: "sortable-chosen",
         ghostClass: "ghost",
         animation: 150,
@@ -22,7 +23,7 @@ const initSortable = () => {
         group: 'shared',
         animation: 150,
         onChange: (event) => {
-            endColumn.addEventListener('drop',(e) => {
+            endColumn.addEventListener('drop', (e) => {
                 let ribbonDiv = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0].children[2];
                 ribbonDiv.parentNode.removeChild(ribbonDiv);
                 let divChange = endColumn.children[1].querySelectorAll('*[id^="id_"]')[0];
@@ -37,11 +38,12 @@ const initSortable = () => {
                 const url = `/assignments/${idString}`;
                 Http.open("PATCH", url);
                 Http.send();
-                    Http.onreadystatechange = function() {
-                    }
+                Http.onreadystatechange = function () {}
             })
-          }
+        }
     });
 };
 
-export { initSortable };
+export {
+    initSortable
+};
