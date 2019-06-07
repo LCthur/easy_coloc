@@ -17,15 +17,15 @@ class IssuesController < ApplicationController
       @issue.assignment.save
       mail = IssueMailer.with(user: current_user, issue: @issue).request_issue
       mail.deliver
-      redirect_to issues_recap_path	
+      redirect_to issues_recap_path
     else
       render :new
     end
   end
 
   def recap
-    @my_issues = Issue.where(user_id: current_user.id)
-    @issues_against_me = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+    @my_issues = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.done_state = false").where(user_id: current_user.id)
+    @issues_against_me = Issue.joins("INNER JOIN assignments ON issues.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}").where("assignments.done_state = false")
   end
 
   private
