@@ -164,7 +164,7 @@ Assignment.create!(
   id: 1004,
   user_id: 2,
   task_id: 7,                                 # !!! Micro-ondes
-  deadline: Date.today,
+  deadline: Date.today + rand(-3..-1),
   done_state: false
 )
 
@@ -178,7 +178,7 @@ Assignment.create!(
 
 Assignment.create!(
   id: 1006,
-  user_id: 3,
+  user_id: 2,
   task_id: 5,
   deadline: Date.today + rand(0..5),
   done_state: false
