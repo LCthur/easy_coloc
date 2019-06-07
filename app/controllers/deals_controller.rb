@@ -34,7 +34,7 @@ class DealsController < ApplicationController
     @deals = Deal.joins("INNER JOIN assignments
                           ON deals.assignment_proposal_id = assignments.id").where("assignments.user_id = #{current_user.id}")
     @my_deals = Deal.joins("INNER JOIN assignments
-                            ON deals.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}")
+                            ON deals.assignment_id = assignments.id").where("assignments.user_id = #{current_user.id}").where(chosen: nil)
   end
 
   def update
