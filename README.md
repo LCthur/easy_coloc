@@ -8,5 +8,5 @@ Ce projet a été réalisé en 2 semaines dans le cadre de la formation du [Wago
 
 Le site est développé en Ruby 2.4.3 compatible cross plateforme et Rails 5.2.3.
 
-https://www.easy-coloc.com
+http://www.easy-coloc.com
 
