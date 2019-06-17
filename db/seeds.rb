@@ -33,7 +33,7 @@ Task.create!(
 Task.create!(
     id: 3,
     name: 'Courses',
-    description: "Récupérer le panier de légume et pas le laisser pourrir"
+    description: "Récupérer le panier de légumes"
   )
 Task.create!(
     id: 4,
@@ -130,7 +130,7 @@ p 'Create Assignments'
 
 Assignment.create!(
   id: 1000,
-  user_id: 1,
+  user_id: 3,
   task_id: 1,
   deadline: Date.today + rand(-3..-1),
   done_state: true
@@ -148,7 +148,7 @@ Assignment.create!(
   id: 1002,
   user_id: 3,
   task_id: 3,
-  deadline: Date.today + rand(-3..-1),
+  deadline: Date.today + 1,
   done_state: false
 )
 
@@ -156,7 +156,7 @@ Assignment.create!(
   id: 1003,
   user_id: 3,
   task_id: 6,                                 # !!! Rangement potes
-  deadline: Date.today + rand(0..5),
+  deadline: Date.today + 1,
   done_state: false
 )
 
@@ -164,7 +164,7 @@ Assignment.create!(
   id: 1004,
   user_id: 2,
   task_id: 7,                                 # !!! Micro-ondes
-  deadline: Date.today,
+  deadline: Date.today + rand(-3..-1),
   done_state: false
 )
 
@@ -178,9 +178,9 @@ Assignment.create!(
 
 Assignment.create!(
   id: 1006,
-  user_id: 3,
+  user_id: 2,
   task_id: 5,
-  deadline: Date.today + rand(0..5),
+  deadline: Date.today + rand(3..5),
   done_state: false
 )
 
