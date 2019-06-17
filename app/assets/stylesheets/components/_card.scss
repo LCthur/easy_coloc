@@ -41,6 +41,18 @@
     padding: 15px 27px 7px 27px;
     color: #fff;
     text-align: left;
+    position: relative;
+}
+
+#add-task-link {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 38px;
+    & a {
+        color: white !important;
+        text-decoration: none !important;
+    }
 }
 
 .task-title-done {

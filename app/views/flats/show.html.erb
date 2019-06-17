@@ -5,7 +5,7 @@
       <h2 class="text-task-title">À faire</h2>
     </div>
     <div class="todo">
-      <h2 class="task-subtitle"><%= "Aujourd'hui" unless @assignments_today_late.empty? %></h2>
+      <h2 class="task-subtitle"><%= "Aujourd'hui" unless @assignments_today_late.empty? %></h2> <span id="add-task-link"><%= link_to new_task_path , class: "nav-link" do %><i class="fas fa-plus-circle"></i><% end %></span>
       <%= render 'flats/today' %>
       <h2 class="task-subtitle"> <%= complete_date(Date.today + 1) unless @assignments_day1.empty? %></h2>
       <%= render 'flats/todo',    assignments: @assignments_day1  %>
