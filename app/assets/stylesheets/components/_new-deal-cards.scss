@@ -63,9 +63,46 @@
             font-weight: 500;
         }
     }
+
+    .style-radio {
+        text-align: left;
+        margin: 10px 25px;
+        box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 8px 5px 8px 5px;
+        color: #222;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        cursor: grab;
+        transition: 0.5s;
+        input {
+            appearance: none;
+        }
+
+        img {
+            margin: 0px 20px 0 20px;
+        }
+
+        label {
+            margin-top: 5px;
+            cursor: grab;
+            font-size: 0.9rem;
+        }
+        span {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+    }
 }
 
 .style-checkbox.active {
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
+    color: #fff;
+}
+
+.style-radio.active {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(0.25turn, #24C7FF, #27E0EE);
     color: #fff;

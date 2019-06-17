@@ -1,0 +1,40 @@
+<div class="container col-12 col-md-6" id="create-task">
+  <div class="task-title">
+    <h2 class="text-center py-2">Créer une nouvelle tâche</h2>
+  </div>
+  <div class="deal">
+    <div class="form-checkbox">
+      <%= "<form action='/tasks' method='post'>".html_safe %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="text-center mt-3">
+        <h3>Attribue la tâche à quelqu'un</h3>
+      </div>
+      <div class="checkboxs">
+        <% User.all.each do |user| %>
+        <div class="style-radio">
+          <%= "<img class='avatar-deal-proposal' src='#{user.avatar_photo}' alt='#{user.first_name}'>".html_safe %>
+          <%= "<input type='radio' id='user_#{user.id}' name='#{user.id}'>".html_safe %>
+          <%= "<label class='label-name' for='proposal_#{user.id}'><span>#{user.first_name}</span></label>".html_safe %>
+        </div>
+        <% end %>
+      </div>
+      <div class="name form-row mb-2 mx-5 px-4 text-left">
+        <div class="col-6">
+          <label for="name">Donne un nom à ta tâche</label>
+          <input class="form-control" id="name" name="name" placeholder="Nom de la tâche" maxlength="25" />
+        </div>
+        <div class="col-6">
+          <label for="date">Choisis une date d'échéance</label>
+          <input class="form-control datepicker" id="date" name="date" type="text" placeholder="jj-MM-aaaa" />
+        </div>
+      </div>
+      <div class="description form-group mb-2 text-left">
+        <label for="descitpion">Donne une description à ta tâche</label>
+        <textarea class="form-control" id="description" name="description"
+          placeholder="Description de la tâche (max: 50 caractères)." maxlength="50" cols="40" rows="2"></textarea>
+      </div>
+      <input type="submit" class="mb-3 proposer" value="Créer une tâche">
+      </form>
+    </div>
+  </div>
+</div>
