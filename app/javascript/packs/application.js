@@ -7,10 +7,6 @@ import { autoResize} from './components/textAreaAutoResize';
 import { flatpickrCreateTask } from "./plugins/date";
 // import { dealCounter} from './components/dealCounter';
 
-if(document.getElementById('create-task')){
-  flatpickrCreateTask();
-};
-
 if (document.getElementById('issue-page')) {
   initCustomInputFile();
 };
@@ -24,6 +20,9 @@ initUpdateNavbarOnScroll();
 radioInputState();
 inputState();
 
+if(document.getElementById('create-task')){
+  flatpickrCreateTask();
+};
 
 // autoResize();
 
